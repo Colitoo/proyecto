@@ -13,7 +13,7 @@
         <div class="container">
             <a class="navbar-brand" href="/">RETRO STORE</a>
 
-            <div>
+            <div class="collapse navbar-collapse">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="/Catalogo">Catálogo</a>
@@ -31,10 +31,7 @@
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/login">Iniciar sesión</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/register">Registrarse</a>
+                        <a class="nav-link" href="/login">Iniciar sesión | Registrarse</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/carrito">Carrito</a>
@@ -48,7 +45,7 @@
         {{ $slot }}
     </div>
 
-    <footer class="bg-dark text-white text-center py-3 mt-4">
+    <footer class="bg-dark text-white py-3 mt-4">
         <div class="container py-4">
             <div class="row">
 
@@ -58,13 +55,13 @@
                     <p>Somos una empresa con mas de 10 años aportando a
                         la industria de venta de consolas y el entretenimiento de
                         nuestros clientes, siempre aportanto las mejores experiencias de juego.</p>
-                    <a href="/Quienes-somos" class="text-white">Mas información</a>
+                    <a href="/Quienes-somos" class="text-white">Más información</a>
                 </div>
 
                 <!-- Columna 2 -->
                 <div class="col-md-4">
                     <h5>Contacto</h5>
-                    <p>Email: RSclienteServis@mail.com</p>
+                    <p>Email: RSclienteServis@gmail.com</p>
                     <p>Tel: +5493624223492</p>
                 </div>
 
@@ -81,7 +78,7 @@
             </div>
         </div>
         <div class="bg-dark text-white text-center py-2">
-            &copy; {{ date('Y') }} RETRO STORE. Todos los derechos reservados.
+            &copy; {{ date('Y') }} RETRO STORE by Colo y Beni. Todos los derechos reservados.
         </div>
     </footer>
 
