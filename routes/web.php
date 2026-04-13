@@ -14,24 +14,34 @@ Route::get('/Contacto', function () {
     return view('frontend.contacto');
 });
 
-Route::get('/Quienes-somos', function () {
-    return view('frontend.quienes-somos');
+Route::get('/informacion-contacto', function () {
+    return view('frontend.informacion-contacto');
 });
 
-Route::get('/Catalogo', function () {
-    return view('frontend.catalogo');
-});
-
-Route::get('/Carrito', function () {
-    return view('frontend.carrito');
-});
-
-Route::get('/Terminos-y-usos', function () {
+Route::get('/terminos-y-usos', function () {
     return view('frontend.terminos-y-usos');
 });
 
-Route::get('/Seguimiento-de-pedidos', function () {
-    return view('frontend.seguimiento-de-pedidos');
-}); 
+Route::get('/productos', function () {
+    return view('frontend.productos');
+});
 
+Route::get('/consultas', function () {
+    return view('frontend.consultas');
+});
 
+Route::get('/seguimiento', function () {
+    return view('frontend.seguimiento');
+});
+
+Route::get('/comercializacion', function () {
+    return view('frontend.comercializacion');
+});
+
+Route::get('/quienes-somos', function () {
+    return view('frontend.quienes-somos');
+});
+
+Route::get('/carrito', function () {
+    return view('frontend.carrito');
+});

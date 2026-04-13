@@ -16,13 +16,13 @@
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/Catalogo">Catálogo</a>
+                        <a class="nav-link" href="/productos">Catálogo</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/Quienes-somos">Quiénes somos</a>
+                        <a class="nav-link" href="/quienes-somos">Quiénes somos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/Contacto">Contacto</a>
+                        <a class="nav-link" href="/informacion-contacto">Contacto</a>
                     </li>
 
                 </ul>

@@ -1,5 +1,6 @@
 <x-layout>
 
-    <h1>Bienvenido</h1>
+    <h2>pagina de inicio</h2>
+  
 
 </x-layout>
