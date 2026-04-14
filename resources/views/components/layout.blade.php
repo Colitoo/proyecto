@@ -22,9 +22,8 @@
                         <a class="nav-link" href="/quienes-somos">Quiénes somos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/informacion-contacto">Contacto</a>
+                        <a class="nav-link" href="/contacto">Contacto</a>
                     </li>
-
                 </ul>
             </div>
 
@@ -70,8 +69,8 @@
                     <h5>Enlaces</h5>
                     <ul class="list-unstyled">
                         <li><a href="/Contacto" class="text-white">Contacto</a></li>
-                        <li><a href="/seguimiento-de-pedidos" class="text-white">Seguimiento de Pedidos</a></li>
-                        <li><a href="/Terminos-y-usos" class="text-white">Términos y Usos</a></li>
+                        <li><a href="/seguimiento" class="text-white">Seguimiento de Pedidos</a></li>
+                        <li><a href="/terminos-y-usos" class="text-white">Términos y Usos</a></li>
                     </ul>
                 </div>
 

@@ -10,11 +10,7 @@ Route::get('/login', function () {
     return view('frontend.login');
 });
 
-Route::get('/Contacto', function () {
-    return view('frontend.contacto');
-});
-
-Route::get('/informacion-contacto', function () {
+Route::get('/contacto', function () {
     return view('frontend.informacion-contacto');
 });
 
