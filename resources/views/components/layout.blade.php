@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
 </head>
 
-<body class="bg-light d-flex flex-column min-vh-100">
+<body class="bg-light d-flex flex-column min-vh-100 bg-dark-subtle">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="/"> <img src="{{ asset('img/logo.png')}}" alt="Logo"> </a>
