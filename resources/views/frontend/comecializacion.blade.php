@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout title="Comercializacion">
 
     <h2>pagina de comercializacion</h2>
 

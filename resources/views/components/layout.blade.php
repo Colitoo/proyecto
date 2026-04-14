@@ -54,7 +54,7 @@
                     <p>Somos una empresa con mas de 10 años aportando a
                         la industria de venta de consolas y el entretenimiento de
                         nuestros clientes, siempre aportanto las mejores experiencias de juego.</p>
-                    <a href="/Quienes-somos" class="text-white">Más información</a>
+                    <a href="/quienes-somos" class="text-white">Más información</a>
                 </div>
 
                 <!-- Columna 2 -->

@@ -1,6 +1,6 @@
-<x-layout>
+<x-layout title="Términos y Usos">
 
-    <h2>pagina de terminos y usos</h2>
+    <h2>pagina de términos y usos</h2>
 
 
 

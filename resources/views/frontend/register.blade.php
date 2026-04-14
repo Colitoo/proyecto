@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout title="Registro">
 
     <h2>pagina de registro</h2>
 
