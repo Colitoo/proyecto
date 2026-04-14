@@ -10,6 +10,10 @@ Route::get('/login', function () {
     return view('frontend.login');
 });
 
+Route::get('/register', function () {
+    return view('frontend.register');
+});
+
 Route::get('/contacto', function () {
     return view('frontend.informacion-contacto');
 });
