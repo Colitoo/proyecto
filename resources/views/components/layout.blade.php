@@ -68,7 +68,7 @@
                 <div class="col-md-4">
                     <h5>Enlaces</h5>
                     <ul class="list-unstyled">
-                        <li><a href="/Contacto" class="text-white">Contacto</a></li>
+                        <li><a href="/contacto" class="text-white">Contacto</a></li>
                         <li><a href="/seguimiento" class="text-white">Seguimiento de Pedidos</a></li>
                         <li><a href="/terminos-y-usos" class="text-white">Términos y Usos</a></li>
                     </ul>
