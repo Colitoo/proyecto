@@ -5,7 +5,7 @@
         <a> Estos términos rigen el uso de http://proyecto.test/ incluyendo todo el contenido, la funcionalidad y los servicios ofrecidos en el sitio web. Al usar el sitio, usted acepta y se compromete a cumplir con estos términos. Nos reservamos el derecho de actualizarlos en cualquier momento; su uso continuado constituye la aceptación de cualquier cambio.</a>
     </div>
     <p></p>
-    <div class="card" style="width: 50rem;">
+    <div class="card" >
         <div class="card">
             <div class="card-header">
                 Conducta en el sitio web
@@ -91,7 +91,7 @@
     <p></p>
     <h4>Políticas de privacidad</h4>
     <p></p>
-    <div class="card" style="width: 50rem;">
+    <div class="card">
         <div class="card">
             <div class="card-header">
                 Protección de datos (RGPD)
