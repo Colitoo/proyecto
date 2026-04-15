@@ -5,13 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ $title ?? 'RETRO STORE' }}</title>
+
+    <!-- Fuente -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&family=Jersey+25&display=swap" rel="stylesheet">
+
+    <!-- Estilo -->
     <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
 </head>
 
-<body class="bg-light d-flex flex-column min-vh-100 bg-dark-subtle">
+<body class="d-flex flex-column min-vh-100">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="/"> <img src="{{ asset('img/logo.png')}}" alt="Logo"> </a>
+            <a class="navbar-brand clickable" href="/"> <img src="{{ asset('img/logo.png')}}" alt="Logo"> </a>
 
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav me-auto">
@@ -40,7 +48,7 @@
         </div>
     </nav>
 
-    <div class="container mt-4" style="flex-grow: 1;">
+    <div style="flex-grow: 1;">
         {{ $slot }}
     </div>
 

@@ -1,0 +1,58 @@
+body {
+    background-image: url('/img/background.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: 'Jersey 25', Arial;
+    font-size: 20px;
+    color: #e4e4e4;
+}
+
+.banner-container img {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto;
+}
+
+.titulo {
+    font-family: 'Jersey 10', Arial;
+    font-size: 3.5rem;
+    margin: 20px 0;
+}
+
+
+.carousel-inner {
+    margin: auto;
+    width: 700px;
+    height: 700px;
+}
+
+.carousel-item img {
+    object-fit: cover;
+
+}
+
+
+
+.card:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:not(:hover) {
+    transition: transform 0.2s ease-in-out;
+}
+
+.clickable:hover {
+
+    transform: scale(1.05);
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.clickable:not(:hover) {
+    transition: transform 0.2s ease-in-out;
+}
