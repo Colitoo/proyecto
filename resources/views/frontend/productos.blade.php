@@ -1,14 +1,24 @@
 <x-layout title="Productos">
+    <div class="container mt-4">
+        <h1>pagina de productos</h1>
+    </div>
 
-    <h1>pagina de productos</h1>
 
     <section class="container mt-5">
         <div class="row">
             <!-- Columna izquierda con texto -->
-            <div class="col-md-3">
+            <div class="dropdown container">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Categorias</button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="consola">Action</a></li>
+                    <li><a class="dropdown-item" href="mando">Another action</a></li>
+                    <li><a class="dropdown-item" href="Portatiles">Something else here</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 mt-4">
                 <h2>Un poco sobre nuestros productos</h2>
                 <p>En nuestra tienda encontrarás una amplia selección de productos de calidad, cuidadosamente seleccionados para ofrecerte lo mejor en rendimiento y diseño.
-                    Consolas y mandos considerados "retros", pero que tienen mucho que ofrecer con sus iconicos catalogos incluidos. No dejes pasar la oportunidad de experimentar los origenes de lo que conocemos hoy dia, con una gran variedad de juegos y una experiencia de juego única. 
+                    Consolas y mandos considerados "retros", pero que tienen mucho que ofrecer con sus iconicos catalogos incluidos. No dejes pasar la oportunidad de experimentar los origenes de lo que conocemos hoy dia, con una gran variedad de juegos y una experiencia de juego única.
                 </p>
             </div>
 
