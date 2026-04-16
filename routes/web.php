@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactoController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -14,9 +15,10 @@ Route::get('/register', function () {
     return view('frontend.register');
 });
 
-Route::get('/contacto', function () {
-    return view('frontend.informacion-contacto');
-});
+Route::get('/contacto', [ContactoController::class, 'ver_contacto']);
+
+Route::post('/form-contacto', [ContactoController::class, 'guardar_contacto'])->name('formulario_contacto');
+
 
 Route::get('/terminos-y-usos', function () {
     return view('frontend.terminos-y-usos');
