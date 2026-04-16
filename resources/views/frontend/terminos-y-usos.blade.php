@@ -204,7 +204,7 @@
     </div>
 
     
-    <div class="alert alert-info mt-4 container">
+    <div class="container mt-4">
         <div class="text-center">
             <a class="alert-heading">¿Tiene alguna pregunta sobre sus datos o sobre esta política?</a>
         </div>
