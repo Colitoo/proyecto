@@ -43,7 +43,7 @@
                 </div>
                 <div class="card-body">
 
-                    <form action="#" method="POST">
+                    <form action="{{ url('form-contacto') }}" method="POST">
 
                         <div class="row">
                             <div class="col-md-6 mb-3">
