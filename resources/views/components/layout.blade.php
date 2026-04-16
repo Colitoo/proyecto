@@ -29,9 +29,13 @@
                 </ul>
             </div>
             <a class="navbar-brand clickable" href="/"> <img src="{{ asset('img/logo.png')}}" alt="Logo"> </a>
-
-            <div class="collapse navbar-collapse">
-                <ul class="navbar-nav me-auto">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link" href="/productos">Catálogo</a>
                     </li>
@@ -44,7 +48,7 @@
                 </ul>
             </div>
 
-            <div class="collapse navbar-collapse">
+            <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="/login">Iniciar sesión | Registrarse</a>
@@ -86,6 +90,7 @@
                     <h5>Enlaces</h5>
                     <ul class="list-unstyled">
                         <li><a href="/contacto" class="text-white">Contacto</a></li>
+                        <li><a href="/comercializacion" class="text-white">Comercialización</a></li>
                         <li><a href="/seguimiento" class="text-white">Seguimiento de Pedidos</a></li>
                         <li><a href="/terminos-y-usos" class="text-white">Términos y Usos</a></li>
                     </ul>
