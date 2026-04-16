@@ -1,6 +1,10 @@
 <x-layout title="Carrito">
 
-    <h2>pagina de carrito de compras</h2>
+    <div class="container">
+        <h2>pagina de carrito de compras</h2>
+        <p>en construccion!!!</p>
+
+    </div>
 
 
 

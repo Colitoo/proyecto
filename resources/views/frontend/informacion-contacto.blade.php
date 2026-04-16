@@ -1,101 +1,99 @@
 <x-layout title="Información de Contacto">
 
-    <div class="banner-container">
-        <img src="{{asset('img/banner(1).png')}}" alt="banner inicio" class="img-fluid mb-4">
-    </div>
+    <div class="container">
+        <section class="mb-5 mt-5"> 
+            <h2>Contactate con el equipo de RGTS</h2>
 
-    <section class="mb-5">
-        <h2>Contactate con el equipo de RGTS</h2>
+            <p>¿Buscás esa joya de 16-bits que te faltaba, o solamente necesitás información? En Retro Games Tech Store estamos para ayudarte. Escribinos y un especialista de nuestro equipo se pondrá en contacto con vos a la brevedad.</p>
+        </section>
 
-        <p>¿Buscás esa joya de 16-bits que te faltaba, o solamente necesitás información? En Retro Games Tech Store estamos para ayudarte. Escribinos y un especialista de nuestro equipo se pondrá en contacto con vos a la brevedad.</p>
-    </section>
+        <section class="row mt-4">
+            <div class="col-md-5">
+                <h3>Datos Legales y Operativos</h3>
+                <ul class="list-unstyled mb-5">
+                    <li class="mb-3"><b>Razón Social:</b> Avalos y Alcaraz S.R.L.</li>
+                    <li class="mb-3"><b>Nombre Comercial:</b> RGTS - Retro Games Tech Store</li>
+                    <li class="mb-3"><b>Titulares:</b> Avalos Alurralde Fausto y Alcaraz Benito Eduardo</li>
+                    <li class="mb-3"><b>Domicilio Legal:</b> Calle San Martín 1450, Piso 2, Oficina 4, W3400 Corrientes, Capital, Argentina.</li>
+                    <li class="mb-3"><b>CUIT:</b> 30-71234567-8 (Ficticio)</li>
+                </ul>
 
-    <section class="row mt-4">
-        <div class="col-md-5">
-            <h3>Datos Legales y Operativos</h3>
-            <ul class="list-unstyled mb-5">
-                <li class="mb-3"><b>Razón Social:</b> Avalos y Alcaraz S.R.L.</li>
-                <li class="mb-3"><b>Nombre Comercial:</b> RGTS - Retro Games Tech Store</li>
-                <li class="mb-3"><b>Titulares:</b> Avalos Alurralde Fausto y Alcaraz Benito Eduardo</li>
-                <li class="mb-3"><b>Domicilio Legal:</b> Calle San Martín 1450, Piso 2, Oficina 4, W3400 Corrientes, Capital, Argentina.</li>
-                <li class="mb-3"><b>CUIT:</b> 30-71234567-8 (Ficticio)</li>
-            </ul>
+                <h3>Contacto directo</h3>
+                <ul class="list-unstyled mb-5">
+                    <li class="mb-3"><b>Atención al Cliente (WhatsApp):</b> <a href="http://wa.me/+543781408249" target="_blank" rel="noopener noreferrer">+54 9 379 412-3456</a></li>
+                    <li class="mb-3"><b>Correo Electrónico:</b> <a href="mailto:soporte@rgts-store.com.ar">soporte@rgts-store.com.ar</a></li>
+                </ul>
 
-            <h3>Contacto directo</h3>
-            <ul class="list-unstyled mb-5">
-                <li class="mb-3"><b>Atención al Cliente (WhatsApp):</b> <a href="http://wa.me/+543781408249" target="_blank" rel="noopener noreferrer">+54 9 379 412-3456</a></li>
-                <li class="mb-3"><b>Correo Electrónico:</b> <a href="mailto:soporte@rgts-store.com.ar">soporte@rgts-store.com.ar</a></li>
-            </ul>
+                <h3>Nuestras redes sociales</h3>
+                <ul class="list-unstyled mb-5">
+                    <li class="mb-3"><a href="https://www.facebook.com/rgtsstore" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                    <li class="mb-3"><a href="https://www.instagram.com/rgtsstore" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                    <li class="mb-3"><a href="https://twitter.com/rgtsstore" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+                    <li class="mb-3"><a href="https://github.com/Colitoo/proyecto" target="_blank" rel="noopener noreferrer">Repo de github</a></li>
+                </ul>
 
-            <h3>Nuestras redes sociales</h3>
-            <ul class="list-unstyled mb-5">
-                <li class="mb-3"><a href="https://www.facebook.com/rgtsstore" target="_blank" rel="noopener noreferrer">Facebook</a></li>
-                <li class="mb-3"><a href="https://www.instagram.com/rgtsstore" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-                <li class="mb-3"><a href="https://twitter.com/rgtsstore" target="_blank" rel="noopener noreferrer">Twitter</a></li>
-                <li class="mb-3"><a href="https://github.com/Colitoo/proyecto" target="_blank" rel="noopener noreferrer">Repo de github</a></li>
-            </ul>
+            </div>
+            <div class="col-md-7">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-dark text-white">
+                        <h3 class="mb-0 text-center">Formulario de Contacto</h3>
+                    </div>
+                    <div class="card-body">
 
-        </div>
-        <div class="col-md-7">
-            <div class="card shadow-sm">
-                <div class="card-header bg-dark text-white">
-                    <h3 class="mb-0 text-center">Formulario de Contacto</h3>
-                </div>
-                <div class="card-body">
+                        <form action="{{ url('form-contacto') }}" method="POST">
 
-                    <form action="{{ url('form-contacto') }}" method="POST">
-
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label for="nombre" class="form-label fw-bold">Nombre y Apellido *</label>
-                                <input type="text" class="form-control" id="nombre" name="nombre" required>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="nombre" class="form-label fw-bold">Nombre y Apellido *</label>
+                                    <input type="text" class="form-control" id="nombre" name="nombre" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="email" class="form-label fw-bold">Correo Electrónico *</label>
+                                    <input type="email" class="form-control" id="email" name="email" required>
+                                </div>
                             </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="email" class="form-label fw-bold">Correo Electrónico *</label>
-                                <input type="email" class="form-control" id="email" name="email" required>
-                            </div>
-                        </div>
 
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label for="telefono" class="form-label fw-bold">Teléfono de contacto</label>
-                                <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="Ej: 3794 123456">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="telefono" class="form-label fw-bold">Teléfono de contacto</label>
+                                    <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="Ej: 3794 123456">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="motivo" class="form-label fw-bold">Motivo de la consulta</label>
+                                    <select class="form-select" id="motivo" name="motivo" required>
+                                        <option value="" selected disabled>Seleccioná una opción...</option>
+                                        <option value="stock">Consultar stock de consolas o juegos</option>
+                                        <option value="envios">Consulta sobre envíos</option>
+                                        <option value="seguridad">Seguridad del comprador</option>
+                                        <option value="otros">Otros</option>
+                                    </select>
+                                </div>
                             </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="motivo" class="form-label fw-bold">Motivo de la consulta</label>
-                                <select class="form-select" id="motivo" name="motivo" required>
-                                    <option value="" selected disabled>Seleccioná una opción...</option>
-                                    <option value="stock">Consultar stock de consolas o juegos</option>
-                                    <option value="envios">Consulta sobre envíos</option>
-                                    <option value="seguridad">Seguridad del comprador</option>
-                                    <option value="otros">Otros</option>
+
+                            <div class="mb-3">
+                                <label for="plataforma" class="form-label fw-bold">Plataforma de interés</label>
+                                <select class="form-select" id="plataforma" name="plataforma">
+                                    <option value="ninguna" selected>General</option>
+                                    <option value="sobremesa">Sobremesa (PS1, PS2, Wii, etc.)</option>
+                                    <option value="portatiles">Portátiles (GameBoy, PsVita, etc.)</option>
                                 </select>
                             </div>
-                        </div>
 
-                        <div class="mb-3">
-                            <label for="plataforma" class="form-label fw-bold">Plataforma de interés</label>
-                            <select class="form-select" id="plataforma" name="plataforma">
-                                <option value="ninguna" selected>General</option>
-                                <option value="sobremesa">Sobremesa (PS1, PS2, Wii, etc.)</option>
-                                <option value="portatiles">Portátiles (GameBoy, PsVita, etc.)</option>
-                            </select>
-                        </div>
+                            <div class="mb-4">
+                                <label for="mensaje" class="form-label fw-bold">Mensaje *</label>
+                                <textarea class="form-control border-dark" id="mensaje" name="mensaje" rows="4" placeholder="Contanos en detalle cómo podemos serte de ayuda..." required></textarea>
+                            </div>
 
-                        <div class="mb-4">
-                            <label for="mensaje" class="form-label fw-bold">Mensaje *</label>
-                            <textarea class="form-control border-dark" id="mensaje" name="mensaje" rows="4" placeholder="Contanos en detalle cómo podemos serte de ayuda..." required></textarea>
-                        </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary btn-lg">Contacta a RGTS</button>
+                            </div>
 
-                        <div class="d-grid">
-                            <button type="submit" class="btn btn-primary btn-lg">Contacta a RGTS</button>
-                        </div>
+                        </form>
 
-                    </form>
-
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
 </x-layout>
