@@ -47,3 +47,15 @@ Route::get('/quienes-somos', function () {
 Route::get('/carrito', function () {
     return view('frontend.carrito');
 });
+
+Route::get('/consolas', function () {
+    return view('frontend.consolas');
+});
+
+Route::get('/mandos', function () {
+    return view('frontend.mandos');
+});
+
+Route::get('/portatiles', function () {
+    return view('frontend.portatiles');
+});

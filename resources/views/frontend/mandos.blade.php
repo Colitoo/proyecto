@@ -1,6 +1,6 @@
-<x-layout title="Consolas">
+<x-layout title="Mandos">
     <div class="container mt-4">
-        <h1>pagina de productos: Consolas de Mesa</h1>
+        <h1>pagina de productos: Mandos para consolas</h1>
     </div>
 
     <section class="container mt-5">
@@ -26,55 +26,67 @@
                 <div class="row row-cols-1 row-cols-md-3 g-4">
                     <div class="col">
                         <div class="card h-100">
-                            <img src="{{asset('img/play1.jpg')}}" class="card-img-top" alt="play1">
+                            <img src="{{asset('img/mandops1.jpg')}}" class="card-img-top" alt="mandops1">
                             <div class="card-body">
-                                <h5 class="card-title">Combo Play Station 1</h5>
-                                <p class="card-text">No dejen pasar la portunidad de experimentar los origenes de lo que conocemos hoy dia </p>
+                                <h5 class="card-title">Play Station 1, Mando</h5>
+                                <p class="card-text">mando de play 1, original en buen estado</p>
                             </div>
                             <div class="card-footer">
-                                <small class="text-body-secondary">$200</small>
+                                <small class="text-body-secondary">$50</small>
                             </div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="card h-100">
-                            <img src="{{asset('img/play2.jpg')}}" class="card-img-top" alt="play2">
+                            <img src="{{asset('img/mandops2.jpg')}}" class="card-img-top" alt="mandops2">
                             <div class="card-body">
-                                <h5 class="card-title">Play Station 2</h5>
-                                <p class="card-text">Para muchos la mejor de la historia, el catalogo mas iconico incluido. No dejen pasar la oportunida.</p>
+                                <h5 class="card-title">Play Station 2, Mando</h5>
+                                <p class="card-text">mando de play 2, original en buen estado</p>
                             </div>
                             <div class="card-footer">
-                                <small class="text-body-secondary">$200</small>
+                                <small class="text-body-secondary">$50</small>
                             </div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="card h-100">
-                            <img src="{{asset('img/PS3.jpg')}}" class="card-img-top" alt="play3">
+                            <img src="{{asset('img/mandops3.jpg')}}" class="card-img-top" alt="mandops3">
                             <div class="card-body">
-                                <h5 class="card-title">Play Station 3</h5>
-                                <p class="card-text">La primera consola de sony con graficos HD, una gran opcion para los amantes de la tecnologia y los juegos.</p>
+                                <h5 class="card-title">Play Station 3, Mando</h5>
+                                <p class="card-text">mando de play 3, original en buen estado</p>
                             </div>
                             <div class="card-footer">
-                                <small class="text-body-secondary">$300</small>
+                                <small class="text-body-secondary">$70</small>
                             </div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="card h-100">
-                            <img src="{{asset('img/wii.jpg')}}" class="card-img-top" alt="wii">
+                            <img src="{{asset('img/mandowii.jpg')}}" class="card-img-top" alt="mandowii">
                             <div class="card-body">
-                                <h5 class="card-title">Wii</h5>
-                                <p class="card-text">La consola de entretenimiento más innovadora de Nintendo, con una gran variedad de juegos y una experiencia de juego única. incluiye mando y juegos!!</p>
+                                <h5 class="card-title">Wii Remote</h5>
+                                <p class="card-text">El mando de la consola de entretenimiento más innovadora de Nintendo, con una gran variedad de juegos y una experiencia de juego única.</p>
                             </div>
                             <div class="card-footer">
-                                <small class="text-body-secondary">$350</small>
+                                <small class="text-body-secondary">$70</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <img src="{{asset('img/mandogamecube.jpg')}}" class="card-img-top" alt="mandogamecube">
+                            <div class="card-body">
+                                <h5 class="card-title">GameCube Controller</h5>
+                                <p class="card-text">El mando de la consola Game Cube, vuelve en esta nueva generacion para tener una nueva oportunidad con sus juegos retrocompatibles.</p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-body-secondary">$80</small>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
+
 </x-layout>

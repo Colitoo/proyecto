@@ -19,6 +19,15 @@
 <body class="d-flex flex-column min-vh-100">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">=</button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/">Home</a></li>
+                    <li><a class="dropdown-item" href="producto">Catalogo</a></li>
+                    <li><a class="dropdown-item" href="quienes-somos">Quienes Somos</a></li>
+                    <li><a class="dropdown-item" href="informacion-contacto">Contacto</a></li>
+                </ul>
+            </div>
             <a class="navbar-brand clickable" href="/"> <img src="{{ asset('img/logo.png')}}" alt="Logo"> </a>
 
             <div class="collapse navbar-collapse">

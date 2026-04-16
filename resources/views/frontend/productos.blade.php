@@ -10,9 +10,9 @@
             <div class="dropdown container">
                 <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Categorias</button>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="consola">Action</a></li>
-                    <li><a class="dropdown-item" href="mando">Another action</a></li>
-                    <li><a class="dropdown-item" href="Portatiles">Something else here</a></li>
+                    <li><a class="dropdown-item" href="consolas">Consolas</a></li>
+                    <li><a class="dropdown-item" href="mandos">Mandos</a></li>
+                    <li><a class="dropdown-item" href="portatiles">Portátiles</a></li>
                 </ul>
             </div>
             <div class="col-md-3 mt-4">

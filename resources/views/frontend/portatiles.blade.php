@@ -1,7 +1,8 @@
-<x-layout title="Consolas">
+<x-layout title="Productos">
     <div class="container mt-4">
-        <h1>pagina de productos: Consolas de Mesa</h1>
+        <h1>pagina de productos</h1>
     </div>
+
 
     <section class="container mt-5">
         <div class="row">
@@ -26,34 +27,10 @@
                 <div class="row row-cols-1 row-cols-md-3 g-4">
                     <div class="col">
                         <div class="card h-100">
-                            <img src="{{asset('img/play1.jpg')}}" class="card-img-top" alt="play1">
+                            <img src="{{asset('img/psp.jpg')}}" class="card-img-top" alt="psp">
                             <div class="card-body">
-                                <h5 class="card-title">Combo Play Station 1</h5>
-                                <p class="card-text">No dejen pasar la portunidad de experimentar los origenes de lo que conocemos hoy dia </p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-body-secondary">$200</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card h-100">
-                            <img src="{{asset('img/play2.jpg')}}" class="card-img-top" alt="play2">
-                            <div class="card-body">
-                                <h5 class="card-title">Play Station 2</h5>
-                                <p class="card-text">Para muchos la mejor de la historia, el catalogo mas iconico incluido. No dejen pasar la oportunida.</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-body-secondary">$200</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card h-100">
-                            <img src="{{asset('img/PS3.jpg')}}" class="card-img-top" alt="play3">
-                            <div class="card-body">
-                                <h5 class="card-title">Play Station 3</h5>
-                                <p class="card-text">La primera consola de sony con graficos HD, una gran opcion para los amantes de la tecnologia y los juegos.</p>
+                                <h5 class="card-title">Play Station Portable</h5>
+                                <p class="card-text">Una consola portatil que te permite jugar en cualquier lugar, con un excelente rendimiento y una gran variedad de juegos.</p>
                             </div>
                             <div class="card-footer">
                                 <small class="text-body-secondary">$300</small>
@@ -62,10 +39,34 @@
                     </div>
                     <div class="col">
                         <div class="card h-100">
-                            <img src="{{asset('img/wii.jpg')}}" class="card-img-top" alt="wii">
+                            <img src="{{asset('img/psvita.jpg')}}" class="card-img-top" alt="psvita">
                             <div class="card-body">
-                                <h5 class="card-title">Wii</h5>
-                                <p class="card-text">La consola de entretenimiento más innovadora de Nintendo, con una gran variedad de juegos y una experiencia de juego única. incluiye mando y juegos!!</p>
+                                <h5 class="card-title">Play Station Vita</h5>
+                                <p class="card-text">La ultima consola portatil de sony, con una pantalla tactil y una gran variedad de juegos.</p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-body-secondary">$400</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <img src="{{asset('img/gameboy.jpg')}}" class="card-img-top" alt="gameboy">
+                            <div class="card-body">
+                                <h5 class="card-title">Game Boy</h5>
+                                <p class="card-text">La consola portátil más icónica de Nintendo, con una gran variedad de juegos.</p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-body-secondary">$80</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <img src="{{asset('img/3DS.jpg')}}" class="card-img-top" alt="3DS-XL">
+                            <div class="card-body">
+                                <h5 class="card-title">3DS-XL</h5>
+                                <p class="card-text">La consola portátil más innovadora de Nintendo, con una gran variedad de juegos y una experiencia de juego única.</p>
                             </div>
                             <div class="card-footer">
                                 <small class="text-body-secondary">$350</small>
@@ -77,4 +78,5 @@
             </div>
         </div>
     </section>
+
 </x-layout>
