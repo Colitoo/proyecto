@@ -1,3 +1,4 @@
+
 <x-layout title="Inicio">
 
     <div class="banner-container">
@@ -89,7 +90,9 @@
                     <div class="row row-cols-1 row-cols-md-2 g-4">
                         <div class="col">
                             <div class="card h-100">
-                                <img src="{{ asset('img/mandops2.jpg') }}" class="card-img-top" alt="...">
+                                <div class="img-box">
+                                    <img src="{{ asset('img/mandops2.jpg') }}" class="card-img-top" alt="...">
+                                </div>
                                 <div class="card-body">
                                     <h5 class="card-title">Juan Perez</h5>
                                     <p class="card-text">Tenia mis dudas, pero cumplió todas mis espectativas, el paquete llegó en excelente estado y el mando anda de 10!.</p>
@@ -98,8 +101,9 @@
                         </div>
                         <div class="col">
                             <div class="card h-100">
-                                <img src="{{ asset('img/mandogamecube.jpg') }}
-                                " class="card-img-top" alt="...">
+                                <div class="img-box">
+                                    <img src="{{ asset('img/mandogamecube.jpg') }}" class="card-img-top" alt="...">
+                                </div>
                                 <div class="card-body">
                                     <h5 class="card-title">María García</h5>
                                     <p class="card-text">Excelente servicio, el producto llego perfecto a mi domicilio y muy rápido. Volvería a comprar sin dudarlo la proxima.</p>
@@ -108,18 +112,15 @@
                         </div>
                     </div>
 
-
-
-
-
-
                 </div>
 
                 <div class="carousel-item">
                     <div class="row row-cols-1 row-cols-md-2 g-4">
                         <div class="col">
                             <div class="card h-100">
-                                <img src="{{ asset('img/mandops1.jpg') }}" class="card-img-top" alt="...">
+                                <div class="img-box">
+                                    <img src="{{ asset('img/mandops1.jpg') }}" class="card-img-top" alt="...">
+                                </div>
                                 <div class="card-body">
                                     <h5 class="card-title">Carlos Rodríguez</h5>
                                     <p class="card-text">El mando funciona perfecto.</p>
@@ -128,8 +129,9 @@
                         </div>
                         <div class="col">
                             <div class="card h-100">
-                                <img src="{{ asset('img/psvita.jpg') }}
-                                " class="card-img-top" alt="...">
+                                <div class="img-box">
+                                    <img src="{{ asset('img/psvita.jpg') }}" class="card-img-top" alt="...">
+                                </div>
                                 <div class="card-body">
                                     <h5 class="card-title">Rodrigo Monzon</h5>
                                     <p class="card-text">10/10 super recomendada la pagina, la psvita vino chipeada tal cual mencionada asi que super contento con mi nueva compraaa</p>
@@ -143,7 +145,9 @@
                     <div class="row row-cols-1 row-cols-md-2 g-4">
                         <div class="col">
                             <div class="card h-100">
-                                <img src="{{ asset('img/psp.jpg') }}" class="card-img-top" alt="...">
+                                <div class="img-box">
+                                    <img src="{{ asset('img/psp.jpg') }}" class="card-img-top" alt="...">
+                                </div>
                                 <div class="card-body">
                                     <h5 class="card-title">Manuel González</h5>
                                     <p class="card-text">La psp que siempre quise desde chico y al fin es mia, es increible las condiciones en las que llegó, parece nueva 100% muy buen servicio.</p>
@@ -152,8 +156,9 @@
                         </div>
                         <div class="col">
                             <div class="card h-100">
-                                <img src="{{ asset('img/3DS.jpg') }}
-                                " class="card-img-top" alt="...">
+                                <div class="img-box">
+                                    <img src="{{ asset('img/3DS.jpg') }}" class="card-img-top" alt="...">
+                                </div>
                                 <div class="card-body">
                                     <h5 class="card-title">Pablo Perez</h5>
                                     <p class="card-text">El 3DS es increíble, la calidad de imagen es excelente y la batería dura mucho tiempo.</p>

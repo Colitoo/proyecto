@@ -26,7 +26,9 @@
                 <div class="row row-cols-1 row-cols-md-3 g-4">
                     <div class="col">
                         <div class="card h-100">
-                            <img src="{{asset('img/mandops1.jpg')}}" class="card-img-top" alt="mandops1">
+                            <div class="img-box">
+                                <img src="{{asset('img/mandops1.jpg')}}" class="card-img-top" alt="mandops1">
+                            </div>
                             <div class="card-body">
                                 <h5 class="card-title">Play Station 1, Mando</h5>
                                 <p class="card-text">mando de play 1, original en buen estado</p>
@@ -38,7 +40,9 @@
                     </div>
                     <div class="col">
                         <div class="card h-100">
-                            <img src="{{asset('img/mandops2.jpg')}}" class="card-img-top" alt="mandops2">
+                                <div class="img-box">
+                                    <img src="{{asset('img/mandops2.jpg')}}" class="card-img-top" alt="mandops2">
+                                </div>
                             <div class="card-body">
                                 <h5 class="card-title">Play Station 2, Mando</h5>
                                 <p class="card-text">mando de play 2, original en buen estado</p>
@@ -50,7 +54,9 @@
                     </div>
                     <div class="col">
                         <div class="card h-100">
-                            <img src="{{asset('img/mandops3.jpg')}}" class="card-img-top" alt="mandops3">
+                            <div class="img-box">
+                                <img src="{{asset('img/mandops3.jpg')}}" class="card-img-top" alt="mandops3">
+                            </div>
                             <div class="card-body">
                                 <h5 class="card-title">Play Station 3, Mando</h5>
                                 <p class="card-text">mando de play 3, original en buen estado</p>
@@ -62,7 +68,9 @@
                     </div>
                     <div class="col">
                         <div class="card h-100">
-                            <img src="{{asset('img/mandowii.jpg')}}" class="card-img-top" alt="mandowii">
+                            <div class="img-box">
+                                <img src="{{asset('img/mandowii.jpg')}}" class="card-img-top" alt="mandowii">
+                            </div>
                             <div class="card-body">
                                 <h5 class="card-title">Wii Remote</h5>
                                 <p class="card-text">El mando de la consola de entretenimiento más innovadora de Nintendo, con una gran variedad de juegos y una experiencia de juego única.</p>
@@ -74,7 +82,9 @@
                     </div>
                     <div class="col">
                         <div class="card h-100">
-                            <img src="{{asset('img/mandogamecube.jpg')}}" class="card-img-top" alt="mandogamecube">
+                            <div class="img-box">
+                                <img src="{{asset('img/mandogamecube.jpg')}}" class="card-img-top" alt="mandogamecube">
+                            </div>
                             <div class="card-body">
                                 <h5 class="card-title">GameCube Controller</h5>
                                 <p class="card-text">El mando de la consola Game Cube, vuelve en esta nueva generacion para tener una nueva oportunidad con sus juegos retrocompatibles.</p>

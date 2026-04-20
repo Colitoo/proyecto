@@ -40,7 +40,6 @@ body {
 }
 
 @keyframes flotar {
-
     0%,
     100% {
         transform: translateY(0);
@@ -110,6 +109,11 @@ body {
 .carousel-item {
     width: 100%;
     height: 100%;
+    background: linear-gradient(135deg, #0b1a3a, #1a2f6b);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .interior-carousel {
@@ -119,13 +123,59 @@ body {
 .carousel-img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    padding: 20px;
+}
+
+.card {
+    background-color: #111;
+    border: none;
+    border-radius: 12px;
+    color: #e4e4e4;
+}
+.card-title {
+    color: #a0a4e9;
+    font-weight: bold;
+}
+
+.card-text {
+    color: #bbbbbb;
 }
 
 .card-img-top {
     width: 100%;
-    height: 280px;
-    object-fit: cover;
+    height: 250px;
+    object-fit: contain;
+    background: transparent !important;
+}
+
+.img-box {
+    background: linear-gradient(135deg, #0b1a3a, #1a2f6b) !important;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 280px;
+    width: 100%;
+    overflow: visible;
+}
+
+.img-box img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    background: transparent !important;
+}
+
+.card img {
+    background-color: transparent !important;
+    background-image: none !important;
+}
+.img-box:hover {
+    transform: translateY(-5px);
+    transition: 0.3s;
 }
 
 .titulo {
@@ -145,7 +195,6 @@ body {
 }
 
 .clickable:hover {
-
     transform: scale(1.05);
     cursor: pointer;
     transition: transform 0.2s ease-in-out;
@@ -172,6 +221,10 @@ body {
         height: 220px;
     }
 
+    .img-box {
+        height: 240px;
+    }
+
     .titulo {
         font-size: 3rem;
     }
@@ -196,6 +249,10 @@ body {
 
     .card-img-top {
         height: 180px;
+    }
+
+    .img-box {
+        height: 200px;
     }
 
     .titulo {

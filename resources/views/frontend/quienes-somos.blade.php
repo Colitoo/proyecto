@@ -32,18 +32,19 @@
             </div>
 
             <div class="col-md-6 mb-4">
-                <div class="card h-100 shadow-sm border-0 bg-light">
-                    <div class="card-body text-center">
+                <div class="card equipo-card h-100 text-center">
+                    <div class="card-body">
                         <h4 class="card-title fw-bold">Avalos Alurralde Fausto</h4>
-                        <h6 class="card-subtitle mb-3 text-primary">Co-Fundador y Director general</h6>
-                        <p class="card-text">Encargado de que tu experiencia de compra sea impecable. Fausto gestiona la tienda online, la logística de envíos seguros y la atención directa para que tu pedido llegue en perfectas condiciones.</p>
+                        <h6 class="card-subtitle mb-3 rol">Co-Fundador y Director general</h6>
+                        <p class="card-text">Encargado de que tu experiencia de compra sea impecable. Fausto gestiona la tienda online, la logística de envíos seguros y la atención directa.</p>
                     </div>
+
                 </div>
             </div>
 
             <div class="col-md-6 mb-4">
-                <div class="card h-100 shadow-sm border-0 bg-light">
-                    <div class="card-body text-center">
+                <div class="card equipo-card h-100 text-center">
+                    <div class="card-body">
                         <h4 class="card-title fw-bold">Alcaraz Benito</h4>
                         <h6 class="card-subtitle mb-3 text-primary">Co-Fundador y Jefe de Calidad</h6>
                         <p class="card-text">El filtro de confianza de RGTS. Benito es el responsable de adquirir el stock y testear minusiosamente cada consola antes de publicarla, asegurando que recibas exactamente lo que prometemos.</p>

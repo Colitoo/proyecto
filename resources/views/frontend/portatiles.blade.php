@@ -27,7 +27,9 @@
                 <div class="row row-cols-1 row-cols-md-3 g-4">
                     <div class="col">
                         <div class="card h-100">
-                            <img src="{{asset('img/psp.jpg')}}" class="card-img-top" alt="psp">
+                            <div class="img-box">
+                                <img src="{{asset('img/psp.jpg')}}" class="card-img-top" alt="psp">
+                            </div>
                             <div class="card-body">
                                 <h5 class="card-title">Play Station Portable</h5>
                                 <p class="card-text">Una consola portatil que te permite jugar en cualquier lugar, con un excelente rendimiento y una gran variedad de juegos.</p>
@@ -39,7 +41,9 @@
                     </div>
                     <div class="col">
                         <div class="card h-100">
-                            <img src="{{asset('img/psvita.jpg')}}" class="card-img-top" alt="psvita">
+                                <div class="img-box">
+                                    <img src="{{asset('img/psvita.jpg')}}" class="card-img-top" alt="psvita">
+                                </div>
                             <div class="card-body">
                                 <h5 class="card-title">Play Station Vita</h5>
                                 <p class="card-text">La ultima consola portatil de sony, con una pantalla tactil y una gran variedad de juegos.</p>
@@ -51,7 +55,9 @@
                     </div>
                     <div class="col">
                         <div class="card h-100">
-                            <img src="{{asset('img/gameboy.jpg')}}" class="card-img-top" alt="gameboy">
+                            <div class="img-box">
+                                <img src="{{asset('img/gameboy.jpg')}}" class="card-img-top" alt="gameboy">
+                            </div>
                             <div class="card-body">
                                 <h5 class="card-title">Game Boy</h5>
                                 <p class="card-text">La consola portátil más icónica de Nintendo, con una gran variedad de juegos.</p>
@@ -63,7 +69,9 @@
                     </div>
                     <div class="col">
                         <div class="card h-100">
-                            <img src="{{asset('img/3DS.jpg')}}" class="card-img-top" alt="3DS-XL">
+                            <div class="img-box">
+                                <img src="{{asset('img/3DS.jpg')}}" class="card-img-top" alt="3DS-XL">
+                            </div>
                             <div class="card-body">
                                 <h5 class="card-title">3DS-XL</h5>
                                 <p class="card-text">La consola portátil más innovadora de Nintendo, con una gran variedad de juegos y una experiencia de juego única.</p>

@@ -26,7 +26,9 @@
                 <div class="row row-cols-1 row-cols-md-3 g-4">
                     <div class="col">
                         <div class="card h-100">
-                            <img src="{{asset('img/play1.jpg')}}" class="card-img-top" alt="play1">
+                            <div class="img-box">
+                                <img src="{{asset('img/play1.jpg')}}" class="card-img-top" alt="play1">
+                            </div>
                             <div class="card-body">
                                 <h5 class="card-title">Combo Play Station 1</h5>
                                 <p class="card-text">No dejen pasar la portunidad de experimentar los origenes de lo que conocemos hoy dia </p>
@@ -38,7 +40,9 @@
                     </div>
                     <div class="col">
                         <div class="card h-100">
-                            <img src="{{asset('img/play2.jpg')}}" class="card-img-top" alt="play2">
+                            <div class="img-box">
+                                <img src="{{asset('img/play2.jpg')}}" class="card-img-top" alt="play2">
+                            </div>
                             <div class="card-body">
                                 <h5 class="card-title">Play Station 2</h5>
                                 <p class="card-text">Para muchos la mejor de la historia, el catalogo mas iconico incluido. No dejen pasar la oportunida.</p>
@@ -50,7 +54,9 @@
                     </div>
                     <div class="col">
                         <div class="card h-100">
-                            <img src="{{asset('img/PS3.jpg')}}" class="card-img-top" alt="play3">
+                            <div class="img-box">
+                                <img src="{{asset('img/play3.jpg')}}" class="card-img-top" alt="play3"> 
+                            </div>
                             <div class="card-body">
                                 <h5 class="card-title">Play Station 3</h5>
                                 <p class="card-text">La primera consola de sony con graficos HD, una gran opcion para los amantes de la tecnologia y los juegos.</p>
@@ -62,7 +68,9 @@
                     </div>
                     <div class="col">
                         <div class="card h-100">
-                            <img src="{{asset('img/wii.jpg')}}" class="card-img-top" alt="wii">
+                            <div class="img-box">
+                                  <img src="{{asset('img/wii.jpg')}}" class="card-img-top" alt="wii">
+                            </div>
                             <div class="card-body">
                                 <h5 class="card-title">Wii</h5>
                                 <p class="card-text">La consola de entretenimiento más innovadora de Nintendo, con una gran variedad de juegos y una experiencia de juego única. incluiye mando y juegos!!</p>
