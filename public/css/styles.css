@@ -111,9 +111,7 @@ body {
     height: 100%;
     background: linear-gradient(135deg, #0b1a3a, #1a2f6b);
     border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
 }
 
 .interior-carousel {
@@ -258,5 +256,28 @@ body {
     .titulo {
         font-size: 2.4rem;
     }
+}
+
+.icon{
+    color: #7e61da;
+    transition: color 0.3s ease-in-out;
+}
+
+.dropdown .btn-secondary {
+    background-color: #2C4598; /* tu azul */
+    border-color: #2C4598;     /* mismo color del borde */
+}
+
+.card-contacto {
+    background-color: #0b1a3a ;
+    color: #8596c5;
+    border-bottom: none;
+    border-radius: 12px 12px 0 0;
+    padding: 20px;
+}
+
+.form-control {
+    border: none;
+    color: #e4e4e4;
 }
 

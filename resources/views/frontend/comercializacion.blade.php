@@ -9,8 +9,11 @@
         <div class="accordion-item">
             <h2 class="accordion-header">
                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-                    Medios de Pago
-                </button>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-wallet">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M17 8v-3a1 1 0 0 0 -1 -1h-10a2 2 0 0 0 0 4h12a1 1 0 0 1 1 1v3m0 4v3a1 1 0 0 1 -1 1h-12a2 2 0 0 1 -2 -2v-12" />
+                        <path d="M20 12v4h-4a2 2 0 0 1 0 -4h4" />
+                    </svg> Medios de Pago</button>
             </h2>
             <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
                 <div class="accordion-body">
@@ -25,8 +28,14 @@
         <div class="accordion-item">
             <h2 class="accordion-header">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-                    Envíos y Entregas
-                </button>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-package">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M12 3l8 4.5l0 9l-8 4.5l-8 -4.5l0 -9l8 -4.5" />
+                        <path d="M12 12l8 -4.5" />
+                        <path d="M12 12l0 9" />
+                        <path d="M12 12l-8 -4.5" />
+                        <path d="M16 5.25l-8 4.5" />
+                    </svg> Envíos y Entregas</button>
             </h2>
             <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
                 <div class="accordion-body">
@@ -39,18 +48,9 @@
                 </div>
             </div>
         </div>
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-                    Accordion Item #3
-                </button>
-            </h2>
-            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
-                <div class="accordion-body">
-                    <strong>This is the third item’s accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It’s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                </div>
-            </div>
-        </div>
     </div>
 
+    <div class="container mt-4 text-center">
+        <img src="{{asset('img/marioComer.png')}}" class="card-img-top" alt="mario comercializacion">
+    </div>
 </x-layout>

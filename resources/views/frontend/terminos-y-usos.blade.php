@@ -1,6 +1,6 @@
 <x-layout title="Términos y Usos">
 
-    
+
     <div class="container mt-4">
         <h4>Términos y usos</h4>
         <a> Estos términos rigen el uso de http://proyecto.test/ incluyendo todo el contenido, la funcionalidad y los servicios ofrecidos en el sitio web. Al usar el sitio, usted acepta y se compromete a cumplir con estos términos. Nos reservamos el derecho de actualizarlos en cualquier momento; su uso continuado constituye la aceptación de cualquier cambio.</a>
@@ -10,8 +10,11 @@
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingTermsOne">
                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTermsOne" aria-expanded="true" aria-controls="collapseTermsOne">
-                    Conducta en el sitio web
-                </button>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-shield-check">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M11.46 20.846a12 12 0 0 1 -7.96 -14.846a12 12 0 0 0 8.5 -3a12 12 0 0 0 8.5 3a12 12 0 0 1 -.09 7.06" />
+                        <path d="M15 19l2 2l4 -4" />
+                    </svg> Conducta en el sitio web</button>
             </h2>
             <div id="collapseTermsOne" class="accordion-collapse collapse show" aria-labelledby="headingTermsOne" data-bs-parent="#accordionTerms">
                 <div class="accordion-body">
@@ -31,8 +34,11 @@
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingTermsTwo">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTermsTwo" aria-expanded="false" aria-controls="collapseTermsTwo">
-                    Propiedad intelectual
-                </button>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-copyright">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+                        <path d="M14 9.75a3.016 3.016 0 0 0 -4.163 .173a2.993 2.993 0 0 0 0 4.154a3.016 3.016 0 0 0 4.163 .173" />
+                    </svg> Propiedad intelectual</button>
             </h2>
             <div id="collapseTermsTwo" class="accordion-collapse collapse" aria-labelledby="headingTermsTwo" data-bs-parent="#accordionTerms">
                 <div class="accordion-body">
@@ -45,8 +51,12 @@
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingTermsThree">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTermsThree" aria-expanded="false" aria-controls="collapseTermsThree">
-                    Sitios web de terceros
-                </button>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-external-link">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6" />
+                        <path d="M11 13l9 -9" />
+                        <path d="M15 4h5v5" />
+                    </svg> Sitios web de terceros</button>
             </h2>
             <div id="collapseTermsThree" class="accordion-collapse collapse" aria-labelledby="headingTermsThree" data-bs-parent="#accordionTerms">
                 <div class="accordion-body">
@@ -59,8 +69,12 @@
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingTermsFour">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTermsFour" aria-expanded="false" aria-controls="collapseTermsFour">
-                    Exención de responsabilidad y responsabilidad
-                </button>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-alert-triangle">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M12 9v4" />
+                        <path d="M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0" />
+                        <path d="M12 16h.01" />
+                    </svg> Exención de responsabilidad y responsabilidad</button>
             </h2>
             <div id="collapseTermsFour" class="accordion-collapse collapse" aria-labelledby="headingTermsFour" data-bs-parent="#accordionTerms">
                 <div class="accordion-body">
@@ -73,8 +87,12 @@
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingTermsFive">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTermsFive" aria-expanded="false" aria-controls="collapseTermsFive">
-                    Terminación
-                </button>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-file-minus">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+                        <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2" />
+                        <path d="M9 14l6 0" />
+                    </svg> Terminación</button>
             </h2>
             <div id="collapseTermsFive" class="accordion-collapse collapse" aria-labelledby="headingTermsFive" data-bs-parent="#accordionTerms">
                 <div class="accordion-body">
@@ -86,8 +104,15 @@
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingTermsSix">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTermsSix" aria-expanded="false" aria-controls="collapseTermsSix">
-                    Asignación
-                </button>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-arrows-transfer-up">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M7 21v-6" />
+                        <path d="M20 6l-3 -3l-3 3" />
+                        <path d="M17 3v18" />
+                        <path d="M10 18l-3 3l-3 -3" />
+                        <path d="M7 3v2" />
+                        <path d="M7 9v2" />
+                    </svg> Asignación</button>
             </h2>
             <div id="collapseTermsSix" class="accordion-collapse collapse" aria-labelledby="headingTermsSix" data-bs-parent="#accordionTerms">
                 <div class="accordion-body">
@@ -99,8 +124,14 @@
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingTermsSeven">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTermsSeven" aria-expanded="false" aria-controls="collapseTermsSeven">
-                    Ley aplicable y jurisdicción
-                </button>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-scale">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M7 20l10 0" />
+                        <path d="M6 6l6 -1l6 1" />
+                        <path d="M12 3l0 17" />
+                        <path d="M9 12l-3 -6l-3 6a3 3 0 0 0 6 0" />
+                        <path d="M21 12l-3 -6l-3 6a3 3 0 0 0 6 0" />
+                    </svg> Ley aplicable y jurisdicción</button>
             </h2>
             <div id="collapseTermsSeven" class="accordion-collapse collapse" aria-labelledby="headingTermsSeven" data-bs-parent="#accordionTerms">
                 <div class="accordion-body">
@@ -111,15 +142,20 @@
     </div>
 
     <div class="container mt-4">
-    <h4>Políticas de privacidad</h4>
+        <h4>Políticas de privacidad</h4>
+        <a>En RetroGames S.R.L, nos comprometemos a proteger su privacidad. Esta política de privacidad describe cómo recopilamos, usamos y protegemos su información personal cuando visita nuestro sitio web http://proyecto.test/. Al utilizar nuestro sitio, usted acepta las prácticas descritas en esta política.</a>
     </div>
 
     <div class="accordion container" id="accordionPrivacy">
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingPrivacyOne">
                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePrivacyOne" aria-expanded="true" aria-controls="collapsePrivacyOne">
-                    Protección de datos (RGPD)
-                </button>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-lock">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M5 13a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-6" />
+                        <path d="M11 16a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" />
+                        <path d="M8 11v-4a4 4 0 1 1 8 0v4" />
+                    </svg> Protección de datos (RGPD)</button>
             </h2>
             <div id="collapsePrivacyOne" class="accordion-collapse collapse show" aria-labelledby="headingPrivacyOne" data-bs-parent="#accordionPrivacy">
                 <div class="accordion-body">
@@ -138,8 +174,15 @@
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingPrivacyTwo">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePrivacyTwo" aria-expanded="false" aria-controls="collapsePrivacyTwo">
-                    Archivos de registro
-                </button>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-file-text-shield">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M13 3v4a.997 .997 0 0 0 1 1h4" />
+                        <path d="M11 21h-5a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v3.5" />
+                        <path d="M8 9h1" />
+                        <path d="M8 12.994l3 0" />
+                        <path d="M8 16.997l2 0" />
+                        <path d="M21 15.994c0 4 -2.5 6 -3.5 6s-3.5 -2 -3.5 -6c1 0 2.5 -.5 3.5 -1.5c1 1 2.5 1.5 3.5 1.5" />
+                    </svg> Archivos de registro</button>
             </h2>
             <div id="collapsePrivacyTwo" class="accordion-collapse collapse" aria-labelledby="headingPrivacyTwo" data-bs-parent="#accordionPrivacy">
                 <div class="accordion-body">
@@ -151,8 +194,15 @@
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingPrivacyThree">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePrivacyThree" aria-expanded="false" aria-controls="collapsePrivacyThree">
-                    Cookies y balizas web
-                </button>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-cookie">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M8 13v.01" />
+                        <path d="M12 17v.01" />
+                        <path d="M12 12v.01" />
+                        <path d="M16 14v.01" />
+                        <path d="M11 8v.01" />
+                        <path d="M13.148 3.476l2.667 1.104a4 4 0 0 0 4.656 6.14l.053 .132a3 3 0 0 1 0 2.296q -.745 1.18 -1.024 1.852q -.283 .684 -.66 2.216a3 3 0 0 1 -1.624 1.623q -1.572 .394 -2.216 .661q -.712 .295 -1.852 1.024a3 3 0 0 1 -2.296 0q -1.203 -.754 -1.852 -1.024q -.707 -.292 -2.216 -.66a3 3 0 0 1 -1.623 -1.624q -.397 -1.577 -.661 -2.216q -.298 -.718 -1.024 -1.852a3 3 0 0 1 0 -2.296q .719 -1.116 1.024 -1.852q .257 -.62 .66 -2.216a3 3 0 0 1 1.624 -1.623q 1.547 -.384 2.216 -.661q .687 -.285 1.852 -1.024a3 3 0 0 1 2.296 0" />
+                    </svg> Cookies y balizas web</button>
             </h2>
             <div id="collapsePrivacyThree" class="accordion-collapse collapse" aria-labelledby="headingPrivacyThree" data-bs-parent="#accordionPrivacy">
                 <div class="accordion-body">
@@ -164,8 +214,14 @@
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingPrivacyFour">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePrivacyFour" aria-expanded="false" aria-controls="collapsePrivacyFour">
-                    Servicios de terceros
-                </button>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-building-store">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M3 21l18 0" />
+                        <path d="M3 7v1a3 3 0 0 0 6 0v-1m0 1a3 3 0 0 0 6 0v-1m0 1a3 3 0 0 0 6 0v-1h-18l2 -4h14l2 4" />
+                        <path d="M5 21l0 -10.15" />
+                        <path d="M19 21l0 -10.15" />
+                        <path d="M9 21v-4a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v4" />
+                    </svg> Servicios de terceros</button>
             </h2>
             <div id="collapsePrivacyFour" class="accordion-collapse collapse" aria-labelledby="headingPrivacyFour" data-bs-parent="#accordionPrivacy">
                 <div class="accordion-body">
@@ -178,8 +234,12 @@
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingPrivacyFive">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePrivacyFive" aria-expanded="false" aria-controls="collapsePrivacyFive">
-                    Información para niños
-                </button>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-user-shield">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M6 21v-2a4 4 0 0 1 4 -4h2" />
+                        <path d="M22 16c0 4 -2.5 6 -3.5 6s-3.5 -2 -3.5 -6c1 0 2.5 -.5 3.5 -1.5c1 1 2.5 1.5 3.5 1.5" />
+                        <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
+                    </svg> Información para niños</button>
             </h2>
             <div id="collapsePrivacyFive" class="accordion-collapse collapse" aria-labelledby="headingPrivacyFive" data-bs-parent="#accordionPrivacy">
                 <div class="accordion-body">
@@ -191,8 +251,11 @@
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingPrivacySix">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePrivacySix" aria-expanded="false" aria-controls="collapsePrivacySix">
-                    Alcance y consentimiento
-                </button>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-circle-check">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+                        <path d="M9 12l2 2l4 -4" />
+                    </svg> Alcance y consentimiento</button>
             </h2>
             <div id="collapsePrivacySix" class="accordion-collapse collapse" aria-labelledby="headingPrivacySix" data-bs-parent="#accordionPrivacy">
                 <div class="accordion-body">
@@ -203,7 +266,7 @@
         </div>
     </div>
 
-    
+
     <div class="container mt-4">
         <div class="text-center">
             <a class="alert-heading">¿Tiene alguna pregunta sobre sus datos o sobre esta política?</a>
