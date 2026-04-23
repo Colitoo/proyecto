@@ -1,7 +1,7 @@
 <x-layout title="Información de Contacto">
 
     <div class="container">
-        <section class="mb-5 mt-5"> 
+        <section class="mb-5 mt-5">
             <h2>Contactate con el equipo de RGTS</h2>
 
             <p>¿Buscás esa joya de 16-bits que te faltaba, o solamente necesitás información? En Retro Games Tech Store estamos para ayudarte. Escribinos y un especialista de nuestro equipo se pondrá en contacto con vos a la brevedad.</p>
@@ -20,25 +20,26 @@
 
                 <h3>Contacto directo</h3>
                 <ul class="list-unstyled mb-5">
-                    <li class="mb-3"><b>Atención al Cliente (WhatsApp):</b> <a href="http://wa.me/+543781408249" target="_blank" rel="noopener noreferrer">+54 9 379 412-3456</a></li>
-                    <li class="mb-3"><b>Correo Electrónico:</b> <a href="mailto:soporte@rgts-store.com.ar">soporte@rgts-store.com.ar</a></li>
+                    <li class="mb-3"><b><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-whatsapp">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
+                                <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" />
+                            </svg> </b> <a href="http://wa.me/+543781408249" target="_blank" rel="noopener noreferrer">+54 9 379 412-3456</a></li>
+                    <li class="mb-3"><b><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-mail">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10" />
+                                <path d="M3 7l9 6l9 -6" />
+                            </svg> </b> <a href="mailto:soporte@rgts-store.com.ar">soporte@rgts-store.com.ar</a></li>
                 </ul>
 
-                <h3>Nuestras redes sociales</h3>
-                <ul class="list-unstyled mb-5">
-                    <li class="mb-3"><a href="https://www.facebook.com/rgtsstore" target="_blank" rel="noopener noreferrer">Facebook</a></li>
-                    <li class="mb-3"><a href="https://www.instagram.com/rgtsstore" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-                    <li class="mb-3"><a href="https://twitter.com/rgtsstore" target="_blank" rel="noopener noreferrer">Twitter</a></li>
-                    <li class="mb-3"><a href="https://github.com/Colitoo/proyecto" target="_blank" rel="noopener noreferrer">Repo de github</a></li>
-                </ul>
-
+                
             </div>
             <div class="col-md-7">
                 <div class="card shadow-sm">
                     <div class="card-header bg-dark text-white">
                         <h3 class="mb-0 text-center">Formulario de Contacto</h3>
                     </div>
-                    <div class="card-body">
+                    <div class="card-contacto">
 
                         <form action="{{ url('form-contacto') }}" method="POST">
 
