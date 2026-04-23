@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ContactoController;
+use App\Http\Controllers\TarjetasController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -20,13 +21,12 @@ Route::get('/contacto', [ContactoController::class, 'ver_contacto']);
 Route::post('/form-contacto', [ContactoController::class, 'guardar_contacto'])->name('formulario_contacto');
 
 
+
 Route::get('/terminos-y-usos', function () {
     return view('frontend.terminos-y-usos');
 });
 
-Route::get('/productos', function () {
-    return view('frontend.productos');
-});
+Route::get('/productos', [TarjetasController::class, 'ver_tarjetas']);
 
 Route::get('/consultas', function () {
     return view('frontend.consultas');
