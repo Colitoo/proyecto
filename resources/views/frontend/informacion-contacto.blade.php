@@ -2,7 +2,7 @@
 
     <div class="container">
         <section class="mb-5 mt-5">
-            <h2>Contactate con el equipo de RGTS</h2>
+            <h2 class="text-center mt-4 subtitulos">Contactate con el equipo de RGTS</h2>
 
             <p>¿Buscás esa joya de 16-bits que te faltaba, o solamente necesitás información? En Retro Games Tech Store estamos para ayudarte. Escribinos y un especialista de nuestro equipo se pondrá en contacto con vos a la brevedad.</p>
         </section>
