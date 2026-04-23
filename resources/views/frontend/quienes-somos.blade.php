@@ -4,8 +4,8 @@
     </div>
     <section id="quienes-somos" class="container mt-4">
         <div class="row mb-4">
-            <div class="col-12 text-center">
-                <h2 class="fw-bold mb-4">Quiénes Somos</h2>
+            <div class="col-12">
+                <h2 class="text-center subtitulo">Quiénes Somos</h2>
                 <p>Somos una empresa con más de 10 años aportando a la industria de la venta de consolas y al entretenimiento de nuestros clientes, siempre garantizando las mejores experiencias de juego. En <strong>RGTS (Retro Games Tech Store)</strong>, nos especializamos en ofrecer el catálogo retro más seguro y confiable del mercado.</p>
             </div>
         </div>
@@ -28,7 +28,7 @@
         <div class="row">
             <div class="col-12 text-center mb-4">
                 <h3 class="fw-bold">Nuestro Equipo</h3>
-                <p class="text-muted">Las caras detrás de tu próxima consola.</p>
+                <p>Las caras detrás de tu próxima consola.</p>
             </div>
 
             <div class="col-md-6 mb-4">
@@ -46,7 +46,7 @@
                 <div class="card equipo-card h-100 text-center">
                     <div class="card-body">
                         <h4 class="card-title fw-bold">Alcaraz Benito</h4>
-                        <h6 class="card-subtitle mb-3 text-primary">Co-Fundador y Jefe de Calidad</h6>
+                        <h6 class="card-subtitle mb-3 rol">Co-Fundador y Jefe de Calidad</h6>
                         <p class="card-text">El filtro de confianza de RGTS. Benito es el responsable de adquirir el stock y testear minusiosamente cada consola antes de publicarla, asegurando que recibas exactamente lo que prometemos.</p>
                     </div>
                 </div>

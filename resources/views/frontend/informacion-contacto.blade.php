@@ -2,7 +2,7 @@
 
     <div class="container">
         <section class="mb-5 mt-5">
-            <h2 class="text-center mt-4 subtitulos">Contactate con el equipo de RGTS</h2>
+            <h2 class="text-center mt-4 subtitulo">Contactate con el equipo de RGTS</h2>
 
             <p>¿Buscás esa joya de 16-bits que te faltaba, o solamente necesitás información? En Retro Games Tech Store estamos para ayudarte. Escribinos y un especialista de nuestro equipo se pondrá en contacto con vos a la brevedad.</p>
         </section>
@@ -32,7 +32,7 @@
                             </svg> </b> <a href="mailto:soporte@rgts-store.com.ar">soporte@rgts-store.com.ar</a></li>
                 </ul>
 
-                
+
             </div>
             <div class="col-md-7">
                 <div class="card shadow-sm">
@@ -86,7 +86,7 @@
                             </div>
 
                             <div class="d-grid">
-                                <button type="submit" class="btn btn-primary btn-lg">Contacta a RGTS</button>
+                                <button type="submit" class="btn btn-outline-light btn-lg">Contacta a RGTS</button>
                             </div>
 
                         </form>

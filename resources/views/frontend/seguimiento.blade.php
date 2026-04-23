@@ -2,7 +2,7 @@
     <section class="container mt-5">
         <div class="row align-items-center mt-4">
             <div class="col-md-6">
-                <h2>Seguimiento de productos</h2>
+                <h2 class="text-center subtitulo">Seguimiento de productos</h2>
                 <p>
                     Nuestra prioridad es que todos los argentinos reciban sus pedidos a tiempo, por eso hacemos uso del correo argentino para dar seguimiento a su pedido en tiempo real, para que puedas estar al tanto del estado de tu pedido en todo momento.
                 </p>

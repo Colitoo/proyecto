@@ -1,6 +1,6 @@
-<x-layout title="Productos">
+<x-layout title="Portátiles">
     <div class="container mt-4">
-        <h1>pagina de productos</h1>
+        <h2 class="text-center subtitulo">Pagina de productos: Consolas portátiles</h2>
     </div>
 
 

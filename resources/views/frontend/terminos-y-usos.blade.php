@@ -2,11 +2,11 @@
 
 
     <div class="container mt-4">
-        <h4>Términos y usos</h4>
+        <h2 class="text-center subtitulo">Términos y usos</h2>
         <a> Estos términos rigen el uso de http://proyecto.test/ incluyendo todo el contenido, la funcionalidad y los servicios ofrecidos en el sitio web. Al usar el sitio, usted acepta y se compromete a cumplir con estos términos. Nos reservamos el derecho de actualizarlos en cualquier momento; su uso continuado constituye la aceptación de cualquier cambio.</a>
     </div>
 
-    <div class="accordion container" id="accordionTerms">
+    <div class="accordion container mt-2" id="accordionTerms">
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingTermsOne">
                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTermsOne" aria-expanded="true" aria-controls="collapseTermsOne">
@@ -141,12 +141,12 @@
         </div>
     </div>
 
-    <div class="container mt-4">
-        <h4>Políticas de privacidad</h4>
+    <div class="container mt-5">
+        <h2 class="text-center subtitulo">Políticas de privacidad</h2>
         <a>En RetroGames S.R.L, nos comprometemos a proteger su privacidad. Esta política de privacidad describe cómo recopilamos, usamos y protegemos su información personal cuando visita nuestro sitio web http://proyecto.test/. Al utilizar nuestro sitio, usted acepta las prácticas descritas en esta política.</a>
     </div>
 
-    <div class="accordion container" id="accordionPrivacy">
+    <div class="accordion container mt-2" id="accordionPrivacy">
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingPrivacyOne">
                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePrivacyOne" aria-expanded="true" aria-controls="collapsePrivacyOne">
@@ -269,11 +269,11 @@
 
     <div class="container mt-4">
         <div class="text-center">
-            <a class="alert-heading">¿Tiene alguna pregunta sobre sus datos o sobre esta política?</a>
+            <p>¿Tiene alguna pregunta sobre sus datos o sobre esta política?</p>
         </div>
 
         <div class="text-center mt-2">
-            <a href="/contacto" class="text-white btn btn-primary">Contacto</a>
+            <a href="/contacto" class="text-white btn btn-primary">Contacta con nosotros</a>
         </div>
     </div>
 </x-layout>

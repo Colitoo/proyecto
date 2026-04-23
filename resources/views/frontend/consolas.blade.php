@@ -1,6 +1,6 @@
 <x-layout title="Consolas">
     <div class="container mt-4">
-        <h1>pagina de productos: Consolas de Mesa</h1>
+        <h2 class="text-center subtitulo">Pagina de productos: Consolas de Mesa</h2>
     </div>
 
     <section class="container mt-5">
@@ -55,7 +55,7 @@
                     <div class="col">
                         <div class="card h-100">
                             <div class="img-box">
-                                <img src="{{asset('img/play3.jpg')}}" class="card-img-top" alt="play3"> 
+                                <img src="{{asset('img/play3.jpg')}}" class="card-img-top" alt="play3">
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title">Play Station 3</h5>
@@ -69,7 +69,7 @@
                     <div class="col">
                         <div class="card h-100">
                             <div class="img-box">
-                                  <img src="{{asset('img/wii.jpg')}}" class="card-img-top" alt="wii">
+                                <img src="{{asset('img/wii.jpg')}}" class="card-img-top" alt="wii">
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title">Wii</h5>

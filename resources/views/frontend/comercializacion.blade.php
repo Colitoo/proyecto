@@ -1,7 +1,7 @@
 <x-layout title="Comercializacion">
 
     <div class="container-sm mt-4">
-        <h2 class="mb-4">Información de Comercialización</h2>
+        <h2 class="text-center mb-4 subtitulo">Información de Comercialización</h2>
         <p>Sabemos que la ansiedad por que llegue esa consola es grande, y que la seguridad de tu dinero y el transporte de tu equipo es lo más importante. Por eso, diseñamos un proceso de compra transparente, rápido y protegido.</p>
     </div>
 

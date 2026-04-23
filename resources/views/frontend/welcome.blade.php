@@ -1,10 +1,9 @@
-
 <x-layout title="Inicio">
 
     <div class="banner-container">
         <img src="{{ asset('img/banner(1).png') }}" alt="banner inicio" class="banner-img">
         <h2 class="banner-texto">Welcome to the Past</h2>
-        <h1 class="banner-texto">Especialistas en Consolas Retro <br><a href="/productos" class="btn btn-primary">Ver catálogo</a> </h1>
+        <h1 class="banner-texto">Especialistas en Consolas Retro <br><a href="/productos" class="btn btn-primary btn-outline-light">Ver catálogo</a> </h1>
     </div>
     <div class="info-general nav" role="alert">
         <p class="info-item">Envios por Correo Argentino</p>
@@ -43,13 +42,13 @@
                 <div class="card h-100 shadow-sm border-0 text-center bg text-white p-3">
                     <div class="card-body">
                         <div class="mb-3">
-                        <h4 class="card-title fw-bold">Portatiles</h4>
-                        <p class="card-text opacity-75">Consolas portátiles en perfecto estado, listas para jugar en cualquier lugar.</p>
-                        <a href="/portatiles" class="btn btn-outline-light btn-lg mt-2">Ver Portátiles</a>
+                            <h4 class="card-title fw-bold">Portatiles</h4>
+                            <p class="card-text opacity-75">Consolas portátiles en perfecto estado, listas para jugar en cualquier lugar.</p>
+                            <a href="/portatiles" class="btn btn-outline-light btn-lg mt-2">Ver Portátiles</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
     </section>
 
     <section class="contenedor-carousel container mt-4">
