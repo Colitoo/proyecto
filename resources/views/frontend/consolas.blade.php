@@ -7,11 +7,17 @@
         <div class="row">
             <!-- Columna izquierda con texto -->
             <div class="dropdown container">
-                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Categorias</button>
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Categorias <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-category-plus">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M4 4h6v6h-6v-6" />
+                        <path d="M14 4h6v6h-6v-6" />
+                        <path d="M4 14h6v6h-6v-6" />
+                        <path d="M14 17h6m-3 -3v6" />
+                    </svg></button>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="consolas">Consolas</a></li>
                     <li><a class="dropdown-item" href="mandos">Mandos</a></li>
                     <li><a class="dropdown-item" href="portatiles">Portátiles</a></li>
+                    <li><a class="dropdown-item" href="productos">Todos los productos</a></li>
                 </ul>
             </div>
             <div class="col-md-3 mt-4">
@@ -55,7 +61,7 @@
                     <div class="col">
                         <div class="card h-100">
                             <div class="img-box">
-                                <img src="{{asset('img/play3.jpg')}}" class="card-img-top" alt="play3"> 
+                                <img src="{{asset('img/play3.jpg')}}" class="card-img-top" alt="play3">
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title">Play Station 3</h5>
@@ -69,7 +75,7 @@
                     <div class="col">
                         <div class="card h-100">
                             <div class="img-box">
-                                  <img src="{{asset('img/wii.jpg')}}" class="card-img-top" alt="wii">
+                                <img src="{{asset('img/wii.jpg')}}" class="card-img-top" alt="wii">
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title">Wii</h5>
