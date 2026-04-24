@@ -9,16 +9,16 @@
 
         <section class="row mt-4">
             <div class="col-md-5">
-                <h3>Datos Legales y Operativos</h3>
+                <h3 class="text-center">Datos Legales y Operativos</h3>
                 <ul class="list-unstyled mb-5">
-                    <li class="mb-3"><b>Razón Social:</b> Avalos y Alcaraz S.R.L.</li>
-                    <li class="mb-3"><b>Nombre Comercial:</b> RGTS - Retro Games Tech Store</li>
-                    <li class="mb-3"><b>Titulares:</b> Avalos Alurralde Fausto y Alcaraz Benito Eduardo</li>
-                    <li class="mb-3"><b>Domicilio Legal:</b> Calle San Martín 1450, Piso 2, Oficina 4, W3400 Corrientes, Capital, Argentina.</li>
-                    <li class="mb-3"><b>CUIT:</b> 30-71234567-8 (Ficticio)</li>
+                    <li class="mb-3"><b class="txt-color">Razón Social:</b> Avalos y Alcaraz S.R.L.</li>
+                    <li class="mb-3"><b class="txt-color">Nombre Comercial:</b> RGTS - Retro Games Tech Store</li>
+                    <li class="mb-3"><b class="txt-color">Titulares:</b> Avalos Alurralde Fausto y Alcaraz Benito Eduardo</li>
+                    <li class="mb-3"><b class="txt-color">Domicilio Legal:</b> Calle San Martín 1450, Piso 2, Oficina 4, W3400 Corrientes, Capital, Argentina.</li>
+                    <li class="mb-3"><b class="txt-color">CUIT:</b> 30-71234567-8 (Ficticio)</li>
                 </ul>
 
-                <h3>Contacto directo</h3>
+                <h3 class="text-center">Contacto directo</h3>
                 <ul class="list-unstyled mb-5">
                     <li class="mb-3"><b><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-whatsapp">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -36,8 +36,8 @@
             </div>
             <div class="col-md-7">
                 <div class="card shadow-sm">
-                    <div class="card-header bg-dark text-white">
-                        <h3 class="mb-0 text-center">Formulario de Contacto</h3>
+                    <div class="card-header bg-dark">
+                        <h3 class="mb-0 text-center txt-color">Formulario de Contacto</h3>
                     </div>
                     <div class="card-contacto">
 
@@ -66,6 +66,7 @@
                                         <option value="stock">Consultar stock de consolas o juegos</option>
                                         <option value="envios">Consulta sobre envíos</option>
                                         <option value="seguridad">Seguridad del comprador</option>
+                                        <option value="politicas">Politicas de nuestra organizacion</option>
                                         <option value="otros">Otros</option>
                                     </select>
                                 </div>
@@ -77,6 +78,7 @@
                                     <option value="ninguna" selected>General</option>
                                     <option value="sobremesa">Sobremesa (PS1, PS2, Wii, etc.)</option>
                                     <option value="portatiles">Portátiles (GameBoy, PsVita, etc.)</option>
+                                    <option value="mandos">Mandos de consolas</option>
                                 </select>
                             </div>
 
@@ -88,9 +90,7 @@
                             <div class="d-grid">
                                 <button type="submit" class="btn btn-outline-light btn-lg">Contacta a RGTS</button>
                             </div>
-
                         </form>
-
                     </div>
                 </div>
             </div>

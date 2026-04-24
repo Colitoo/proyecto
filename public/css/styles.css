@@ -5,9 +5,35 @@ body {
     background-position: center;
     background-size: cover;
     font-family: 'Jersey 25', Arial;
-    font-size: 1.6em;
     color: #e4e4e4;
     padding-top: 70px;
+}
+
+p,
+li {
+    line-height: 1.6;
+    font-size: 1.3rem;
+}
+
+.titulo {
+    font-family: 'Jersey 10', Arial;
+    font-size: 3.5rem;
+    margin: 20px 0;
+}
+
+.subtitulo,
+.no-center-sub {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.no-center-sub::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 4px;
+    background: #afffaa;
+    margin-top: 8px;
 }
 
 .navbar {
@@ -63,6 +89,13 @@ body {
     animation: flotar 3s ease-in-out infinite;
 }
 
+.container-md {
+    background: rgba(20, 20, 20, 0.5);
+    padding: 2rem;
+    border-radius: 16px;
+    backdrop-filter: blur(2px);
+}
+
 .info-general {
     background-color: #2C4598;
     display: flex;
@@ -77,6 +110,11 @@ body {
 
 .bg {
     background-color: #2C4598;
+}
+
+hr {
+    border-color: #afffaa;
+    opacity: 0.3;
 }
 
 .contenedor-carousel {
@@ -157,8 +195,12 @@ body {
     object-fit: contain;
 }
 
+.card-contacto {
+    padding: 2rem;
+}
+
 .img-box {
-    background: linear-gradient(135deg, #0b1a3a, #1a2f6b);
+    background: linear-gradient(180deg, #0b1a3a, #1a2f6b);
     padding: 15px;
     border-radius: 12px 12px 0 0;
     display: flex;
@@ -170,16 +212,6 @@ body {
     max-width: 90%;
     max-height: 90%;
     object-fit: contain;
-}
-
-.titulo {
-    font-family: 'Jersey 10', Arial;
-    font-size: 3.5rem;
-    margin: 20px 0;
-}
-
-.subtitulo{
-    font-size: 3rem;
 }
 
 .tarjeta-producto:hover {
@@ -194,6 +226,43 @@ body {
     transition: transform 0.2s ease-in-out;
 }
 
+.equipo-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: visible;
+    padding-top: 2rem;
+}
+
+.equipo-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+.equipo-card::before {
+    content: "";
+    display: block;
+    height: 4px;
+    background: #afffaa;
+    border-radius: 12px 12px 0 0;
+}
+
+.personaje {
+    position: absolute;
+    width: 180px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.personaje-izq {
+    top: -150px;
+    left: -40px;
+}
+
+.personaje-der {
+    top: -150px;
+    right: -40px;
+}
+
 .clickable:hover {
     transform: scale(1.05);
     cursor: pointer;
@@ -204,31 +273,6 @@ body {
     transition: transform 0.2s ease-in-out;
 }
 
-@media (max-width: 991px) {
-    .banner-texto {
-        font-size: 3.2rem;
-    }
-
-    .carouselGeneral {
-        height: 520px;
-    }
-
-    .carousel-img {
-        height: 100%;
-    }
-
-    .card-img-top {
-        height: 220px;
-    }
-
-    .img-box {
-        height: 240px;
-    }
-
-    .titulo {
-        font-size: 3rem;
-    }
-}
 
 @media (max-width: 767px) {
     body {
@@ -258,6 +302,20 @@ body {
     .titulo {
         font-size: 2.4rem;
     }
+
+    .personaje {
+        width: 110px;
+    }
+
+    .personaje-izq {
+        left: -20px;
+        top: -40px;
+    }
+
+    .personaje-der {
+        right: -20px;
+        top: -40px;
+    }
 }
 
 .icon {
@@ -272,4 +330,44 @@ body {
     padding: 10px 20px;
     border-radius: 5px;
     transition: background-color 0.3s ease;
+}
+
+.logo-grande img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.accordion-item {
+    background-color: #111;
+    border: 1px solid #2a2a2a;
+    color: #e4e4e4;
+}
+
+.accordion-button {
+    background-color: #1a1a1a;
+    color: #e4e4e4;
+    box-shadow: none;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #222;
+    color: #afffaa;
+    /* tu verde */
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+    border-color: transparent;
+}
+
+/* flechita */
+.accordion-button::after {
+    filter: invert(1);
+}
+
+/* cuerpo */
+.accordion-body {
+    background-color: #111;
+    color: #ccc;
 }
