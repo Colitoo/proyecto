@@ -1,6 +1,6 @@
 <x-layout title="Mandos">
     <div class="container mt-4">
-        <h1>pagina de productos: Mandos para consolas</h1>
+        <h2 class="text-center subtitulo">Pagina de productos: Mandos para consolas</h2>
     </div>
 
     <section class="container mt-5">

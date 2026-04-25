@@ -1,6 +1,6 @@
 <x-layout title="Productos">
     <div class="container mt-4">
-        <h1>pagina de productos</h1>
+        <h1 class="text-center subtitulo">Pagina de productos</h1>
     </div>
 
     <section class="container mt-5">

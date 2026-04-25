@@ -1,6 +1,6 @@
 <x-layout title="Consolas">
     <div class="container mt-4">
-        <h1>pagina de productos: Consolas de Mesa</h1>
+        <h2 class="text-center subtitulo">Pagina de productos: Consolas de Mesa</h2>
     </div>
 
     <section class="container mt-5">
