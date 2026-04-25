@@ -34,7 +34,7 @@
                         @foreach ($productos as $item)
                         <div class="col">
                             <div class="card h-100 tarjeta-producto">
-                                <div class="img-box">
+                                <div class="img-box img-box-producto">
                                     <img src="{{asset($item['imagen'])}}" class="card-img-top">
                                 </div>
                                 <div class="card-body">

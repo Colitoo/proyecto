@@ -11,31 +11,34 @@
         <p class="info-item">Garantía de 3 meses</p>
     </div>
 
-    <section class="container mt-5 mb-5">
-            <h2 class="fw-bold">Nuestro Objetivo</h2>
-            <p>Nuestra mision como una empresa modesta, es proveer de productos y experiencias de otra epoca. Por ello nos enfocamos en lo "Retro" del mundo de los videos juegos, queremos proporcionar la oportunidad que las personas que disfrutan de este hobby puedan revivir viejos recuerdos o conocer los orignes de lo que conocen hoy.</p>
-            <a href="/quienes-somos" class="btn text-white"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-info-circle">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
-                    <path d="M12 9h.01" />
-                    <path d="M11 12h1v4h1" />
-                </svg> Más información</a>
+    <section class="container mt-5 mb-5 text-center">
+        <h2 class="fw-bold">Nuestro Objetivo</h2>
+        <p>Nuestra mision como una empresa modesta, es proveer de productos y experiencias de otra epoca. Por ello nos enfocamos en lo "Retro" del mundo de los videos juegos, queremos proporcionar la oportunidad que las personas que disfrutan de este hobby puedan revivir viejos recuerdos o conocer los orignes de lo que conocen hoy.</p>
+        <a href="/quienes-somos" class="btn text-white"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-info-circle">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+                <path d="M12 9h.01" />
+                <path d="M11 12h1v4h1" />
+            </svg> Más información</a>
         </div>
     </section>
 
     <section class="contenedor-carousel  mt-4">
-        <h2 class="titulo subtitulo text-center">Productos más vendidos</h2>
+        <div class="container mt-5 mb-5 text-center">
+            <h2 class="titulo subtitulo text-center">Productos más vendidos</h2>
+            <p>Nos enorgullese presentarles los productos más queridos y vendidos por nuestra tienda.</p>
+        </div>
 
         <div id="carouselMasVendidos" class="carousel carouselGeneral slide " data-bs-ride="carousel">
             <div class="carousel-interior">
                 <div class="carousel-item active" data-bs-interval="3000">
-                    <img src="{{asset('img/3DS.jpg')}}" class="d-block carousel-img w-100" alt="...">
+                    <img src="{{asset('img/3DS.jpg')}}" class="carousel-img" alt="...">
                 </div>
                 <div class="carousel-item" data-bs-interval="3000">
-                    <img src="{{asset('img/play1.jpg')}}" class="d-block carousel-img w-100" alt="...">
+                    <img src="{{asset('img/play1.jpg')}}" class="carousel-img" alt="...">
                 </div>
                 <div class="carousel-item" data-bs-interval="3000">
-                    <img src="{{asset('img/play2.jpg')}}" class="d-block carousel-img w-100" alt="...">
+                    <img src="{{asset('img/play2.jpg')}}" class="carousel-img" alt="...">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselMasVendidos" data-bs-slide="prev">
@@ -109,8 +112,24 @@
         </ul>
     </section>
 
+    <section class="container mt-5 mb-5">
+        <div class="card mb-4 border-0 shadow-lg bg text-white w-100">
+
+            <div class="card h-100 shadow-sm border-0 text-center bg text-white p-3">
+                <h2 class="card-title fw-bold">Novedades de la Tienda</h2>
+                <p class="card-text opacity-75">Como parte de nuestro compromiso hacia la comunidad de jugadores nos esforzamos por traer a la "vida" nuevos productos Retro por ello en esta seccion les preseentaremos los nuevos productos que ingresan a nuestro catalogo.</p>
+                <p class="card-text opacity-75">Les presentamos a la GameCube una consola extremadamente potente para su epoca que no se supo valorar en su momento.</p>
+            </div>
+
+            <img src="{{ asset('img/gamecube.jpg') }}" class="img-fluid rounded-bottom mx-auto d-block" style="object-fit: cover; height: 450px; max-width: 90%;" alt="GameCube">
+        </div>
+    </section>
+
     <section class="contenedor-carousel container mt-4">
-        <h2 class="titulo subtitulo text-center">Comentarios de nuestros clientes</h2>
+        <div class="container mt-5 mb-5 text-center">
+            <h2 class="titulo subtitulo text-center">Comentarios de Nuestros Clientes</h2>
+            <p>Nos alegra poder compartir las experiencias de usuarios anteriores de nuestra tienda con ustedes.</p>
+        </div>
         <div id="carouselComentarios" class="carousel carouselGeneral2 slide">
             <div class="carousel-innter interior-carousel">
                 <div class="carousel-item active">

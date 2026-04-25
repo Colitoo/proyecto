@@ -133,8 +133,8 @@ hr {
 
 .carouselGeneral {
     width: 100%;
-    max-width: 1100px;
-    height: 700px;
+    max-width: 700px;
+    height: 600px;
     display: block;
     overflow: hidden;
 }
@@ -152,9 +152,15 @@ hr {
 
 .carousel-item {
     width: 100%;
-    height: 100%;
+    height: 600xp;
     background: linear-gradient(135deg, #0b1a3a, #1a2f6b);
     border-radius: 12px;
+}
+
+.carouselGeneral .carousel-item.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .interior-carousel {
@@ -162,10 +168,12 @@ hr {
 }
 
 .carousel-img {
-    width: 100%;
-    height: 100%;
+    max-width: 90%;
+    max-height: 550px;    
+    width: auto;
+    height: auto;
     object-fit: contain;
-    padding: 20px;
+    padding: 0; 
 }
 
 .card {
@@ -211,12 +219,28 @@ hr {
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 450px;
+    overflow: hidden;
 }
 
 .img-box img {
-    max-width: 90%;
-    max-height: 90%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-width: none;
+    max-height: none;
+}
+
+.img-box-producto img {
+    width: 100%;
+    height: 100%;
     object-fit: contain;
+}
+
+.img-box-producto {
+    height: 250px;
+    padding: 10px; 
+     background: white
 }
 
 .tarjeta-producto:hover {
@@ -288,20 +312,30 @@ hr {
         font-size: 2.6rem;
     }
 
-    .carouselGeneral {
-        height: 320px;
+     .carouselGeneral {
+        height: auto;        
+        max-width: 100%;     
+    }
+
+    .carousel-item {
+        height: auto;
     }
 
     .carousel-img {
-        height: 100%;
+        width: 90%;
+        height: 90%;
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: cover;
     }
 
     .card-img-top {
-        height: 180px;
+        height: 140px;
+        object-fit: cover;
     }
 
     .img-box {
-        height: 200px;
+        height: 350px;
     }
 
     .titulo {
