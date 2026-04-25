@@ -49,13 +49,22 @@
                     </div>
                 </div>
             </div>
+            <h2 class="fw-bold">Nuestro Objetivo</h2>
+            <p>Nuestra mision como una empresa modesta, es proveer de productos y experiencias de otra epoca. Por ello nos enfocamos en lo "Retro" del mundo de los videos juegos, queremos proporcionar la oportunidad que las personas que disfrutan de este hobby puedan revivir viejos recuerdos o conocer los orignes de lo que conocen hoy.</p>
+            <a href="/quienes-somos" class="btn text-white"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-info-circle">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+                    <path d="M12 9h.01" />
+                    <path d="M11 12h1v4h1" />
+                </svg> Más información</a>
+        </div>
     </section>
 
-    <section class="contenedor-carousel container mt-4">
-        <h2 class="titulo">Productos más vendidos</h2>
+    <section class="contenedor-carousel  mt-4">
+        <h2 class="titulo subtitulo text-center">Productos más vendidos</h2>
 
         <div id="carouselMasVendidos" class="carousel carouselGeneral slide " data-bs-ride="carousel">
-            <div class="carousel-inner">
+            <div class="carousel-interior">
                 <div class="carousel-item active" data-bs-interval="3000">
                     <img src="{{asset('img/3DS.jpg')}}" class="d-block carousel-img w-100" alt="...">
                 </div>
@@ -80,10 +89,67 @@
         </div>
     </section>
 
+    <section class="container mt-5 mb-5">
+        <div class="text-center mb-4">
+            <h2 class="fw-bold">Nuestras Categorías</h2>
+            <p>Te invitamos a que explores de mejor manera nuestros productos para entender su funcionamiento y características.</p>
+        </div>
+
+        <ul class="list-group mt-4 row row-cols-1 row-cols-md-3 g-4">
+            <div class="card mb-4 border-0 shadow-lg bg text-white w-100">
+                <div class="row g-0 align-items-center">
+                    <div class="col-md-5">
+                        <img src="{{asset('img/play2.jpg')}}" class="img-fluid h-100 w-100 rounded-start object-fit-cover" alt="PlayStation 2">
+                    </div>
+
+                    <div class="col-md-6 px-5 ps-md-5">
+                        <div class="card h-100 shadow-sm border-0 text-center bg text-white p-3">
+                            <h5 class="card-title fw-bold">Consolas de Sobremesa</h5>
+                            <p class="card-text opacity-75">En esta categoria encontraras las opciones de las consolas retro que ofrecemos, donde prodras jugar de la forma "tipica" frente a un televisor con un mando en la mano. Incluyendo la amplia biblioteca que ofrece cada consola con los juegos iconicos que cada una puede ofrecer.</p>
+                            <a href="/consolas" class="btn btn-outline-light btn-lg mt-2">Ver Consolas</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-4 border-0 shadow-lg bg text-white w-100">
+                <div class="row g-0 align-items-center">
+                    <div class="col-md-6 px-5 ps-md-5">
+                        <div class="card h-100 shadow-sm border-0 text-center bg text-white p-3">
+                            <h5 class="card-title fw-bold">Mandos</h5>
+                            <p class="card-text opacity-75">En esta categoria encontraras las herramientas utilizadas para interactuar con el mundo dentro del juego, a pesar de que no son productos de la actualidad no significa que no contengan tegnologias y diseños inovadores, en su momento cada uno destaco a su manera ya sea por su comodidad o inovacion.</p>
+                            <a href="/mandos" class="btn btn-outline-light btn-lg mt-2">Ver Mandos</a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <img src="{{asset('img/mandogamecube.jpg')}}" class="img-fluid h-100 w-100 rounded-start object-fit-cover" alt="mando de GameCube">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-4 border-0 shadow-lg bg text-white w-100">
+                <div class="row g-0 align-items-center">
+                    <div class="col-md-5">
+                        <img src="{{asset('img/3DS.jpg')}}" class="img-fluid h-100 w-100 rounded-start object-fit-cover" alt="Nintendo 3DS">
+                    </div>
+
+                    <div class="col-md-6 px-5 ps-md-5">
+                        <div class="card h-100 shadow-sm border-0 text-center bg text-white p-3">
+                            <h5 class="card-title fw-bold">Portatiles</h5>
+                            <p class="card-text opacity-75">En esta categoria encontraras las consolas, fueron aquellas consolas que trajeron una manera de jugar única. Con su extrema comodidad y versatilidad a la hora de jugar permitia jugar en los lugares que uno quisiera, no se dejen llevar por sus limitaciones tecnicas porque cuentan con su propio catalogo que no desepciona.</p>
+                            <a href="/portatiles" class="btn btn-outline-light btn-lg mt-2">Ver Portátiles</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ul>
+    </section>
+
     <section class="contenedor-carousel container mt-4">
-        <h2 class="titulo">Comentarios de nuestros clientes</h2>
+        <h2 class="titulo subtitulo text-center">Comentarios de nuestros clientes</h2>
         <div id="carouselComentarios" class="carousel carouselGeneral2 slide">
-            <div class="carousel-inner interior-carousel">
+            <div class="carousel-innter interior-carousel">
                 <div class="carousel-item active">
 
                     <div class="row row-cols-1 row-cols-md-2 g-4">
