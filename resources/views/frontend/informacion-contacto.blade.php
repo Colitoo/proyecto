@@ -1,21 +1,21 @@
 <x-layout title="Información de Contacto">
 
     <div class="container">
-        <section class="mb-5 mt-5">
+        <div class="mb-5 mt-5">
             <h2 class="text-center mt-4 subtitulo">Contactate con el equipo de RGTS</h2>
 
             <p>¿Buscás esa joya de 16-bits que te faltaba, o solamente necesitás información? En Retro Games Tech Store estamos para ayudarte. Escribinos y un especialista de nuestro equipo se pondrá en contacto con vos a la brevedad.</p>
-        </section>
+        </div>
 
         <section class="row mt-4">
-            <div class="col-md-5">
+            <div class="col-md-5 container-md">
                 <h3 class="text-center">Datos Legales y Operativos</h3>
                 <ul class="list-unstyled mb-5">
                     <li class="mb-3"><b class="txt-color">Razón Social:</b> Avalos y Alcaraz S.R.L.</li>
                     <li class="mb-3"><b class="txt-color">Nombre Comercial:</b> RGTS - Retro Games Tech Store</li>
                     <li class="mb-3"><b class="txt-color">Titulares:</b> Avalos Alurralde Fausto y Alcaraz Benito Eduardo</li>
-                    <li class="mb-3"><b class="txt-color">Domicilio Legal:</b> Calle San Martín 1450, Piso 2, Oficina 4, W3400 Corrientes, Capital, Argentina.</li>
-                    <li class="mb-3"><b class="txt-color">CUIT:</b> 30-71234567-8 (Ficticio)</li>
+                    <li class="mb-3"><b class="txt-color">Domicilio Legal:</b> Calle 9 de Julio 1449, Piso 1, Salon de Laboratorio 1, W3400 Corrientes, Capital, Argentina.</li>
+                    <li class="mb-3"><b class="txt-color">CUIT:</b> 30-71234567-8 </li>
                 </ul>
 
                 <h3 class="text-center">Contacto directo</h3>

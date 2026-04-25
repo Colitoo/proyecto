@@ -7,6 +7,7 @@ body {
     font-family: 'Jersey 25', Arial;
     color: #e4e4e4;
     padding-top: 70px;
+    font-size: 1.3rem;
 }
 
 p,
@@ -34,6 +35,10 @@ li {
     height: 4px;
     background: #afffaa;
     margin-top: 8px;
+}
+
+.txt-color{
+    color: #a0a4e9;
 }
 
 .navbar {
@@ -304,17 +309,17 @@ hr {
     }
 
     .personaje {
-        width: 110px;
+        width: 80px;
     }
 
     .personaje-izq {
         left: -20px;
-        top: -40px;
+        top: -20px;
     }
 
     .personaje-der {
         right: -20px;
-        top: -40px;
+        top: -20px;
     }
 }
 
@@ -361,12 +366,12 @@ hr {
     border-color: transparent;
 }
 
-/* flechita */
+
 .accordion-button::after {
     filter: invert(1);
 }
 
-/* cuerpo */
+
 .accordion-body {
     background-color: #111;
     color: #ccc;
