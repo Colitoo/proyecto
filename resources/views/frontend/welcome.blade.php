@@ -12,43 +12,6 @@
     </div>
 
     <section class="container mt-5 mb-5">
-        <div class="text-center mb-4">
-            <h2 class="fw-bold">Nuestras Categorías</h2>
-            <p>Explorá el catálogo de piezas originales que tenemos para vos.</p>
-        </div>
-
-        <div class="row g-4 justify-content-center">
-            <div class="col-md-4">
-                <div class="card h-100 shadow-sm border-0 text-center bg text-white p-3">
-                    <div class="card-body">
-                        <h4 class="card-title fw-bold">Consolas de Sobremesa</h4>
-                        <p class="card-text opacity-75">Sistemas de sobremesa testeados para brindar la mejor experiencia de juego.</p>
-                        <a href="/consolas" class="btn btn-outline-light btn-lg mt-2">Ver Consolas</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card h-100 shadow-sm border-0 text-center bg text-white p-3">
-                    <div class="card-body">
-                        <h4 class="card-title fw-bold">Mandos</h4>
-                        <p class="card-text opacity-75">Controles originales para disfrutar horas a tus juegos favoritos.</p>
-                        <a href="/mandos" class="btn btn-outline-light btn-lg mt-2">Ver Mandos</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card h-100 shadow-sm border-0 text-center bg text-white p-3">
-                    <div class="card-body">
-                        <div class="mb-3">
-                            <h4 class="card-title fw-bold">Portatiles</h4>
-                            <p class="card-text opacity-75">Consolas portátiles en perfecto estado, listas para jugar en cualquier lugar.</p>
-                            <a href="/portatiles" class="btn btn-outline-light btn-lg mt-2">Ver Portátiles</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <h2 class="fw-bold">Nuestro Objetivo</h2>
             <p>Nuestra mision como una empresa modesta, es proveer de productos y experiencias de otra epoca. Por ello nos enfocamos en lo "Retro" del mundo de los videos juegos, queremos proporcionar la oportunidad que las personas que disfrutan de este hobby puedan revivir viejos recuerdos o conocer los orignes de lo que conocen hoy.</p>
             <a href="/quienes-somos" class="btn text-white"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-info-circle">
