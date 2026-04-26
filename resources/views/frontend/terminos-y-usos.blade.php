@@ -274,7 +274,7 @@
             </div>
 
             <div class="text-center mt-2">
-                <a href="/contacto" class="text-white btn btn-primary">Contacta con nosotros</a>
+                <a href="/contacto" class="btn btn-primary btn-outline-light">Contacta con nosotros</a>
             </div>
         </div>
     </section>
