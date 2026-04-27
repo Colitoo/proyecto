@@ -9,7 +9,7 @@
             </div>
 
             <div class="col-md-6 text-center">
-                <img src="{{asset('img/soniEnvio.png')}}" class="card-img-top" alt="sonicEnvio">
+                <img src="{{asset('img/sonicEnvio.png')}}" class="sonic-envio" alt="sonicEnvio">
             </div>
 
         </div>
