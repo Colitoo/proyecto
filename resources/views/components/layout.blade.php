@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ $title ?? 'RETRO STORE' }}</title>
+    <title>{{ $title ?? 'RGTS' }}</title>
 
     <!-- Fuente -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -72,7 +72,7 @@
             <div class="row">
 
                 <!-- Columna 1 -->
-                <div class="col-md-4">
+                <div class="col-md-4 mb-4">
                     <h5>Quienes somos</h5>
                     <p>Somos una empresa con mas de 10 años aportando a
                         la industria de venta de consolas y el entretenimiento de
@@ -82,7 +82,7 @@
                             <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
                             <path d="M12 9h.01" />
                             <path d="M11 12h1v4h1" />
-                        </svg>Más información</a>
+                        </svg> Más información</a>
                 </div>
 
                 <!-- Columna 2 -->
@@ -148,7 +148,7 @@
             </div>
         </div>
         <div class="bg-dark text-white text-center py-2">
-            &copy; {{ date('Y') }} RETRO STORE by Colo y Beni. Todos los derechos reservados.
+            &copy; {{ date('Y') }} RGTS by Colo y Beni. Todos los derechos reservados.
         </div>
     </footer>
 
