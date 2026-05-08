@@ -79,48 +79,83 @@
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
                                         <label for="telefono" class="form-label fw-bold">Teléfono de contacto</label>
-                                        <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="Ej: 3794 123456" value="{{ old('telefono') }}">
+                                        <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="Ej: 3794123456" value="{{ old('telefono') }}">
                                         @error('telefono')
                                         <small class="text-danger">{{ $message }}</small>
                                         @enderror
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label for="motivo" class="form-label fw-bold">Motivo de la consulta</label>
-                                        <select class="form-select" id="motivo" name="motivo" value="{{ old('motivo') }}">
-                                            <option value="" selected disabled>Seleccioná una opción...</option>
-                                            <option value="stock">Consultar stock de consolas o juegos</option>
-                                            <option value="envios">Consulta sobre envíos</option>
-                                            <option value="seguridad">Seguridad del comprador</option>
-                                            <option value="politicas">Politicas de nuestra organizacion</option>
-                                            <option value="otros">Otros</option>
+
+                                        <select class="form-select @error('motivo') is-invalid @enderror" id="motivo" name="motivo">
+
+                                            <option value="" disabled @selected(old('motivo')==null)>
+                                                Seleccioná una opción...
+                                            </option>
+
+                                            <option value="stock" @selected(old('motivo')=='stock' )>
+                                                Consultar stock de consolas o juegos
+                                            </option>
+
+                                            <option value="envios" @selected(old('motivo')=='envios' )>
+                                                Consulta sobre envíos
+                                            </option>
+
+                                            <option value="seguridad" @selected(old('motivo')=='seguridad' )>
+                                                Seguridad del comprador
+                                            </option>
+
+                                            <option value="politicas" @selected(old('motivo')=='politicas' )>
+                                                Politicas de nuestra organizacion
+                                            </option>
+
+                                            <option value="otros" @selected(old('motivo')=='otros' )>
+                                                Otros
+                                            </option>
+
                                         </select>
+
                                         @error('motivo')
                                         <small class="text-danger">{{ $message }}</small>
                                         @enderror
                                     </div>
-                                </div>
 
-                                <div class="mb-3">
-                                    <label for="plataforma" class="form-label fw-bold">Plataforma de interés</label>
-                                    <select class="form-select" id="plataforma" name="plataforma">
-                                        <option value="ninguna" selected>General</option>
-                                        <option value="sobremesa">Sobremesa (PS1, PS2, Wii, etc.)</option>
-                                        <option value="portatiles">Portátiles (GameBoy, PsVita, etc.)</option>
-                                        <option value="mandos">Mandos de consolas</option>
-                                    </select>
-                                </div>
 
-                                <div class="mb-4">
-                                    <label for="mensaje" class="form-label fw-bold">Mensaje *</label>
-                                    <textarea class="form-control border-dark" id="mensaje" name="mensaje" rows="4" placeholder="Contanos en detalle cómo podemos serte de ayuda..." value="{{ old('mensaje') }}"></textarea>
-                                    @error('mensaje')
-                                    <small class="text-danger">{{ $message }}</small>
-                                    @enderror
-                                </div>
+                                    <div class="mb-3">
+                                        <label for="plataforma" class="form-label fw-bold">Plataforma de interés</label>
 
-                                <div class="d-grid">
-                                    <button type="submit" class="btn btn-outline-light btn-lg">Contacta a RGTS</button>
-                                </div>
+                                        <select class="form-select" id="plataforma" name="plataforma">
+
+                                            <option value="general" @selected(old('plataforma', 'general' )=='general' )>
+                                                General
+                                            </option>
+
+                                            <option value="sobremesa" @selected(old('plataforma')=='sobremesa' )>
+                                                Sobremesa (PS1, PS2, Wii, etc.)
+                                            </option>
+
+                                            <option value="portatiles" @selected(old('plataforma')=='portatiles' )>
+                                                Portátiles (GameBoy, PsVita, etc.)
+                                            </option>
+
+                                            <option value="mandos" @selected(old('plataforma')=='mandos' )>
+                                                Mandos de consolas
+                                            </option>
+
+                                        </select>
+                                    </div>
+
+                                    <div class="mb-4">
+                                        <label for="mensaje" class="form-label fw-bold">Mensaje *</label>
+                                        <textarea class="form-control border-dark" id="mensaje" name="mensaje" rows="4" placeholder="Contanos en detalle cómo podemos serte de ayuda...">{{ old('mensaje') }}</textarea>
+                                        @error('mensaje')
+                                        <small class="text-danger">{{ $message }}</small>
+                                        @enderror
+                                    </div>
+
+                                    <div class="d-grid">
+                                        <button type="submit" class="btn btn-outline-light btn-lg">Contacta a RGTS</button>
+                                    </div>
                             </form>
                         </div>
                     </div>

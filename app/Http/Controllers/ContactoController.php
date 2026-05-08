@@ -22,6 +22,7 @@ class ContactoController extends Controller
         $plataforma = $datos['plataforma'];
         $mensaje = $datos['mensaje'];
 
+        //aca se agrega para enviar a BD
 
         return redirect()->back()->with('success_message', 'Tu Consulta fue enviada correctamente!');
     }

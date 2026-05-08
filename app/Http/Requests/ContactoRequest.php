@@ -26,9 +26,9 @@ class ContactoRequest extends FormRequest
         return [
             'nombre'=> 'required|string|max:50',
             'email'=> 'required|email|max:100',
-            'telefono'=> 'required|numeric|max:20',
+            'telefono' => 'required|string|min:10|max:20|regex:/^\+?[0-9\s\-()]+$/',
             'motivo' => 'required|in:stock,envios,seguridad,politicas,otros',
-            'plataforma' => 'nullable|in:ninguna,sobremesa,portatiles,mandos',
+            'plataforma' => 'nullable|in:general,sobremesa,portatiles,mandos',
             'mensaje' => 'required|string|min:5|max:1000',
         ];
     }
@@ -38,6 +38,9 @@ class ContactoRequest extends FormRequest
         return[
             //los otros campos ya se traducen al español
             'email.required' => 'El campo email es obligatorio.',
+            'telefono.regex' => 'Ingresá un número telefónico válido.',
+            'telefono.min' => 'El teléfono debe tener al menos 10 caracteres.',
+            'telefono.max' => 'El teléfono no puede ser mayor de 20 caracteres.',
         ];
     }
 }
