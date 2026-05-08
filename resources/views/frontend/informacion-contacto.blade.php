@@ -3,8 +3,13 @@
         <div class="container">
             <div>
                 <h2 class="text-center mt-4 subtitulo">Contactate con el equipo de RGTS</h2>
-
+                @if (session('success_message'))
+                <div class="alert alert-success" role="alert">
+                    {{ session('success_message') }}
+                </div>
+                @else
                 <p>¿Buscás esa joya de 16-bits que te faltaba, o solamente necesitás información? En Retro Games Tech Store estamos para ayudarte. Escribinos y nos pondremos en contacto con vos a la brevedad.</p>
+                @endif
             </div>
 
             <div class="row mt-4">
@@ -57,22 +62,31 @@
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
                                         <label for="nombre" class="form-label fw-bold">Nombre y Apellido *</label>
-                                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required>
+                                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" value="{{ old('nombre') }}">
+                                        @error('nombre')
+                                        <small class="text-danger">{{ $message }}</small>
+                                        @enderror
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label for="email" class="form-label fw-bold">Correo Electrónico *</label>
-                                        <input type="email" class="form-control" id="email" name="email" placeholder="Ej: juan@ejemplo.com" required>
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="Ej: juan@ejemplo.com" value="{{ old('email') }}">
+                                        @error('email')
+                                        <small class="text-danger">{{ $message }}</small>
+                                        @enderror
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
                                         <label for="telefono" class="form-label fw-bold">Teléfono de contacto</label>
-                                        <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="Ej: 3794 123456">
+                                        <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="Ej: 3794 123456" value="{{ old('telefono') }}">
+                                        @error('telefono')
+                                        <small class="text-danger">{{ $message }}</small>
+                                        @enderror
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label for="motivo" class="form-label fw-bold">Motivo de la consulta</label>
-                                        <select class="form-select" id="motivo" name="motivo" required>
+                                        <select class="form-select" id="motivo" name="motivo" value="{{ old('motivo') }}">
                                             <option value="" selected disabled>Seleccioná una opción...</option>
                                             <option value="stock">Consultar stock de consolas o juegos</option>
                                             <option value="envios">Consulta sobre envíos</option>
@@ -80,6 +94,9 @@
                                             <option value="politicas">Politicas de nuestra organizacion</option>
                                             <option value="otros">Otros</option>
                                         </select>
+                                        @error('motivo')
+                                        <small class="text-danger">{{ $message }}</small>
+                                        @enderror
                                     </div>
                                 </div>
 
@@ -95,7 +112,10 @@
 
                                 <div class="mb-4">
                                     <label for="mensaje" class="form-label fw-bold">Mensaje *</label>
-                                    <textarea class="form-control border-dark" id="mensaje" name="mensaje" rows="4" placeholder="Contanos en detalle cómo podemos serte de ayuda..." required></textarea>
+                                    <textarea class="form-control border-dark" id="mensaje" name="mensaje" rows="4" placeholder="Contanos en detalle cómo podemos serte de ayuda..." value="{{ old('mensaje') }}"></textarea>
+                                    @error('mensaje')
+                                    <small class="text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
 
                                 <div class="d-grid">
