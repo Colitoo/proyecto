@@ -10,13 +10,28 @@
                         <div class="mb-4">
                             <form action="{{ url('form-login') }}" method="POST">
                                 <div class="justify-content-center mb-5">
-                                    <div class="mb-3 p-3">
-                                        <label for="email" class="form-label fw-bold mt-4">Correo electrónico *</label>
-                                        <input type="email" class="form-control" id="email" name="email" required>
-                                        <label for="password" class="form-label fw-bold mt-4">Contraseña *</label>
-                                        <input type="password" class="form-control" id="password" name="password" required>
+                                    <div class="p-3">
+                                        <div>
+                                            <label for="email" class="form-label fw-bold mt-4">Correo electrónico *</label>
+                                            <input type="email" class="form-control" id="email" name="email" value="{{old ('email')}}">
+                                            @error('email')
+                                            <small class="text-danger">{{ $message }}</small>
+                                            @enderror
+                                        </div>
+                                        <div>
+                                            <label for="password" class="form-label fw-bold mt-4">Contraseña *</label>
+                                            <input type="password" class="form-control" id="password" name="password">
+                                            @error('password')
+                                            <small class="text-danger">{{ $message }}</small>
+                                            @enderror
+                                        </div>
                                         <div class="d-flex justify-content-end">
-                                            <button type="submit" class="btn btn-primary btn-outline-light mt-4">Acceder</button>
+                                            <div class="m-2">
+                                                <a class="btn btn-outline-secondary mt-4">Volver</a>
+                                            </div>
+                                            <div class="m-2">
+                                                <button type="submit" class="btn btn-primary btn-outline-light mt-4">Acceder</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

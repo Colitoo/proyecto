@@ -11,18 +11,48 @@
                             <form action="{{ url('form-register') }}" method="POST">
                                 <div class="justify-content-center mb-5">
                                     <div class="mb-3 p-3">
-                                        <label for="name" class="form-label fw-bold mt-4">Nombre completo *</label>
-                                        <input type="text" class="form-control" id="name" name="name" required>
-                                        <label for="number" class="form-label fw-bold mt-4">Número de teléfono *</label>
-                                        <input type="tel" class="form-control" id="number" name="number" required>
-                                        <label for="email" class="form-label fw-bold mt-4">Correo electrónico *</label>
-                                        <input type="email" class="form-control" id="email" name="email" required>
-                                        <label for="password" class="form-label fw-bold mt-4">Contraseña *</label>
-                                        <input type="password" class="form-control" id="password" name="password" required>
-                                        <label for="confirm_password" class="form-label fw-bold mt-4">Confirmar contraseña *</label>
-                                        <input type="password" class="form-control" id="confirm_password" name="confirm_password" required>
+                                        <div>
+                                            <label for="name" class="form-label fw-bold mt-4">Nombre completo *</label>
+                                            <input type="text" class="form-control" id="name" name="name" value="{{old('name')}}">
+                                            @error('name')
+                                            <small class="text-danger">{{ $message }}</small>
+                                            @enderror
+                                        </div>
+                                        <div>
+                                            <label for="number" class="form-label fw-bold mt-4">Número de teléfono *</label>
+                                            <input type="tel" class="form-control" id="number" name="number" value="{{old('number')}}">
+                                            @error('number')
+                                            <small class="text-danger">{{ $message }}</small>
+                                            @enderror
+                                        </div>
+                                        <div>
+                                            <label for="email" class="form-label fw-bold mt-4">Correo electrónico *</label>
+                                            <input type="email" class="form-control" id="email" name="email" value="{{old('email')}}">
+                                            @error('email')
+                                            <small class="text-danger">{{ $message }}</small>
+                                            @enderror
+                                        </div>
+                                        <div>
+                                            <label for="password" class="form-label fw-bold mt-4">Contraseña *</label>
+                                            <input type="password" class="form-control" id="password" name="password">
+                                            @error('password')
+                                            <small class="text-danger">{{ $message }}</small>
+                                            @enderror
+                                        </div>
+                                        <div>
+                                            <label for="confirm_password" class="form-label fw-bold mt-4">Confirmar contraseña *</label>
+                                            <input type="password" class="form-control" id="confirm_password" name="confirm_password">
+                                            @error('confirm_password')
+                                            <small class="text-danger">{{ $message }}</small>
+                                            @enderror
+                                        </div>
                                         <div class="d-flex justify-content-end">
-                                            <button type="submit" class="btn btn-primary btn-outline-light mt-4">Registrarse</button>
+                                            <div class="m-2">
+                                                <a class="btn btn-outline-secondary mt-4">Volver</a>
+                                            </div>
+                                            <div class="m-2">
+                                                <button type="submit" class="btn btn-primary btn-outline-light mt-4">Registrarse</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
