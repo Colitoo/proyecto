@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Console\View\Components\Alert;
-use Illuminate\Http\Request;
+use App\Http\Requests\ContactoRequest;
 
 class ContactoController extends Controller
 {
@@ -12,15 +12,18 @@ class ContactoController extends Controller
         return view('frontend.informacion-contacto');
     }
 
-    public function guardar_contacto(Request $request){
-        $nombre = $request->input('nombre');
-        $email = $request->input('email');
-        $telefono = $request->input('telefono');
-        $motivo = $request->input('motivo');
-        $plataforma = $request->input('plataforma');
-        $mensaje = $request->input('mensaje');
-        
-        dd($request->all());
-        
+    public function guardar_contacto(ContactoRequest $request){
+        $datos =$request->validated();
+
+        $nombre = $datos['nombre'];
+        $email = $datos['email'];
+        $telefono = $datos['telefono'];
+        $motivo = $datos['motivo'];
+        $plataforma = $datos['plataforma'];
+        $mensaje = $datos['mensaje'];
+
+        //aca se agrega para enviar a BD
+
+        return redirect()->back()->with('success_message', 'Tu Consulta fue enviada correctamente!');
     }
 }
