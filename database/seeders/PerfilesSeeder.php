@@ -12,11 +12,11 @@ class PerfilesSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\perfiles::create([
+        \App\Models\Perfiles::create([
             'descripcion' => 'Administrador',
         ]);
 
-        \App\Models\perfiles::create([
+        \App\Models\Perfiles::create([
             'descripcion' => 'Usuario',
         ]);
     }

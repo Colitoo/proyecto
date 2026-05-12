@@ -40,9 +40,9 @@
                                             @enderror
                                         </div>
                                         <div>
-                                            <label for="confirm_password" class="form-label fw-bold mt-4">Confirmar contraseña *</label>
-                                            <input type="password" class="form-control" id="confirm_password" name="confirm_password">
-                                            @error('confirm_password')
+                                            <label for="password_confirmation" class="form-label fw-bold mt-4">Confirmar contraseña *</label>
+                                            <input type="password" class="form-control" id="password_confirmation" name="password_confirmation">
+                                            @error('password_confirmation')
                                             <small class="text-danger">{{ $message }}</small>
                                             @enderror
                                         </div>
