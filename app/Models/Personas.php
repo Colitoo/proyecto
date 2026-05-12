@@ -9,8 +9,7 @@ class personas extends Model
     protected $table = 'personas';
 
     protected $fillable = [ 
-        'nombre',
-        'apellido',
+        'nombre y apellido',
         'telefono',
         'mail',
         'contraseña',
