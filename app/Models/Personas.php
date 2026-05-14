@@ -2,10 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Auth\Middleware\Authenticate;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class personas extends Authenticate
+class Personas extends Authenticatable
 {   
     protected $table = 'personas';
 
@@ -22,5 +21,16 @@ class personas extends Authenticate
     ];
     protected $hidden = [
         'contraseña',
-    ]; 
+    ];
+
+    // Métodos para autenticación con campos personalizados
+    public function getAuthIdentifierName()
+    {
+        return 'mail';
+    }
+
+    public function getAuthPassword()
+    {
+        return $this->contraseña;
+    }
 }
