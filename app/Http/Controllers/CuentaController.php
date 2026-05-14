@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\RegisterRequest;
-
+use App\Models\Personas;
 class CuentaController extends Controller
 {
     public function ver_login(){
@@ -20,28 +20,27 @@ class CuentaController extends Controller
     public function guardar_login(LoginRequest $request){
         $datos = $request->validated();
 
+        //$usuario = Personas::where('mail', $datos['email'])->first();
+
         $correo_usuario = $datos['email'];
         $pass_usuario = $datos['password'];
 
         //acá el envío a la BD para comprobar
 
-        //si existe retornaria la vista del inicio?
+        //si existe retornaria la vista del admin
         //hay que hacer otra vista para que el usuario vea su cuenta?
     }
 
     public function guardar_register(RegisterRequest $request){
         $datos = $request->validated();
-
-        $nombre = $datos['name'];
-        $telefono = $datos['number'];
-        $correo_usuario = $datos['email'];
-        $pass_usuario = $datos['password'];
-        $pass_confirm_usuario = $datos['confirm_password'];
-
-        //acá enviaría la info nueva a la BD
-
-        //después lo tendría que mandar a la pestaña de login no?
-
-        //el usuario ya puso todos sus acá, entonces no tendríamos que pedirle otra vez estos datos en el formulario de contacto Si es que ya tiene cuenta, ahi dentriamos que usar estos datos nomas?
+        
+        Personas::create([
+            'nombre y apellido' => $datos['name'],
+            'telefono' => $datos['number'],
+            'mail' => $datos['email'],
+            'contraseña' => bcrypt($datos['password']),
+            'perfiles_id' => 2,
+            'estado' => true,
+        ]);
     }
 }
