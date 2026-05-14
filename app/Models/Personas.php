@@ -2,9 +2,10 @@
 
 namespace App\Models;
 
+use Illuminate\Auth\Middleware\Authenticate;
 use Illuminate\Database\Eloquent\Model;
 
-class personas extends Model
+class personas extends Authenticate
 {   
     protected $table = 'personas';
 
@@ -19,4 +20,7 @@ class personas extends Model
     protected $casts = [
         'estado' => 'boolean',
     ];
+    protected $hidden = [
+        'contraseña',
+    ]; 
 }
