@@ -12,6 +12,11 @@
                                 @csrf
                                 <div class="justify-content-center mb-5">
                                     <div class="p-3">
+                                        @if(session('success'))
+                                        <div class="alert alert-success">
+                                            {{ session('success') }}
+                                        </div>
+                                        @endif
                                         <div>
                                             <label for="email" class="form-label fw-bold mt-4">Correo electrónico *</label>
                                             <input type="email" class="form-control" id="email" name="email" value="{{old ('email')}}">

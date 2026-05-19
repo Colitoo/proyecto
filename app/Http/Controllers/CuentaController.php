@@ -24,7 +24,7 @@ class CuentaController extends Controller
         $datos = $request->validated();
         
         $credenciales = [
-            'mail' => $datos['email'],
+            'email' => $datos['email'],
             'password' => $datos['password'],
             'estado' => true,
         ];
@@ -47,6 +47,15 @@ class CuentaController extends Controller
         }
     }
 
+    public function logout(Request $request){
+        Auth::logout();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect('/');
+    }
+
     public function guardar_register(RegisterRequest $request){
 
         //valida lo que ingresas en el formulario de registro y si todo esta correcto crea un usuario nuevo en la base de datos con la informacion ingresada. Caso contrario el request devuelve los errores y no lo deja pasar
@@ -55,10 +64,12 @@ class CuentaController extends Controller
         Personas::create([
             'nombre y apellido' => $datos['name'],
             'telefono' => $datos['number'],
-            'mail' => $datos['email'],
-            'contraseña' => bcrypt($datos['password']),
+            'email' => $datos['email'],
+            'password' => bcrypt($datos['password']),
             'perfiles_id' => 2,
             'estado' => true,
         ]);
+
+        return redirect('/login')->with('success', 'Registro exitoso. Ahora puede iniciar sesión.');
     }
 }

@@ -36,9 +36,6 @@
                         <a class="nav-link" href="/contacto">Contacto</a>
                     </li>
                 </ul>
-            </div>
-
-            <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     @guest
                     <li class="nav-item">
@@ -48,8 +45,8 @@
                                 <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4g 0 0 1 4 4v2" />
                             </svg></a>
                     </li>
-
                     @endguest
+
                     @auth
                     <li class="nav-item">
                         <a class="nav-link" href="#">Perfil<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-user">
@@ -58,7 +55,6 @@
                                 <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4g 0 0 1 4 4v2" />
                             </svg></a>
                     </li>
-
                     <li class="nav-item">
                         <a class="nav-link" href="/carrito">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-shopping-cart">
@@ -70,7 +66,6 @@
                             </svg>
                         </a>
                     </li>
-
                     <li class="nav-item">
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
