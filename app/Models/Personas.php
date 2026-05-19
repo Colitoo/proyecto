@@ -11,8 +11,8 @@ class Personas extends Authenticatable
     protected $fillable = [ 
         'nombre y apellido',
         'telefono',
-        'mail',
-        'contraseña',
+        'email',
+        'password',
         'perfiles_id',
         'estado',
    ];
@@ -20,17 +20,7 @@ class Personas extends Authenticatable
         'estado' => 'boolean',
     ];
     protected $hidden = [
-        'contraseña',
+        'password',
     ];
 
-    // Métodos para autenticación con campos personalizados
-    public function getAuthIdentifierName()
-    {
-        return 'mail';
-    }
-
-    public function getAuthPassword()
-    {
-        return $this->contraseña;
-    }
 }

@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('nombre y apellido', 100);
             $table->integer('telefono')->unsigned();
-            $table->string('mail', 50);
-            $table->string('contraseña', 500);
+            $table->string('email', 50);
+            $table->string('password', 500);
             $table->foreignId('perfiles_id')
                 ->constrained('perfiles')
                 ->onDelete('cascade')->default(2);

@@ -50,3 +50,5 @@ Route::post('/form-login', [CuentaController::class, 'guardar_login'])->name('fo
 Route::get('/register', [CuentaController::class, 'ver_register']);
 
 Route::post('/form-register', [CuentaController::class, 'guardar_register'])->name('formulario-register');
+
+Route::post('/logout', [CuentaController::class, 'logout'])->name('logout');
