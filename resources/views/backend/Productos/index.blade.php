@@ -1,3 +1,3 @@
 <x-layout_admin>
-    <a>Bienvenido, {{ auth()->user()->name }}</a>
+    <a>Bienvenido admin</a>
 </x-layout_admin>

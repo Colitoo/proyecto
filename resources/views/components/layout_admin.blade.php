@@ -19,21 +19,13 @@
 <body class="d-flex flex-column min-vh-100">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand clickable" href="/"> <img src="{{ asset('img/logo.png')}}" alt="Logo"> </a>
+            <a class="navbar-brand clickable" href="/admin"> <img src="{{ asset('img/logo.png')}}" alt="Logo"> </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 @auth
-                <div class="dropdown navbar-nav">
-                    <button class="btn btn-secondary dropdown-toggle w-100" type="button" data-bs-toggle="dropdown" aria-expanded="false">Vision-Usuario</button>
-                    <ul class="dropdown-menu w-100">
-                        <li><a class="nav-link" href="/productos">Catálogo</a></li>
-                        <li><a class="nav-link" href="/quienes-somos">Quiénes somos</a></li>
-                        <li><a class="nav-link" href="/contacto">Contacto</a></li>
-                    </ul>
-                </div>
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link" href="/Listar_Productos">Productos</a>

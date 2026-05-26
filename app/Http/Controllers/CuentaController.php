@@ -19,6 +19,10 @@ class CuentaController extends Controller
         return view('frontend.register');
     }
 
+    public function index(){
+        return view('backend.Productos.index');
+    }
+
     public function guardar_login(LoginRequest $request){
         //guarda lo que ingresas en el formulario de login, lo valida y despues lo guarda en un array credenciales
         $datos = $request->validated();
