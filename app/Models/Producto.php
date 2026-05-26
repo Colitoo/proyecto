@@ -13,9 +13,15 @@ class Producto extends Model
         'precio',
         'stock',
         'url_imagen',
+        'categoria_id',
     ];
     protected $casts = [
         'precio' => 'decimal:2',
         'stock' => 'integer',
     ];
+
+    public function categoria()
+    {
+        return $this->belongsTo(Categoria::class);
+    }
 }

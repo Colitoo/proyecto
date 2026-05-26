@@ -53,8 +53,7 @@ Route::post('/form-register', [CuentaController::class, 'guardar_register'])->na
 
 Route::post('/logout', [CuentaController::class, 'logout'])->name('logout');
 
-Route::get('Producto_Carga',[TarjetasController::class, 'create'])->name('Producto_Carga');
-
-Route::get('Producto_Gestion', [TarjetasController::class, 'index'])->name('Producto_Gestion');
+// Resource Controller para Productos (backend)
+Route::resource('productos', TarjetasController::class);
 
 Route::get('admin', [CuentaController::class, 'index']);
