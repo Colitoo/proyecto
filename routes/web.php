@@ -52,3 +52,13 @@ Route::get('/register', [CuentaController::class, 'ver_register']);
 Route::post('/form-register', [CuentaController::class, 'guardar_register'])->name('formulario-register');
 
 Route::post('/logout', [CuentaController::class, 'logout'])->name('logout');
+
+Route::get('/Producto_Carga', function () {
+    return view('backend.Productos.carga');
+}); 
+
+Route::get('/Producto_Gestion', function () {
+    return view('backend.Productos.gestion');
+}); 
+
+Route::get('admin', [CuentaController::class, 'index']);

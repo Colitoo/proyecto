@@ -9,6 +9,7 @@
                     <div class="card-body">
                         <div class="mb-4">
                             <form action="{{ url('form-register') }}" method="POST">
+                                @csrf
                                 <div class="justify-content-center mb-5">
                                     <div class="mb-3 p-3">
                                         <div>
