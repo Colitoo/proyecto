@@ -53,12 +53,8 @@ Route::post('/form-register', [CuentaController::class, 'guardar_register'])->na
 
 Route::post('/logout', [CuentaController::class, 'logout'])->name('logout');
 
-Route::get('/Producto_Carga', function () {
-    return view('backend.Productos.carga');
-}); 
+Route::get('Producto_Carga',[TarjetasController::class, 'create'])->name('Producto_Carga');
 
-Route::get('/Producto_Gestion', function () {
-    return view('backend.Productos.gestion');
-}); 
+Route::get('Producto_Gestion', [TarjetasController::class, 'index'])->name('Producto_Gestion');
 
 Route::get('admin', [CuentaController::class, 'index']);
