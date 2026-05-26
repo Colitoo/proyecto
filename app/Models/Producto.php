@@ -11,9 +11,11 @@ class Producto extends Model
         'nombre',
         'descripcion',
         'precio',
+        'stock',
         'url_imagen',
     ];
     protected $casts = [
         'precio' => 'decimal:2',
+        'stock' => 'integer',
     ];
 }
