@@ -4,7 +4,8 @@ namespace Database\Seeders;
 
 use App\Models\User;
 use Database\Seeders\PerfilesSeeder;
-//use Database\Seeders\PersonasSeeder;
+use Database\Seeders\ConsultasSeeder;
+use Database\Seeders\PersonasSeeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -21,6 +22,8 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             PerfilesSeeder::class,
+            ConsultasSeeder::class,
+            PersonasSeeder::class,
         ]);
 
         User::factory()->create([
