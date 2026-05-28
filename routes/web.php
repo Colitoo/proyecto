@@ -29,8 +29,7 @@ Route::get('/carrito', function () {
     return view('frontend.carrito');
 });
 
-Route::get('/productos', [TarjetasController::class, 'index']);
-
+Route::get('/productos', [TarjetasController::class, 'listarFrontend']);
 
 Route::get('/contacto', [ContactoController::class, 'ver_contacto']);
 
@@ -48,7 +47,7 @@ Route::post('/form-register', [CuentaController::class, 'guardar_register'])->na
 Route::post('/logout', [CuentaController::class, 'logout'])->name('logout');
 
 // Backend - Rutas de Productos
-Route::get('/admin/productos',          [TarjetasController::class, 'index'])->name('productos.index');
+Route::get('/admin/productos',          [TarjetasController::class, 'gestionar'])->name('productos.index');
 Route::get('/admin/productos/gestionar',[TarjetasController::class, 'gestionar'])->name('productos.gestionar');
 Route::get('/admin/productos/create',   [TarjetasController::class, 'create'])->name('productos.create');
 Route::post('/admin/productos',         [TarjetasController::class, 'store'])->name('productos.store');
