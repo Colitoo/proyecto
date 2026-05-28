@@ -1,94 +1,69 @@
 <x-layout_admin>
     <div class="container mt-4">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card shadow-sm mb-4">
-                    <div class="card-header bg-dark">
-                        <h2 class="text-center txt-color mb-0">Editar Producto</h2>
-                    </div>
-                    <div class="card-body">
-                        <form action="{{ route('productos.update', $producto->id) }}" method="POST">
-                            @csrf
-                            @method('PUT')
+        <h2 class="txt-color">Gestionar Productos</h2>
 
-                            <div class="mb-3">
-                                <label for="nombre" class="form-label fw-bold">Nombre del Producto *</label>
-                                <input type="text" class="form-control @error('nombre') is-invalid @enderror" 
-                                       id="nombre" name="nombre" placeholder="Ej: PlayStation 2" 
-                                       value="{{ old('nombre', $producto->nombre) }}">
-                                @error('nombre')
-                                    <small class="text-danger">{{ $message }}</small>
-                                @enderror
+        @if(session('success'))
+        <div class="alert alert-success alert-dismissible fade show mt-3">
+            {{ session('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+        @endif
+
+        <div class="table-responsive mt-4">
+            <table class="table table-dark table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Categoría</th>
+                        <th>Precio</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @forelse($productos as $producto)
+                    <tr>
+                        <td>{{ $producto->id }}</td>
+                        <td>{{ $producto->nombre }}</td>
+                        <td>{{ $producto->categoria->nombre ?? 'Sin categoría' }}</td>
+                        <td>${{ number_format($producto->precio, 2) }}</td>
+                        <td>
+                            @if($producto->activo)
+                            <span class="badge bg-success">Activo</span>
+                            @else
+                            <span class="badge bg-danger">Inactivo</span>
+                            @endif
+                        </td>
+                        <td>
+                            <div class="btn-group btn-group-sm">
+
+                                {{-- Editar --}}
+                                <a href="{{ route('productos.edit', $producto->id) }}"
+                                    class="btn btn-warning">
+                                    Editar
+                                </a>
+
+                                {{-- Habilitar/Deshabilitar --}}
+                                <form action="{{ route('productos.toggleActivo', $producto->id) }}" method="POST">
+                                    @csrf
+                                    @method('PATCH')
+                                    <button type="submit"
+                                        class="btn {{ $producto->activo ? 'btn-secondary' : 'btn-success' }}">
+                                        {{ $producto->activo ? 'Deshabilitar' : 'Habilitar' }}
+                                    </button>
+                                </form>
+
                             </div>
-
-                            <div class="mb-3">
-                                <label for="descripcion" class="form-label fw-bold">Descripción</label>
-                                <textarea class="form-control @error('descripcion') is-invalid @enderror" 
-                                          id="descripcion" name="descripcion" rows="4" 
-                                          placeholder="Descripción del producto...">{{ old('descripcion', $producto->descripcion) }}</textarea>
-                                @error('descripcion')
-                                    <small class="text-danger">{{ $message }}</small>
-                                @enderror
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-6 mb-3">
-                                    <label for="precio" class="form-label fw-bold">Precio *</label>
-                                    <input type="number" step="0.01" class="form-control @error('precio') is-invalid @enderror" 
-                                           id="precio" name="precio" placeholder="0.00" 
-                                           value="{{ old('precio', $producto->precio) }}">
-                                    @error('precio')
-                                        <small class="text-danger">{{ $message }}</small>
-                                    @enderror
-                                </div>
-
-                                <div class="col-md-6 mb-3">
-                                    <label for="stock" class="form-label fw-bold">Stock *</label>
-                                    <input type="number" class="form-control @error('stock') is-invalid @enderror" 
-                                           id="stock" name="stock" placeholder="0" 
-                                           value="{{ old('stock', $producto->stock) }}">
-                                    @error('stock')
-                                        <small class="text-danger">{{ $message }}</small>
-                                    @enderror
-                                </div>
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="categoria_id" class="form-label fw-bold">Categoría *</label>
-                                <select class="form-select @error('categoria_id') is-invalid @enderror" 
-                                        id="categoria_id" name="categoria_id">
-                                    <option value="" disabled>
-                                        Selecciona una categoría...
-                                    </option>
-                                    @foreach($categorias as $categoria)
-                                        <option value="{{ $categoria->id }}" @selected(old('categoria_id', $producto->categoria_id)==$categoria->id)>
-                                            {{ $categoria->nombre }}
-                                        </option>
-                                    @endforeach
-                                </select>
-                                @error('categoria_id')
-                                    <small class="text-danger">{{ $message }}</small>
-                                @enderror
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="url_imagen" class="form-label fw-bold">URL de la Imagen</label>
-                                <input type="text" class="form-control @error('url_imagen') is-invalid @enderror" 
-                                       id="url_imagen" name="url_imagen" placeholder="ej: img/producto.jpg" 
-                                       value="{{ old('url_imagen', $producto->url_imagen) }}">
-                                @error('url_imagen')
-                                    <small class="text-danger">{{ $message }}</small>
-                                @enderror
-                            </div>
-
-                            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                <a href="{{ route('productos.index') }}" class="btn btn-secondary">Cancelar</a>
-                                <button type="submit" class="btn btn-primary">Actualizar Producto</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
+                        </td>
+                    </tr>
+                    @empty
+                    <tr>
+                        <td colspan="6" class="text-center py-4">No hay productos</td>
+                    </tr>
+                    @endforelse
+                </tbody>
+            </table>
         </div>
     </div>
 </x-layout_admin>

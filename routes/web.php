@@ -29,13 +29,7 @@ Route::get('/carrito', function () {
     return view('frontend.carrito');
 });
 
-Route::get('/productos', [TarjetasController::class, 'ver_tarjetas']);
-
-Route::get('/mandos', [TarjetasController::class, 'ver_mandos']);
-
-Route::get('/consolas', [TarjetasController::class, 'ver_consolas']);
-
-Route::get('/portatiles', [TarjetasController::class, 'ver_portatiles']);
+Route::get('/productos', [TarjetasController::class, 'index']);
 
 
 Route::get('/contacto', [ContactoController::class, 'ver_contacto']);
@@ -53,7 +47,15 @@ Route::post('/form-register', [CuentaController::class, 'guardar_register'])->na
 
 Route::post('/logout', [CuentaController::class, 'logout'])->name('logout');
 
-// Resource Controller para Productos (backend)
-Route::resource('productos', TarjetasController::class);
+// Backend - Rutas de Productos
+Route::get('/admin/productos',          [TarjetasController::class, 'index'])->name('productos.index');
+Route::get('/admin/productos/gestionar',[TarjetasController::class, 'gestionar'])->name('productos.gestionar');
+Route::get('/admin/productos/create',   [TarjetasController::class, 'create'])->name('productos.create');
+Route::post('/admin/productos',         [TarjetasController::class, 'store'])->name('productos.store');
+Route::get('/admin/productos/{id}/edit',[TarjetasController::class, 'edit'])->name('productos.edit');
+Route::put('/admin/productos/{id}',     [TarjetasController::class, 'update'])->name('productos.update');
+Route::patch('/admin/productos/{id}',   [TarjetasController::class, 'toggleActivo'])->name('productos.toggleActivo');
+Route::delete('/admin/productos/{id}',  [TarjetasController::class, 'destroy'])->name('productos.destroy');
+Route::get('/admin/productos/{id}',     [TarjetasController::class, 'show'])->name('productos.show');
 
 Route::get('admin', [CuentaController::class, 'index']);
