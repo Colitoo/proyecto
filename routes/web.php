@@ -46,15 +46,16 @@ Route::post('/form-register', [CuentaController::class, 'guardar_register'])->na
 
 Route::post('/logout', [CuentaController::class, 'logout'])->name('logout');
 
-// Backend - Rutas de Productos
-Route::get('/admin/productos',          [TarjetasController::class, 'gestionar'])->name('productos.index');
-Route::get('/admin/productos/gestionar',[TarjetasController::class, 'gestionar'])->name('productos.gestionar');
+// Backend - Rutas de Productos (DEBE ESTAR ANTES QUE Route::get('admin'))
 Route::get('/admin/productos/create',   [TarjetasController::class, 'create'])->name('productos.create');
-Route::post('/admin/productos',         [TarjetasController::class, 'store'])->name('productos.store');
+Route::get('/admin/productos/gestionar',[TarjetasController::class, 'gestionar'])->name('productos.gestionar');
 Route::get('/admin/productos/{id}/edit',[TarjetasController::class, 'edit'])->name('productos.edit');
 Route::put('/admin/productos/{id}',     [TarjetasController::class, 'update'])->name('productos.update');
 Route::patch('/admin/productos/{id}',   [TarjetasController::class, 'toggleActivo'])->name('productos.toggleActivo');
 Route::delete('/admin/productos/{id}',  [TarjetasController::class, 'destroy'])->name('productos.destroy');
 Route::get('/admin/productos/{id}',     [TarjetasController::class, 'show'])->name('productos.show');
+Route::post('/admin/productos',         [TarjetasController::class, 'store'])->name('productos.store');
+Route::get('/admin/productos',          [TarjetasController::class, 'gestionar'])->name('productos.index');
 
-Route::get('admin', [CuentaController::class, 'index']);
+// Panel admin
+Route::get('/admin', [CuentaController::class, 'index']);
