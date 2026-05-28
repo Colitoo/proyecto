@@ -12,8 +12,8 @@ class TarjetasController extends Controller
      */
     public function index()
     {
-        $productos = Producto::all();
-        return view('backend.Productos.Listar_Productos', compact('productos'));
+        $productos = Producto::with('categoria')->get();
+        return view('frontend.productos', compact('productos'));
     }
 
     /**
