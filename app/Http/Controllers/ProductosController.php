@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Producto;
+use App\Models\Categoria;
 
 class ProductosController extends Controller
 {
@@ -11,7 +13,8 @@ class ProductosController extends Controller
      */
     public function index()
     {
-        //
+        $productos = Producto::with('categoria')->orderBy('created_at', 'desc')->get();
+        return view('backend.Productos.Listar_Productos', compact('productos'));
     }
 
     /**

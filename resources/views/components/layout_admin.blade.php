@@ -28,21 +28,21 @@
                 @auth
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="/Listar_Productos">Productos</a>
+                        <a class="nav-link" href="/admin/Listar_Productos">Productos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/Listar_Ventas">Ventas</a>
+                        <a class="nav-link" href="/admin/Listar_Ventas">Ventas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/Ver_Consultas">Consultas</a>
+                        <a class="nav-link" href="/admin/Ver_Consultas">Consultas</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="Producto_Carga">Cargar Producto</a>
+                        <a class="nav-link" href="/admin/Producto_Carga">Cargar Producto</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/Producto_Gestion">Gestionar Producto</a>
+                        <a class="nav-link" href="/admin/Producto_Gestion">Gestionar Producto</a>
                     </li>
                     <li class="nav-item">
                         <form method="POST" action="{{ route('logout') }}">
