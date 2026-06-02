@@ -11,6 +11,8 @@ class TarjetasController extends Controller
     /**
      * Mostrar catálogo de productos (frontend)
      */
+
+/*
     public function listarFrontend()
     {
         $productos = Producto::where('activo', true)
@@ -31,14 +33,14 @@ class TarjetasController extends Controller
 
         return view('frontend.productos', compact('productos'));
     }
-
+*/
     /**
      * Mostrar lista de productos (backend)
      */
-    public function index()
+    public function ver_tarjetas()
     {
         $productos = Producto::with('categoria')->orderBy('created_at', 'desc')->get();
-        return view('backend.Productos.Listar_Productos', compact('productos'));
+        return view('frontend.productos', compact('productos'));
     }
 
     /**

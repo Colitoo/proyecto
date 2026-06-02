@@ -3,6 +3,7 @@
 use App\Http\Controllers\ContactoController;
 use App\Http\Controllers\CuentaController;
 use App\Http\Controllers\TarjetasController;
+use App\Http\Controllers\ProductosController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -29,7 +30,7 @@ Route::get('/carrito', function () {
     return view('frontend.carrito');
 });
 
-Route::get('/productos', [TarjetasController::class, 'listarFrontend']);
+Route::get('/productos', [TarjetasController::class, 'ver_tarjetas']);
 
 Route::get('/contacto', [ContactoController::class, 'ver_contacto']);
 
@@ -46,6 +47,7 @@ Route::post('/form-register', [CuentaController::class, 'guardar_register'])->na
 
 Route::post('/logout', [CuentaController::class, 'logout'])->name('logout');
 
+
 // Backend - Rutas de Productos (DEBE ESTAR ANTES QUE Route::get('admin'))
 Route::get('/admin/productos/create',   [TarjetasController::class, 'create'])->name('productos.create');
 Route::get('/admin/productos/gestionar',[TarjetasController::class, 'gestionar'])->name('productos.gestionar');
@@ -57,5 +59,7 @@ Route::get('/admin/productos/{id}',     [TarjetasController::class, 'show'])->na
 Route::post('/admin/productos',         [TarjetasController::class, 'store'])->name('productos.store');
 Route::get('/admin/productos',          [TarjetasController::class, 'gestionar'])->name('productos.index');
 
+Route::get('/admin/Listar_Productos', [ProductosController::class, 'index']);
+Route::get('/admin/Producto_Carga', [TarjetasController::class, 'create']);
 // Panel admin
 Route::get('/admin', [CuentaController::class, 'index']);
