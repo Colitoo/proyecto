@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Perfiles;
 
 class PerfilesSeeder extends Seeder
 {
@@ -12,11 +13,11 @@ class PerfilesSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\Perfiles::create([
+        Perfiles::create([
             'descripcion' => 'Administrador',
         ]);
 
-        \App\Models\Perfiles::create([
+        Perfiles::create([
             'descripcion' => 'Usuario',
         ]);
     }

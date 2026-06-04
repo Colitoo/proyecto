@@ -30,7 +30,7 @@ Route::get('/carrito', function () {
     return view('frontend.carrito');
 });
 
-Route::get('/productos', [TarjetasController::class, 'ver_tarjetas']);
+Route::get('/catalogo', [TarjetasController::class, 'ver_tarjetas']);
 
 Route::get('/contacto', [ContactoController::class, 'ver_contacto']);
 
@@ -49,17 +49,28 @@ Route::post('/logout', [CuentaController::class, 'logout'])->name('logout');
 
 
 // Backend - Rutas de Productos (DEBE ESTAR ANTES QUE Route::get('admin'))
-Route::get('/admin/productos/create',   [TarjetasController::class, 'create'])->name('productos.create');
-Route::get('/admin/productos/gestionar',[TarjetasController::class, 'gestionar'])->name('productos.gestionar');
-Route::get('/admin/productos/{id}/edit',[TarjetasController::class, 'edit'])->name('productos.edit');
-Route::put('/admin/productos/{id}',     [TarjetasController::class, 'update'])->name('productos.update');
-Route::patch('/admin/productos/{id}',   [TarjetasController::class, 'toggleActivo'])->name('productos.toggleActivo');
-Route::delete('/admin/productos/{id}',  [TarjetasController::class, 'destroy'])->name('productos.destroy');
-Route::get('/admin/productos/{id}',     [TarjetasController::class, 'show'])->name('productos.show');
-Route::post('/admin/productos',         [TarjetasController::class, 'store'])->name('productos.store');
-Route::get('/admin/productos',          [TarjetasController::class, 'gestionar'])->name('productos.index');
+Route::get('/admin/productos/create',   [ProductosController::class, 'create'])->name('productos.create');
+Route::get('/admin/productos/gestionar',[ProductosController::class, 'gestionar'])->name('productos.gestionar');
+Route::get('/admin/productos/{id}/edit',[ProductosController::class, 'edit'])->name('productos.edit');
+Route::put('/admin/productos/{id}',     [ProductosController::class, 'update'])->name('productos.update');
+Route::patch('/admin/productos/{id}',   [ProductosController::class, 'toggleActivo'])->name('productos.toggleActivo');
 
-Route::get('/admin/Listar_Productos', [ProductosController::class, 'index']);
-Route::get('/admin/Producto_Carga', [TarjetasController::class, 'create']);
-// Panel admin
+//este no debería usarse porque borra de la tabla de la base de datos, pero lo dejo por las dudas
+Route::delete('/admin/productos/{id}',  [ProductosController::class, 'destroy'])->name('productos.destroy');
+
+//este muestra un producto específico al admin
+Route::get('/admin/productos/{id}',     [ProductosController::class, 'show'])->name('productos.show');
+
+//este  crea el producto nuevo en la tabla de Productos con los datos del formulario de carga
+Route::post('/admin/Producto_Carga',[ProductosController::class, 'store'])->name('productos.store');
+Route::get('/admin/Producto_Carga', [ProductosController::class, 'create'])->name('productos.create');
+//este muestra la lista de productos al admin y le deja gestionar cada uno
+Route::get('/admin/Gestionar_Productos', [ProductosController::class, 'gestionar'])->name('productos.index');
+
+//este muestra solo una lista de prodcutos  al admin
+Route::get('/admin/Listar_Productos', [ProductosController::class, 'index'])->name('admin.listar_productos');
+
+//muestra el inicio al admin
 Route::get('/admin', [CuentaController::class, 'index']);
+
+Route::resource('productos', ProductosController::class);
