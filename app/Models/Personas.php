@@ -23,4 +23,9 @@ class Personas extends Authenticatable
         'password',
     ];
 
+    public function Ventas()
+    {
+        return $this->hasMany(Ventas::class, 'personas_id');
+    }
+
 }

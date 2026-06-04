@@ -13,12 +13,14 @@ class Producto extends Model
         'precio',
         'stock',
         'url_imagen',
+        'activo',
         'categoria_id',
         'activo',
     ];
     protected $casts = [
         'precio' => 'decimal:2',
         'stock' => 'integer',
+        'activo' => 'boolean',
     ];
 
     public function categoria()
