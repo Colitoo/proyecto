@@ -3,7 +3,7 @@
         <h2 class="txt-color">Cargar Nuevo Producto</h2>
 
         <div class="card bg-dark mt-4 p-4">
-            <form action="{{ route('productos.store') }}" method="POST">
+            <form action="{{ route('productos.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
 
                 <div class="mb-3">
@@ -22,9 +22,13 @@
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label">URL Imagen</label>
-                    <input type="text" name="url_imagen" class="form-control"
-                        placeholder="img/nombre.jpg">
+                    <label class="form-label"> Stock</label>
+                    <input type="number" name="stock" class="form-control" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Imagen</label>
+                    <input type="file" name="imagen" class="form-control" required>
                 </div>
 
                 <div class="mb-3">

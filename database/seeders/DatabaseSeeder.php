@@ -6,6 +6,7 @@ use App\Models\User;
 use Database\Seeders\PerfilesSeeder;
 use Database\Seeders\ConsultasSeeder;
 use Database\Seeders\PersonasSeeder;
+use Database\Seeders\CategoriasSeeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -24,6 +25,7 @@ class DatabaseSeeder extends Seeder
             PerfilesSeeder::class,
             ConsultasSeeder::class,
             PersonasSeeder::class,
+            CategoriasSeeder::class,
         ]);
 
         User::factory()->create([

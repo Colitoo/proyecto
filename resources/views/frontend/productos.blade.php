@@ -34,11 +34,12 @@
                         <div class="col">
                             <div class="card h-100 tarjeta-producto">
                                 <div class="img-box img-box-producto">
-                                    <img src="{{asset($item['imagen'])}}" class="card-img-top">
+                                    <img src="{{ asset('storage/' . $item['url_imagen']) }}" class="card-img-top" alt="{{ $item['nombre'] }}">
                                 </div>
                                 <div class="card-body">
                                     <h5 class="card-title">{{ $item['nombre'] }}</h5>
                                     <p class="card-text">{{ $item['descripcion'] }}</p>
+                                    <p class="card-text"><small class="text-white">Stock: {{ $item['stock'] }}</small></p>
                                 </div>
                                 <div class="card-footer align-items-center text-center">
                                     <small class="card-text-price">{{ $item['precio'] }}</small>
