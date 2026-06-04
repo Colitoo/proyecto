@@ -19,7 +19,7 @@
                     <tr>
                         <td>{{ $producto->id }}</td>
                         <td>
-                            <img src="{{ asset($producto->url_imagen) }}"
+                            <img src="{{ asset('storage/' . $producto->url_imagen) }}" alt="{{ $producto->nombre }}"
                                 width="60" height="60"
                                 style="object-fit: contain;">
                         </td>
