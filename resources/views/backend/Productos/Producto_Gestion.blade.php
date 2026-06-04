@@ -1,4 +1,4 @@
-<x-layout_admin>
+<x-layout title="Gestion de Productos">
     <div class="container mt-4">
         <h2 class="txt-color">Gestionar Productos</h2>
 
@@ -66,4 +66,4 @@
             </table>
         </div>
     </div>
-</x-layout_admin>
+</x-layout>

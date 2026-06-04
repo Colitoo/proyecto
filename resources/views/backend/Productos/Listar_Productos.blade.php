@@ -1,4 +1,4 @@
-<x-layout_admin>
+<x-layout title="Lista de Productos">
     <div class="container mt-4">
         <h2 class="txt-color">Lista de Productos</h2>
 
@@ -43,4 +43,4 @@
             </table>
         </div>
     </div>
-</x-layout_admin>
+</x-layout>

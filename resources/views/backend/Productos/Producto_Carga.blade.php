@@ -1,4 +1,4 @@
-<x-layout_admin>
+<x-layout title="Cargar Producto">
     <div class="container mt-4">
         <h2 class="txt-color">Cargar Nuevo Producto</h2>
 
@@ -54,4 +54,4 @@
             </form>
         </div>
     </div>
-</x-layout_admin>
+</x-layout>
