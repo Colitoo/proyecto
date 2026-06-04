@@ -1,4 +1,4 @@
-<x-layout_admin>
+<x-layout title="Consultas recibidas">
     <div class="container mt-4">
         <h2>Consultas recibidas</h2>
 
@@ -39,4 +39,4 @@
             </tbody>
         </table>
     </div>
-</x-layout_admin>
+</x-layout>

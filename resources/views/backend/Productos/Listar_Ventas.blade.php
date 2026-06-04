@@ -1,4 +1,4 @@
-<x-layout_admin>
+<x-layout title="Lista de Ventas">
     <div class="container mt-4">
         <h2 class="txt-color">Lista de Ventas totales</h2>
         <div class="table-responsive mt-4">
@@ -86,4 +86,4 @@
             @endforeach
         </div>
     </div>
-</x-layout_admin>
+</x-layout>
