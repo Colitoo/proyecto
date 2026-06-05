@@ -4,7 +4,7 @@
         <img src="{{ asset('img/banner(1).png') }}" alt="banner inicio" class="banner-img">
         <h2 class="banner-texto">Welcome to the Past</h2>
         <h1 class="banner-texto">Especialistas en Consolas Retro</h1>
-        <a href="/productos" class="btn btn-primary btn-outline-light col-md-3">Ver catálogo</a>
+        <a href="/catalogo" class="btn btn-primary btn-outline-light col-md-3">Ver catálogo</a>
     </div>
     <div class="info-general nav" role="alert">
         <p class="info-item">Envios por Correo Argentino</p>
@@ -52,7 +52,7 @@
 
         </div>
         <div class="text-center mt-2 w-100">
-            <a href="/productos" class="w-25 btn btn-primary btn-outline-light">Más productos</a>
+            <a href="/catalogo" class="w-25 btn btn-primary btn-outline-light">Más productos</a>
         </div>
     </section>
 

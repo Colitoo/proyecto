@@ -6,40 +6,32 @@ use App\Models\Producto;
 use App\Models\Categoria;
 use Illuminate\Http\Request;
 
-class TarjetasController extends Controller
-{
-    /**
-     * Mostrar catálogo de productos (frontend)
-     */
+class TarjetasController extends Controller{
 
-/*
-    public function listarFrontend()
-    {
-        $productos = Producto::where('activo', true)
-            ->with('categoria')
-            ->orderBy('created_at', 'desc')
-            ->get()
-            ->map(function ($producto) {
-                return [
-                    'id' => $producto->id,
-                    'nombre' => $producto->nombre,
-                    'descripcion' => $producto->descripcion,
-                    'precio' => '$' . number_format($producto->precio, 2),
-                    'imagen' => $producto->url_imagen,
-                    'categoria' => $producto->categoria->nombre ?? 'Sin categoría',
-                ];
-            })
-            ->toArray();
-
-        return view('frontend.productos', compact('productos'));
-    }
-*/
-    /**
-     * Mostrar lista de productos (backend)
-     */
-    public function ver_tarjetas()
-    {
+    public function ver_tarjetas(){
         $productos = Producto::with('categoria')->orderBy('created_at', 'desc')->get();
         return view('frontend.productos', compact('productos'));
     }
+
+    public function ver_mandos(){
+        $mandos = Producto::whereHas('categoria', function ($query) {
+            $query->where('categorias.id', 1);
+        })->get();
+        return view('frontend.mandos', compact('mandos'));
+    }
+
+    public function ver_portatiles(){
+        $portatiles = Producto::whereHas('categoria', function ($query){
+            $query->where('categorias.id', 2);
+        })->get();
+        return view('frontend.portatiles', compact('portatiles'));
+    }
+
+    public function ver_sobremesa(){
+        $consolas = Producto::whereHas('categoria', function ($query) {
+            $query->where('categorias.id', 3);
+        })->get();
+        return view('frontend.consolas', compact('consolas'));
+    }
+
 }

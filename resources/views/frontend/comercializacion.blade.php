@@ -63,7 +63,7 @@
                             <li class="mb-2"><b class="txt-color">Datos protegidos:</b> Nunca almacenamos información sensible de tus medios de pago. Cada transacción pasa por canales encriptados.</li>
                             <li><b class="txt-color">Compra respaldada:</b> Ante cualquier inconveniente, nuestro equipo está disponible para resolver dudas y encontrar una solución.</li>
                         </ul>
-                        <div class="d-flex justify-content-center"><a href="/informacion-contacto" class="btn btn-primary btn-outline-light px-5">Más información</a></div>
+                        <div class="d-flex justify-content-center"><a href="/contacto" class="btn btn-primary btn-outline-light px-5">Más información</a></div>
                     </div>
                 </div>
             </div>

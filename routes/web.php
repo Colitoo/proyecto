@@ -29,6 +29,9 @@ Route::get('/seguimiento', function () {
 });
 
 Route::get('/catalogo', [TarjetasController::class, 'ver_tarjetas']);
+Route::get('/mandos', [TarjetasController::class, 'ver_mandos']);
+Route::get('/portatiles', [TarjetasController::class, 'ver_portatiles']);
+Route::get('/consolas', [TarjetasController::class, 'ver_sobremesa']);
 
 Route::get('/contacto', [ContactoController::class, 'ver_contacto']);
 
