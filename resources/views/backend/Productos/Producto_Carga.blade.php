@@ -1,13 +1,13 @@
 <x-layout title="Cargar Producto">
-    <div class="container mt-4">
-        <h2 class="txt-color">Cargar Nuevo Producto</h2>
+    <div class="container-md mt-4">
+        <h2 class="txt-color text-center">Cargar un Producto</h2>
 
         <div class="card bg-dark mt-4 p-4">
             <form action="{{ route('productos.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
 
                 <div class="mb-3">
-                    <label class="form-label">Nombre</label>
+                    <label class="form-label">Nombre del producto</label>
                     <input type="text" name="nombre" class="form-control" required>
                 </div>
 
@@ -22,7 +22,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label"> Stock</label>
+                    <label class="form-label">Stock</label>
                     <input type="number" name="stock" class="form-control" required>
                 </div>
 
@@ -49,7 +49,7 @@
                     </select>
                 </div>
 
-                <button type="submit" class="btn btn-primary">Guardar Producto</button>
+                <button type="submit" class="btn btn-primary">Añadir Producto</button>
                 <a href="{{ route('productos.index') }}" class="btn btn-secondary">Cancelar</a>
             </form>
         </div>

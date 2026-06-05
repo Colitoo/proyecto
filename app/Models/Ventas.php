@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Database\Eloquent\Relations\HasMany;
 class Ventas extends Model
 {
     protected $fillable = [
@@ -25,6 +25,6 @@ class Ventas extends Model
 
     public function detalleVentas()
     {
-        return $this->hasMany(DetalleVenta::class, 'venta_id');
+        return $this->hasMany(Detalleventa::class, 'venta_id');
     }
 }

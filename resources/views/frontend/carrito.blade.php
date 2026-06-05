@@ -2,27 +2,24 @@
     <div class="container mt-5">
         <h2 class="subtitulo mb-4">Carrito de Compras</h2>
 
-        <!-- Fila principal -->
         <div class="row">
-
-            <!-- MITAD IZQUIERDA: Productos, imágenes y modificación de cantidades -->
             <div class="col-md-7">
                 <div class="row row-cols-1 g-3">
-                    @foreach ($venta->detalles as $detalle)
+                    @foreach ($venta->detalleVentas as $detalle)
                     <div class="col">
                         <div class="card mb-3 border-0 shadow-sm p-2">
                             <div class="row g-0 align-items-center">
-                                <!-- Imagen del producto -->
+                                
                                 <div class="col-md-4 text-center">
                                     <img src="{{ asset('storage/' . $detalle->producto->url_imagen) }}"
                                         class="img-fluid rounded"
                                         alt="{{ $detalle->producto->nombre }}"
                                         style="max-height: 100px; object-fit: cover;">
                                 </div>
-                                <!-- Nombre y Selector de Cantidad Dinámico -->
+                        
                                 <div class="col-md-8">
                                     <div class="card-body py-2">
-                                        <h5 class="card-title fw-bold text-dark mb-2">{{ $detalle->producto->nombre }}</h5>
+                                        <h5 class="card-title fw-bold text-dark mb-2">{{ $detalleVentas->producto->nombre }}</h5>
 
                                         <!-- Formulario inline para actualizar cantidad al cambiar el select -->
                                         <form action="{{ route('carrito.update-cantidad', $detalle->id) }}" method="POST" class="d-flex align-items-center">
@@ -33,9 +30,9 @@
                                             <!-- Desplegable limitado por el stock real de la BD -->
                                             <select name="cantidad" class="form-select form-select-sm w-auto" onchange="this.form.submit()">
                                                 <!-- Protegemos que empiece en 1 y termine en el stock máximo disponible -->
-                                                @for ($i = 1; $i <= $detalle->producto->stock; $i++)
+                                                @for ($i = 1; $i <= $detalleVentas->producto->stock; $i++)
                                                     <option value="{{ $i }}" {{ $detalle->cantidad == $i ? 'selected' : '' }}>
-                                                        {{ $i }} {{ $i == $detalle->producto->stock ? '(Últimos disponibles)' : '' }}
+                                                        {{ $i }} {{ $i == $detalleVentas->producto->stock ? '(Últimos disponibles)' : '' }}
                                                     </option>
                                                     @endfor
                                             </select>
@@ -49,19 +46,18 @@
                 </div>
             </div>
 
-            <!-- MITAD DERECHA: Resumen de pagos -->
             <div class="col-md-5">
                 <div class="card border-0 shadow-sm p-4 bg-light">
                     <h4 class="fw-bold mb-4">Resumen de Compra</h4>
 
                     <ul class="list-group list-group-flush mb-4">
-                        @foreach ($venta->detalles as $detalle)
+                        @foreach ($venta->detallesVentas as $detalle)
                         <li class="list-group-item bg-transparent d-flex justify-content-between align-items-start px-0 py-3">
                             <div class="me-auto">
-                                <div class="fw-bold text-truncate" style="max-width: 200px;">{{ $detalle->producto->nombre }}</div>
-                                <small class="text-muted">{{ $detalle->cantidad }} x ${{ number_format($detalle->precioUnitario, 2) }}</small>
+                                <div class="fw-bold text-truncate" style="max-width: 200px;">{{ $detalleVentas->producto->nombre }}</div>
+                                <small class="text-muted">{{ $detalleVentas->cantidad }} x ${{ number_format($detalleVentas->precioUnitario, 2) }}</small>
                             </div>
-                            <span class="fw-bold text-dark">${{ number_format($detalle->subtotal, 2) }}</span>
+                            <span class="fw-bold text-dark">${{ number_format($detalleVentas->subtotal, 2) }}</span>
                         </li>
                         @endforeach
                     </ul>

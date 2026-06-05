@@ -43,6 +43,10 @@
                                 </div>
                                 <div class="card-footer align-items-center text-center">
                                     <small class="card-text-price">{{ $item['precio'] }}</small>
+                                    <form action="{{ route('carrito.agregar', $item['id']) }}" method="post">
+                                        @csrf
+                                        <button type="submit" class="btn btn-primary">Añadir al carrito</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>

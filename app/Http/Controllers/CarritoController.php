@@ -4,47 +4,46 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Ventas;
-use App\Models\DetalleVenta;
+use App\Models\Detalleventa;
 use App\Models\Producto;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class CarritoController extends Controller
 {
     // 1. Ver la vista del carrito con sus productos
-    public function index()
-    {
-        // Simulamos el usuario logueado con ID 1 (Luego cambiar por auth()->id())
-        $usuarioId = 1;
+    public function index(){
+        $usuarioId = Auth::id();
 
-        // Buscamos la venta activa en estado 'carrito'
-        $venta = Ventas::with('detalleVentas.producto')
-            ->where('personas_id', $usuarioId)
-            ->where('estado', 'carrito')
-            ->first();
-
-        // Si no tiene carrito activo, creamos un objeto vacío temporal para no romper la vista
-        if (!$venta) {
-            $venta = new Ventas();
-            $venta->detalleVentas = collect();
-            $venta->precioTotal = 0;
+        if (! $usuarioId) {
+            return redirect()->route('login')->with('error', 'Debe iniciar sesión para ver el carrito.');
         }
 
-        return view('carrito', compact('venta'));
+        $venta = Ventas::with('detalleVentas.producto')
+            ->where('personas_id', $usuarioId)
+            ->where('estado', false)
+            ->first();
+
+        return view('frontend.carrito', compact('venta'));
     }
 
     // 2. Añadir un producto al carrito
-    public function add($id)
+    public function agregar(Request $request, $id)
     {
         $producto = Producto::findOrFail($id);
-        $usuarioId = 1; // Cambiar por auth()->id() en producción
+        $usuarioId = Auth::id();
+
+        if (! $usuarioId) {
+            return redirect()->route('login')->with('error', 'Debe iniciar sesión para agregar productos al carrito.');
+        }
 
         if ($producto->stock < 1) {
             return back()->with('error', 'Este producto no tiene stock disponible.');
         }
 
-        // Buscamos o creamos la cabecera de la venta en estado 'carrito'
+        // Buscamos o creamos la cabecera de la venta en estado carrito abierto
         $venta = Ventas::firstOrCreate(
-            ['personas_id' => $usuarioId, 'estado' => 'carrito'],
+            ['personas_id' => $usuarioId, 'estado' => false],
             ['fecha' => now(), 'cantidad' => 0, 'precioTotal' => 0]
         );
 
@@ -76,7 +75,7 @@ class CarritoController extends Controller
     }
 
     // 3. Actualizar cantidad desde el selector desplegable
-    public function updateCantidad(Request $request, $id)
+    public function actualizar(Request $request, $id)
     {
         $detalle = DetalleVenta::findOrFail($id);
         $nuevaCantidad = $request->input('cantidad');
@@ -100,7 +99,7 @@ class CarritoController extends Controller
     }
 
     // 4. Eliminar un producto del carrito
-    public function destroy($id)
+    public function eliminar($id)
     {
         $detalle = DetalleVenta::findOrFail($id);
         $venta = $detalle->venta;
@@ -142,7 +141,7 @@ class CarritoController extends Controller
             }
 
             // Pasamos la orden a pagada/procesada
-            $venta->estado = 'pagado';
+            $venta->estado = true;
             $venta->fecha = now();
             $venta->save();
         });
@@ -156,5 +155,29 @@ class CarritoController extends Controller
         $venta->cantidad = $venta->detalleVentas()->sum('cantidad');
         $venta->precioTotal = $venta->detalleVentas()->sum('subtotal');
         $venta->save();
+    }
+
+    //funcion updateCantidad
+    public function updateCantidad(Request $request, $id)
+    {
+        $detalle = DetalleVenta::findOrFail($id);
+        $nuevaCantidad = $request->input('cantidad');
+        $producto = $detalle->producto;
+
+        if ($nuevaCantidad > $producto->stock) {
+            return back()->with('error', "Solo quedan {$producto->stock} unidades.");
+        }
+
+        if ($nuevaCantidad < 1) {
+            return back()->with('error', 'La cantidad mínima es 1.');
+        }
+
+        $detalle->cantidad = $nuevaCantidad;
+        $detalle->subtotal = $nuevaCantidad * $detalle->precioUnitario;
+        $detalle->save();
+
+        $this->actualizarTotalesCabecera($detalle->venta);
+
+        return back()->with('success', 'Cantidad actualizada.');
     }
 }
