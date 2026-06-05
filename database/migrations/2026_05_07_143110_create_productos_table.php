@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('url_imagen')->nullable();
             $table->boolean('activo')->default(true);
             $table->foreignId('categoria_id') 
-                  ->constrained('categorias')   
+                  ->constrained('categorias')       
                   ->onDelete('cascade');
             // las tres líneas juntas dicen: "cada producto 
             //pertenece a una categoría que debe existir, y si esa categoría se borra, sus productos se borran también".

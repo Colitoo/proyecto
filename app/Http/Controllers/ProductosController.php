@@ -24,7 +24,8 @@ class ProductosController extends Controller
     public function gestionar()
     {
         $productos = Producto::with('categoria')->orderBy('created_at', 'desc')->get();
-        return view('backend.Productos.Producto_Gestion', compact('productos'));
+        $categorias = Categoria::all();
+        return view('backend.Productos.Producto_Gestion', compact('productos', 'categorias'));
     }
 
     /**
@@ -97,8 +98,7 @@ class ProductosController extends Controller
 
         $producto->update($validated);
 
-        return redirect()->route('admin.listar_productos')
-            ->with('success', 'Producto actualizado correctamente');
+        return redirect()->back()->with('success', 'Producto actualizado correctamente');
     }
 
     /**

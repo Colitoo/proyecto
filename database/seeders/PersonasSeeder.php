@@ -20,5 +20,14 @@ class PersonasSeeder extends Seeder
             'perfiles_id' => 1,
             'estado' => true,
         ]);
+
+        \App\Models\Personas::create([
+            'nombre y apellido' => 'usuario',
+            'telefono' => '123456789',
+            'email' => 'usuario@gmail.com',
+            'password' => bcrypt('12345'),
+            'perfiles_id' => 2,
+            'estado' => true,
+        ]);
     }
 }

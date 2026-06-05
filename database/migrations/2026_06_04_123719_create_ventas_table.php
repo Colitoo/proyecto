@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('ventas', function (Blueprint $table) {
             $table->id();
             $table->foreignId('personas_id')
-                  ->constrained('users')
+                  ->constrained('personas')
                   ->onDelete('cascade');
             $table->integer('cantidad');
             $table->decimal('precioTotal', 10, 2);

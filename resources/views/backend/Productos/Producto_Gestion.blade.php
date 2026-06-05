@@ -73,8 +73,9 @@
                     @endforelse
                 </tbody>
             </table>
-            <!-- Modal -->
-            <!-- Agregamos "modal-xl" en la segunda línea -->
+
+            <!-- Modales para editar cada producto -->
+            @foreach($productos as $producto)
             <div class="modal fade" id="exampleModal{{ $producto->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-xl">
                     <div class="modal-content">
@@ -134,6 +135,7 @@
                     </div>
                 </div>
             </div>
+            @endforeach
         </div>
     </div>
 </x-layout>

@@ -10,6 +10,7 @@
                         <th>Imagen</th>
                         <th>Nombre</th>
                         <th>Categoría</th>
+                        <th>Cantidad</th>
                         <th>Precio</th>
                         <th>Estado</th>
                     </tr>
@@ -25,6 +26,7 @@
                         </td>
                         <td>{{ $producto->nombre }}</td>
                         <td>{{ $producto->categoria->nombre ?? 'Sin categoría' }}</td>
+                        <td>{{ $producto->stock }}</td>
                         <td>${{ number_format($producto->precio, 2) }}</td>
                         <td>
                             @if($producto->activo)
@@ -36,7 +38,7 @@
                     </tr>
                     @empty
                     <tr>
-                        <td colspan="6" class="text-center py-4">No hay productos</td>
+                        <td colspan="7" class="text-center py-4">No hay productos</td>
                     </tr>
                     @endforelse
                 </tbody>

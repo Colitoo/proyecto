@@ -27,7 +27,7 @@ Route::get('/seguimiento', function () {
 });
 
 Route::get('/carrito', function () {
-    return view('frontend.carrito');
+    return view('backend.Productos.carrito');
 });
 
 Route::get('/catalogo', [TarjetasController::class, 'ver_tarjetas']);
@@ -65,10 +65,13 @@ Route::get('/admin/productos/{id}',     [ProductosController::class, 'show'])->n
 Route::post('/admin/Producto_Carga',[ProductosController::class, 'store'])->name('productos.store');
 Route::get('/admin/Producto_Carga', [ProductosController::class, 'create'])->name('productos.create');
 //este muestra la lista de productos al admin y le deja gestionar cada uno
-Route::get('/admin/Gestionar_Productos', [ProductosController::class, 'gestionar'])->name('productos.index');
+Route::get('/admin/Producto_Gestion', [ProductosController::class, 'gestionar'])->name('productos.index');
 
 //este muestra solo una lista de prodcutos  al admin
 Route::get('/admin/Listar_Productos', [ProductosController::class, 'index'])->name('admin.listar_productos');
+Route::get('/admin/Listar_Ventas', [ProductosController::class, 'index'])->name('admin.listar_ventas'); // cambiar controller
+Route::get('/admin/Ver_Consultas', [ProductosController::class, 'index'])->name('admin.Ver_Consultas'); //cambiar controlador
+
 
 //muestra el inicio al admin
 Route::get('/admin', [CuentaController::class, 'index']);
