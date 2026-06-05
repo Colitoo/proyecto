@@ -1,6 +1,7 @@
 <x-layout title="Gestion de Productos">
     <div class="container mt-4">
-        <h2 class="txt-color">Gestionar Productos</h2>
+
+        <h2 class="txt-color text-center">Gestionar Productos</h2>
 
         @if(session('success'))
         <div class="alert alert-success alert-dismissible fade show mt-3">
@@ -10,13 +11,15 @@
         @endif
 
         <div class="table-responsive mt-4">
-            <table class="table table-dark table-striped table-hover">
+            <table class="table table-dark table-striped table-bordered table-hover align-middle">
                 <thead>
                     <tr>
                         <th>ID</th>
+                        <th>Imagen</th>
                         <th>Nombre</th>
                         <th>Categoría</th>
                         <th>Precio</th>
+                        <th>Stock</th>
                         <th>Estado</th>
                         <th>Acciones</th>
                     </tr>
@@ -25,50 +28,51 @@
                     @forelse($productos as $producto)
                     <tr>
                         <td>{{ $producto->id }}</td>
+                        <td>
+                            <img src="{{ asset('storage/' . $producto->url_imagen) }}" alt="{{ $producto->nombre }}"
+                                width="60" height="60"
+                                style="object-fit: contain;">
+                        </td>
                         <td>{{ $producto->nombre }}</td>
                         <td>{{ $producto->categoria->nombre ?? 'Sin categoría' }}</td>
                         <td>${{ number_format($producto->precio, 2) }}</td>
+                        <td>{{ $producto->stock }}</td>
                         <td>
-                            @if($producto->activo)
+                            @if(!$producto->trashed())
                             <span class="badge bg-success">Activo</span>
                             @else
                             <span class="badge bg-danger">Inactivo</span>
                             @endif
                         </td>
                         <td>
-                            <div class="btn-group btn-group-sm">
-
-                                {{-- Editar --}}
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal{{ $producto->id }}">
+                            <div class="d-flex flex-wrap gap-2">
+                                <button type="button" class="btn btn-primary btn-outline-light" data-bs-toggle="modal" data-bs-target="#exampleModal{{ $producto->id }}">
                                     Editar
                                 </button>
 
-
-                                {{-- Habilitar/Deshabilitar --}}
-                                @if($producto->activo)
-                                <form action="{{ route('productos.toggleActivo', $producto->id) }}" method="POST">
+                                @if(!$producto->trashed())
+                                <form action="{{ route('productos.destroy', $producto->id) }}" method="POST">
                                     @csrf
-                                    @method('PATCH')
+                                    @method('DELETE')
                                     <button type="submit" class="btn btn-secondary">
                                         Deshabilitar
                                     </button>
                                 </form>
                                 @else
-                                <form action="{{ route('productos.toggleActivo', $producto->id) }}" method="POST">
+                                <form action="{{ route('productos.restore', $producto->id) }}" method="POST">
                                     @csrf
-                                    @method('PATCH')
+                                    @method('PUT')
                                     <button type="submit" class="btn btn-success">
                                         Habilitar
                                     </button>
                                 </form>
                                 @endif
-
                             </div>
                         </td>
                     </tr>
                     @empty
                     <tr>
-                        <td colspan="6" class="text-center py-4">No hay productos</td>
+                        <td colspan="8" class="text-center py-4">No hay productos</td>
                     </tr>
                     @endforelse
                 </tbody>
@@ -76,11 +80,11 @@
 
             <!-- Modales para editar cada producto -->
             @foreach($productos as $producto)
-            <div class="modal fade" id="exampleModal{{ $producto->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="exampleModal{{ $producto->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-theme="dark">
                 <div class="modal-dialog modal-xl">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Producto N°{{ $producto->id }}</h1>
+                            <h1 class="modal-title fs-5 txt-color" id="exampleModalLabel">Editar Producto N°{{ $producto->id }}</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
@@ -130,7 +134,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                            <button type="submit" form="formEditar{{ $producto->id }}" class="btn btn-primary">Guardar cambios</button>
+                            <button type="submit" form="formEditar{{ $producto->id }}" class="btn btn-primary btn-outline-light">Guardar cambios</button>
                         </div>
                     </div>
                 </div>

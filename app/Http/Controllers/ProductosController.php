@@ -7,40 +7,30 @@ use App\Http\Requests\ProductoRequest;
 use App\Models\Producto;
 use App\Models\Categoria;
 
-class ProductosController extends Controller
-{
-    /**
-     * Display a listing of the resource.
-     */
+class ProductosController extends Controller{
     public function index()
     {
         $productos = Producto::with('categoria')->orderBy('created_at', 'desc')->get();
         return view('backend.Productos.Listar_Productos', compact('productos'));
     }
 
-    /**
-     * Mostrar gestión de productos (backend)
-     */
-    public function gestionar()
+
+    public function ver_gestion()
     {
-        $productos = Producto::with('categoria')->orderBy('created_at', 'desc')->get();
+        $productos = Producto::withTrashed()->with('categoria')->orderBy('created_at', 'desc')->get();
         $categorias = Categoria::all();
         return view('backend.Productos.Producto_Gestion', compact('productos', 'categorias'));
     }
 
-    /**
-     * Mostrar formulario crear producto
-     */
-    public function create()
+
+    public function form_crear_producto()
     {
         $categorias = Categoria::all();
         return view('backend.Productos.Producto_Carga', compact('categorias'));
     }
 
-    /**
-     * Guardar producto nuevo
-     */
-    public function store(ProductoRequest $request)
+
+    public function crear_producto(ProductoRequest $request)
     {
         $datos = $request->validated();
 
@@ -60,67 +50,32 @@ class ProductosController extends Controller
             ->with('success', 'Producto creado correctamente');
     }
 
-    /**
-     * Mostrar producto específico
-     */
-    public function show(string $id)
-    {
-        $producto = Producto::findOrFail($id);
-        return redirect()->route('productos.index');
-    }
 
-    /**
-     * Mostrar formulario editar
-     */
-    public function edit(string $id)
-    {
-        $producto = Producto::findOrFail($id);
-        $categorias = Categoria::all();
-        return view('backend.Productos.Producto_Editar', compact('producto', 'categorias'));
-    }
 
-    /**
-     * Actualizar producto
-     */
-    public function update(Request $request, string $id)
-    {
-        $producto = Producto::findOrFail($id);
+    public function update(ProductoRequest $datos, string $id){
+        $datos = $datos->validated();
 
-        $validated = $request->validate([
-            'nombre' => 'required|string|max:150',
-            'descripcion' => 'nullable|string',
-            'precio' => 'required|numeric|min:0',
-            'stock' => 'required|integer|min:1',
-            'url_imagen' => 'nullable|string',
-            'categoria_id' => 'required|exists:categorias,id',
-            'activo' => 'nullable|boolean',
-        ]);
+        $producto = Producto::withTrashed()->findOrFail($id);
 
-        $producto->update($validated);
+        $producto->update($datos);
 
         return redirect()->back()->with('success', 'Producto actualizado correctamente');
     }
 
-    /**
-     * Habilitar/Deshabilitar producto
-     */
-    public function toggleActivo($id)
-    {
-        $producto = Producto::findOrFail($id);
-        $producto->activo = !$producto->activo;
-        $producto->save();
-        return redirect()->back()->with('success', 'Estado actualizado');
-    }
 
-    /**
-     * Eliminar producto
-     */
-    public function destroy(string $id)
+    public function destroy(String $id)
     {
         $producto = Producto::findOrFail($id);
         $producto->delete();
 
-        return redirect()->route('productos.index')
-            ->with('success', 'Producto eliminado correctamente');
+        return redirect()->back()->with('success', 'Producto deshabilitado correctamente');
+    }
+
+
+    public function restore(String $id){
+        $producto = Producto::withTrashed()->findOrFail($id);
+        $producto->restore();
+
+        return redirect()->back()->with('success', 'Producto restaurado correctamente');
     }
 }

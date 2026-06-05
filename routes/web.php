@@ -35,7 +35,7 @@ Route::get('/contacto', [ContactoController::class, 'ver_contacto']);
 Route::post('/form-contacto', [ContactoController::class, 'guardar_contacto'])->name('formulario_contacto');
 
 
-Route::get('/login', [CuentaController::class, 'ver_login']);
+Route::get('/login', [CuentaController::class, 'ver_login'])->name('login');
 
 Route::post('/form-login', [CuentaController::class, 'guardar_login'])->name('formulario-login');
 
@@ -50,41 +50,49 @@ Route::resource('productos', ProductosController::class);
 //para acceder debes estar logeado
 Route::middleware('auth')->group(function () {
     Route::get('/carrito', [CarritoController::class, 'index'])->name('carrito.index');
-    Route::post('carrito/agregar/{id}', [CarritoController::class, 'agregar'])->name('carrito.agregar');
-    Route::put('carrito/actualizar/{id}', [CarritoController::class, 'actualizar'])->name('carrito.actualizar');
+    Route::post('/carrito/agregar/{id}', [CarritoController::class, 'agregar'])->name('carrito.agregar');
+    Route::put('/carrito/actualizar/{id}', [CarritoController::class, 'actualizar'])->name('carrito.actualizar');
     //ruta para carrito.updateCantidad
-    Route::put('carrito/update-cantidad/{id}', [CarritoController::class, 'updateCantidad'])->name('carrito.update-cantidad');
-    Route::delete('carrito/eliminar/{id}', [CarritoController::class, 'eliminar'])->name('carrito.eliminar');
-    Route::delete('carrito/vaciar', [CarritoController::class, 'vaciar'])->name('carrito.vaciar');
-    Route::post('carrito/verificar-stock/{id}', [CarritoController::class, 'verificarStock'])->name('carrito.verificar-stock');
+    Route::put('/carrito/update-cantidad/{id}', [CarritoController::class, 'updateCantidad'])->name('carrito.update-cantidad');
+    Route::delete('/carrito/eliminar/{id}', [CarritoController::class, 'eliminar'])->name('carrito.eliminar');
+    Route::delete('/carrito/vaciar', [CarritoController::class, 'vaciar'])->name('carrito.vaciar');
+    Route::post('/carrito/verificar-stock/{id}', [CarritoController::class, 'verificarStock'])->name('carrito.verificar-stock');
 });
 
 
-//para acceder debes ser admin, el rol verifica que sea con perfil_id 1
+//para acceder verifica que sea con perfil_id 1
 Route::middleware('rol:1')->prefix('admin')->group(function (){
-    Route::get('/productos/create',   [ProductosController::class, 'create'])->name('productos.create');
-    Route::get('/productos/gestionar', [ProductosController::class, 'gestionar'])->name('productos.gestionar');
-    Route::get('/productos/{id}/edit', [ProductosController::class, 'edit'])->name('productos.edit');
-    Route::put('/productos/{id}',     [ProductosController::class, 'update'])->name('productos.update');
-    Route::patch('/productos/{id}',   [ProductosController::class, 'toggleActivo'])->name('productos.toggleActivo');
+    //seccion de productos
+    //este muestra el formulario para editar un producto específico
+    Route::put('/productos/{id}', [ProductosController::class, 'update'])->name('productos.update');
 
+    //este muestra un producto específico al admin pero no lo usamos
+    Route::get('/productos/{id}', [ProductosController::class, 'show'])->name('productos.show');
 
+    //este hace la eliminación lógica del producto
+    Route::delete('/productos/{id}', [ProductosController::class, 'destroy'])->name('productos.destroy');
 
-    //este no debería usarse porque borra de la tabla de la base de datos, pero lo dejo por las dudas
-    Route::delete('/productos/{id}',  [ProductosController::class, 'destroy'])->name('productos.destroy');
+    //este restaura de la eliminacion lógica
+    Route::put('/productos/{id}/restore', [ProductosController::class, 'restore'])->name('productos.restore');
+    
+    //muestra el formulario para crear un producto
+    Route::get('/Producto_Carga', [ProductosController::class, 'form_crear_producto'])->name('productos.formulario');
 
-    //este muestra un producto específico al admin
-    Route::get('/productos/{id}',     [ProductosController::class, 'show'])->name('productos.show');
-
-    //este  crea el producto nuevo en la tabla de Productos con los datos del formulario de carga
-    Route::post('/Producto_Carga', [ProductosController::class, 'store'])->name('productos.store');
-    Route::get('/Producto_Carga', [ProductosController::class, 'create'])->name('productos.create');
+    //este crea el producto nuevo en la tabla de Productos con los datos del formulario de carga
+    Route::post('/Producto_Carga', [ProductosController::class, 'crear_producto'])->name('productos.crear');
+    
     //este muestra la lista de productos al admin y le deja gestionar cada uno
-    Route::get('/Producto_Gestion', [ProductosController::class, 'gestionar'])->name('productos.index');
+    Route::get('/Producto_Gestion', [ProductosController::class, 'ver_gestion'])->name('productos.index');
 
     //este muestra solo una lista de prodcutos  al admin
     Route::get('/Listar_Productos', [ProductosController::class, 'index'])->name('admin.listar_productos');
+
+    
+    //seccion de ventas
     Route::get('/Listar_Ventas', [VentaController::class, 'index'])->name('admin.listar_ventas'); // cambiar controller
+
+
+    //seccion de consultas
     Route::get('/Ver_Consultas', [ContactoController::class, 'mostrar_consultas'])->name('admin.Ver_Consultas'); //cambiar controlador
 
 

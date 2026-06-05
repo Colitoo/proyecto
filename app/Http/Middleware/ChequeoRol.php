@@ -17,7 +17,7 @@ class ChequeoRol
     public function handle(Request $request, Closure $next, mixed ...$roles): Response
     {
         if (!Auth::check()) {
-            return redirect()->route('login');
+            return redirect()->route('login')->with('error', 'Debes iniciar sesión para acceder a esta sección.');
         }
         if (!in_array(Auth::user()->perfiles_id, $roles)) {
             // Si el perfiles_id no es 1 (Admin), bloquea el acceso
