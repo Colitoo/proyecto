@@ -4,8 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Detalleventa extends Model
+class DetalleVenta extends Model
 {
+    protected $table = 'detalleventas';
+
     protected $fillable = [
         'venta_id',
         'producto_id',
