@@ -50,6 +50,7 @@ Route::post('/logout', [CuentaController::class, 'logout'])->name('logout');
 
 Route::resource('productos', ProductosController::class);
 
+
 //para acceder debes estar logeado
 Route::middleware('auth')->group(function () {
     Route::get('/carrito', [CarritoController::class, 'index'])->name('carrito.index');
@@ -101,4 +102,8 @@ Route::middleware('rol:1')->prefix('admin')->group(function (){
 
     //muestra el inicio al admin
     Route::get('/', [CuentaController::class, 'index']);
+
+    Route::put('consultas/{id}/marcar-contestada', [ContactoController::class, 'marcarContestada'])->name('consultas.marcar-contestada');
+    Route::put('consultas/{id}/marcar-pendiente', [ContactoController::class, 'marcarPendiente'])->name('consultas.marcar-pendiente');
 });
+

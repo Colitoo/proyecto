@@ -36,4 +36,22 @@ class ContactoController extends Controller
 
         return view('backend.Productos.Ver_Consultas', compact('consultas'));
     }
+
+    public function marcarContestada($id)
+    {
+        $consulta = Consulta::findOrFail($id);
+        $consulta->contestado = true;
+        $consulta->save();
+
+        return redirect()->back()->with('success', 'Consulta marcada como contestada.');
+    }
+
+    public function marcarPendiente($id)
+    {
+        $consulta = Consulta::findOrFail($id);
+        $consulta->contestado = false;
+        $consulta->save();
+
+        return redirect()->back()->with('success', 'Consulta marcada como pendiente.');
+    }
 }
