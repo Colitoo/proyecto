@@ -3,11 +3,11 @@
         <div class="container">
             <div>
                 <h2 class="text-center mt-4 subtitulo">Contactate con el equipo de RGTS</h2>
-                @if (session('success_message'))
-                <div class="alert alert-success" role="alert">
-                    {{ session('success_message') }}
+                @if(session('success'))
+                <div class="alert alert-success alert-dismissible fade show mt-3">
+                    {{ session('success') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
                 </div>
-                @else
                 <p>¿Buscás esa joya de 16-bits que te faltaba, o solamente necesitás información? En Retro Games Tech Store estamos para ayudarte. Escribinos y nos pondremos en contacto con vos a la brevedad.</p>
                 @endif
             </div>
