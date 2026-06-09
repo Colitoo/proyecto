@@ -18,6 +18,17 @@
                                             <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
                                         </div>
                                         @endif
+                                        @if($errors->any())
+                                        <div class="alert alert-danger alert-dismissible fade show mt-3">
+                                            <ul class="mb-0">
+                                                @foreach($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                                @endforeach
+                                            </ul>
+                                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                                        </div>
+                                        @endif
+                                        
                                         <div>
                                             <label for="email" class="form-label fw-bold mt-4">Correo electrónico *</label>
                                             <input type="email" class="form-control" id="email" name="email">

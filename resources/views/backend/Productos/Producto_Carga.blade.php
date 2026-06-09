@@ -3,10 +3,17 @@
 
         <div class="card shadow-sm mt-4">
             <div class="card-header bg-dark">
-                <h2 class="mb-0 txt-color text-center">Cargar un Producto</h2>
+                <h2 class="subtitulo txt-color text-center">Cargar un Producto</h2>
             </div>
 
             <div class=" p-4">
+                @if(session('success'))
+                <div class="alert alert-success alert-dismissible fade show mt-3">
+                    {{ session('success') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+                @endif
+
                 <form action="{{ route('productos.crear') }}" method="POST" enctype="multipart/form-data">
                     @csrf
 
@@ -73,7 +80,7 @@
                         <small class="text-danger">{{ $message }}</small>
                         @enderror
                     </div>
-                    
+
                     <div class="d-flex justify-content-end gap-2">
                         <a href="{{ route('productos.formulario') }}" class="btn btn-secondary">Cancelar</a>
                         <button type="submit" class="btn btn-primary btn-outline-light">Añadir Producto</button>

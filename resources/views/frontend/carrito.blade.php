@@ -1,21 +1,23 @@
 <x-layout title="Carrito">
-    <style>
-        /* Ocultar flechas del input number */
-        .cantidad-input::-webkit-outer-spin-button,
-        .cantidad-input::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-            appearance: none;
-            margin: 0;
-        }
-
-        .cantidad-input[type=number] {
-            -moz-appearance: textfield;
-            appearance: none;
-        }
-    </style>
-
     <div class="container-md mt-5">
         <h2 class="subtitulo text-center txt-color mb-4">Carrito de Compras</h2>
+
+        @if(session('success'))
+        <div class="alert alert-success alert-dismissible fade show mt-3">
+            {{ session('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+        @endif
+        @if($errors->any())
+        <div class="alert alert-danger alert-dismissible fade show mt-3">
+            <ul class="mb-0">
+                @foreach($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+        @endif
 
         @if ($venta && $venta->detalleVentas->isNotEmpty())
         <div class="row">
@@ -135,7 +137,7 @@
 
                     <div class="d-flex justify-content-between align-items-center mb-4">
                         <span class="fs-5 text-white">Total General:</span>
-                        <span class="fs-4 text-white">${{ number_format($venta->precioTotal + 1500, 2) }}</span>
+                        <span class="fs-4 card-text-price">${{ number_format($venta->precioTotal + 1500, 2) }}</span>
                     </div>
 
                     <button type="button" class="btn btn-primary btn-outline-light w-100 py-2 shadow-sm"

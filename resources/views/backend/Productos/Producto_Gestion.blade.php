@@ -1,11 +1,21 @@
 <x-layout title="Gestion de Productos">
     <div class="container mt-4">
 
-        <h2 class="txt-color text-center">Gestionar Productos</h2>
+        <h2 class="subtitulo txt-color text-center">Gestionar Productos</h2>
 
         @if(session('success'))
         <div class="alert alert-success alert-dismissible fade show mt-3">
             {{ session('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+        @endif
+        @if($errors->any())
+        <div class="alert alert-danger alert-dismissible fade show mt-3">
+            <ul class="mb-0">
+                @foreach($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
             <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
         </div>
         @endif
@@ -95,22 +105,22 @@
                                     <!-- Nombre -->
                                     <div class="col-md-6 mb-3">
                                         <label class="form-label">Nombre</label>
-                                        <input type="text" name="nombre" class="form-control" value="{{ $producto->nombre }}" required>
+                                        <input type="text" name="nombre" class="form-control" value="{{ $producto->nombre }}">
                                     </div>
                                     <!-- Precio -->
                                     <div class="col-md-6 mb-3">
                                         <label class="form-label">Precio</label>
-                                        <input type="number" name="precio" step="0.01" class="form-control" value="{{ $producto->precio }}" required>
+                                        <input type="number" name="precio" step="0.01" class="form-control" value="{{ $producto->precio }}">
                                     </div>
                                     <!-- Stock -->
                                     <div class="col-md-6 mb-3">
                                         <label class="form-label">Stock</label>
-                                        <input type="number" name="stock" class="form-control" value="{{ $producto->stock }}" required>
+                                        <input type="number" name="stock" class="form-control" value="{{ $producto->stock }}">
                                     </div>
                                     <!-- Categoría -->
                                     <div class="col-md-6 mb-3">
                                         <label class="form-label">Categoría</label>
-                                        <select name="categoria_id" class="form-select" required>
+                                        <select name="categoria_id" class="form-select">
                                             <option value="">Seleccioná una categoría</option>
                                             @foreach($categorias as $categoria)
                                             <option value="{{ $categoria->id }}" {{ $producto->categoria_id == $categoria->id ? 'selected' : '' }}>
@@ -119,12 +129,12 @@
                                             @endforeach
                                         </select>
                                     </div>
-                                    <!-- Imagen (Opcional en la edición) -->
+
                                     <div class="col-md-6 mb-3">
                                         <label class="form-label">Imagen (Dejar vacío si no cambia)</label>
                                         <input type="file" name="imagen" class="form-control">
                                     </div>
-                                    <!-- Descripción (Ocupa todo el ancho) -->
+
                                     <div class="col-12 mb-3">
                                         <label class="form-label">Descripción</label>
                                         <textarea name="descripcion" class="form-control" rows="3">{{ $producto->descripcion }}</textarea>
