@@ -51,13 +51,6 @@
 
                     <div class="row mb-3">
                         <div class="col-md-6">
-                            <label class="form-label">Estado</label>
-                            <select name="activo" class="form-select">
-                                <option value="1">Activo</option>
-                                <option value="0">Inactivo</option>
-                            </select>
-                        </div>
-                        <div class="col-md-6">
                             <label class="form-label">Imagen</label>
                             <input type="file" name="imagen" class="form-control">
                             @error('imagen')

@@ -43,11 +43,9 @@ class ProductosController extends Controller{
             'stock'        => $datos['stock'],
             'url_imagen'   => $datos['url_imagen'],
             'categoria_id' => $datos['categoria_id'],
-            'activo'       => $datos['activo'] ?? true,
         ]);
 
-        return redirect()->route('admin.listar_productos')
-            ->with('success', 'Producto creado correctamente');
+        return redirect()->back()->with('success', 'Producto creado correctamente');
     }
 
 

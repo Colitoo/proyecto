@@ -29,7 +29,6 @@ class ProductoRequest extends FormRequest
             'stock' => 'required|integer|min:1',
             'imagen' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
             'categoria_id' => 'required|exists:categorias,id',
-            'activo' => 'nullable|boolean',
         ];
     }
 
@@ -53,8 +52,6 @@ class ProductoRequest extends FormRequest
             'imagen.max' => 'La imagen no puede exceder los 2MB de tamaño.',
             'categoria_id.required' => 'La categoría del producto es obligatoria.',
             'categoria_id.exists' => 'La categoría seleccionada no existe.',
-            'activo.boolean' => 'El campo activo debe ser verdadero o falso.',
-            'activo.nullable' => 'El campo activo es opcional.',
         ];
     }
 }

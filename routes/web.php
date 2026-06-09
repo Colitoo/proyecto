@@ -6,6 +6,7 @@ use App\Http\Controllers\TarjetasController;
 use App\Http\Controllers\ProductosController;
 use App\Http\Controllers\VentaController;
 use App\Http\Controllers\CarritoController;
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -99,8 +100,7 @@ Route::middleware('rol:1')->prefix('admin')->group(function (){
     Route::get('/Ver_Consultas', [ContactoController::class, 'mostrar_consultas'])->name('admin.Ver_Consultas'); //cambiar controlador
 
 
-    //muestra el inicio al admin
-    Route::get('/', [CuentaController::class, 'index']);
+    Route::get('/', [AdminController::class, 'index'])->name('admin.dashboard');
 
     Route::put('consultas/{id}/marcar-contestada', [ContactoController::class, 'marcarContestada'])->name('consultas.marcar-contestada');
     Route::put('consultas/{id}/marcar-pendiente', [ContactoController::class, 'marcarPendiente'])->name('consultas.marcar-pendiente');

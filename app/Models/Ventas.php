@@ -30,4 +30,6 @@ class Ventas extends Model
     {
         return $this->hasMany(DetalleVenta::class, 'venta_id');
     }
+
+    
 }
