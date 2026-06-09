@@ -28,11 +28,9 @@ Route::get('/seguimiento', function () {
     return view('frontend.seguimiento');
 });
 
-Route::get('/catalogo', [TarjetasController::class, 'ver_tarjetas']);
-Route::get('/mandos', [TarjetasController::class, 'ver_mandos']);
-Route::get('/portatiles', [TarjetasController::class, 'ver_portatiles']);
-Route::get('/consolas', [TarjetasController::class, 'ver_sobremesa']);
-
+// Esta única ruta ahora se encarga de mostrar todo el catálogo y sus filtros
+Route::get('/catalogo', [TarjetasController::class, 'ver_tarjetas'])->name('catalogo.index');
+    
 Route::get('/contacto', [ContactoController::class, 'ver_contacto']);
 
 Route::post('/form-contacto', [ContactoController::class, 'guardar_contacto'])->name('formulario_contacto');

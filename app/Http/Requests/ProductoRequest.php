@@ -54,6 +54,7 @@ class ProductoRequest extends FormRequest
             'categoria_id.required' => 'La categoría del producto es obligatoria.',
             'categoria_id.exists' => 'La categoría seleccionada no existe.',
             'activo.boolean' => 'El campo activo debe ser verdadero o falso.',
+            'activo.nullable' => 'El campo activo es opcional.',
         ];
     }
 }

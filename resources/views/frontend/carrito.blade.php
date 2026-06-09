@@ -4,11 +4,13 @@
         .cantidad-input::-webkit-outer-spin-button,
         .cantidad-input::-webkit-inner-spin-button {
             -webkit-appearance: none;
+            appearance: none;
             margin: 0;
         }
 
         .cantidad-input[type=number] {
             -moz-appearance: textfield;
+            appearance: none;
         }
     </style>
 

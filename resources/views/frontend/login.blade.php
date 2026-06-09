@@ -20,15 +20,21 @@
                                         @endif
                                         <div>
                                             <label for="email" class="form-label fw-bold mt-4">Correo electrónico *</label>
-                                            <input type="email" class="form-control" id="email" name="email" value="{{old ('email')}}">
-                                            @error('email')
+                                            <input type="email" class="form-control" id="email" name="email">
+                                            @error ('login')
+                                            <small class="text-danger">{{ $message }}</small>
+                                            @enderror
+                                            @error ('email')
                                             <small class="text-danger">{{ $message }}</small>
                                             @enderror
                                         </div>
                                         <div>
                                             <label for="password" class="form-label fw-bold mt-4">Contraseña *</label>
                                             <input type="password" class="form-control" id="password" name="password">
-                                            @error('password')
+                                            @error ('login')
+                                            <small class="text-danger">{{ $message }}</small>
+                                            @enderror
+                                            @error ('password')
                                             <small class="text-danger">{{ $message }}</small>
                                             @enderror
                                         </div>
