@@ -31,9 +31,12 @@ class LoginRequest extends FormRequest
 
     public function messages(): array{
         return[
-            'email.required'=>'Debe ingresar su email.',
-            'email.email'=>'Debe ingresar un email válido.',
-            'password.required'=>'Debe ingresar su contraseña.',
+            'email.required'=> 'Correo y/o contraseña invalidos.',
+            'email.email'=> 'Correo y/o contraseña invalidos',
+            'email.max'=> 'Correo y/o contraseña invalidos',
+            'password.required'=> 'Correo y/o contraseña invalidos',
+            'password.string'=> 'Correo y/o contraseña invalidos',
+            'password.min'=> 'Correo y/o contraseña invalidos',
         ];
     }
 }

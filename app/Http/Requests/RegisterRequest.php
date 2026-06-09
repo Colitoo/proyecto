@@ -34,13 +34,21 @@ class RegisterRequest extends FormRequest
     {
         return [
             'name.required'=>'Debe ingresar su nombre y apellido.',
+            'name.string'=>'El nombre debe ser una cadena de texto.',
+            'name.min'=>'El nombre debe tener al menos 5 caracteres.',
+            'name.max'=>'El nombre no puede tener más de 50 caracteres.',
+            'number.required' => 'Debe ingresar su número de teléfono.',
+            'number.string' => 'El número de teléfono debe ser una cadena de texto.',
             'number.regex' => 'Ingresá un número telefónico válido.',
             'number.min' => 'El teléfono debe tener al menos 10 caracteres.',
             'number.max' => 'El teléfono no puede ser mayor de 20 caracteres.',
             'email.required' => 'Debe ingresar un email.',
             'email.email' => 'Debe ingresar un email válido.',
+            'email.max' => 'El email no puede tener más de 100 caracteres.',
             'email.unique' => 'El email ya está registrado.',
             'password.required' => 'Debe ingresar su contraseña.',
+            'password.string' => 'La contraseña debe ser una cadena de texto.',
+            'password.min' => 'La contraseña debe tener al menos 5 caracteres.',
             'password.confirmed' => 'Las contraseñas no coinciden.',
         ];
     }

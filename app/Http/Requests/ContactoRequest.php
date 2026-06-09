@@ -37,10 +37,24 @@ class ContactoRequest extends FormRequest
     {
         return[
             //los otros campos ya se traducen al español
+            'nombre.required' => 'El campo nombre es obligatorio.',
+            'nombre.string' => 'El campo nombre debe ser una cadena de texto.',
+            'nombre.max' => 'El campo nombre no puede tener más de 50 caracteres.',
             'email.required' => 'El campo email es obligatorio.',
+            'email.email' => 'El campo email debe ser una dirección de correo electrónico válida.',
+            'email.max' => 'El campo email no puede tener más de 100 caracteres.',
+            'telefono.required' => 'El campo teléfono es obligatorio.',
+            'telefono.string' => 'El campo teléfono debe ser una cadena de texto.',
             'telefono.regex' => 'Ingresá un número telefónico válido.',
             'telefono.min' => 'El teléfono debe tener al menos 10 caracteres.',
             'telefono.max' => 'El teléfono no puede ser mayor de 20 caracteres.',
+            'motivo.required' => 'El campo motivo es obligatorio.',
+            'motivo.in' => 'El campo motivo debe ser uno de los siguientes: stock, envios, seguridad, politicas, otros.',
+            'plataforma.in' => 'El campo plataforma debe ser uno de los siguientes: general, sobremesa, portatiles, mandos.',
+            'mensaje.required' => 'El campo mensaje es obligatorio.',
+            'mensaje.string' => 'El campo mensaje debe ser una cadena de texto.',
+            'mensaje.min' => 'El campo mensaje debe tener al menos 5 caracteres.',
+            'mensaje.max' => 'El campo mensaje no puede tener más de 1000 caracteres.',
         ];
     }
 }

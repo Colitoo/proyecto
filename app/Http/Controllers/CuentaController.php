@@ -44,10 +44,7 @@ class CuentaController extends Controller
                 return redirect('/');
             }
         } else {
-            return back()->withErrors([
-                'email' => 'Correo y/o contraseñas incorrectas.',
-                'password' => 'Correo y/o contraseñas incorrectas.',
-            ]);
+            return back()->withErrors(['login' => 'Correo y/o contraseña invalidos.']);
         }
     }
 

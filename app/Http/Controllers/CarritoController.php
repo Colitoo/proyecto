@@ -32,7 +32,7 @@ class CarritoController extends Controller
     }
 
     // 2. Añadir producto al carrito
-    public function agregar(Request $request, $id)
+    public function agregar(Request $request, mixed $id)
     {
         $usuarioId = Auth::id();
 
@@ -41,11 +41,8 @@ class CarritoController extends Controller
         }
 
         $producto = Producto::where('id', $id)
-            ->where('activo', true)
             ->where('stock', '>=', 1)
             ->first();
-
-        Log::info('Producto encontrado: ' . ($producto ? $producto->id : 'NULL'));
 
         if (!$producto) {
             return redirect()->route('catalogo.index')->with('error', 'Este producto no está disponible.');
@@ -56,13 +53,11 @@ class CarritoController extends Controller
             ['fecha' => now(), 'cantidad' => 0, 'precioTotal' => 0]
         );
 
-        Log::info('Venta ID: ' . $venta->id);
 
         $detalle = DetalleVenta::where('venta_id', $venta->id)
             ->where('producto_id', $producto->id)
             ->first();
 
-        Log::info('Detalle existente: ' . ($detalle ? $detalle->id : 'NINGUNO'));
 
         if ($detalle) {
             if ($detalle->cantidad + 1 > $producto->stock) {
@@ -72,7 +67,6 @@ class CarritoController extends Controller
             $detalle->subtotal = $detalle->cantidad * $detalle->precioUnitario;
             $detalle->save();
         } else {
-            Log::info('Intentando crear detalle...');
             DetalleVenta::create([
                 'venta_id'       => $venta->id,
                 'producto_id'    => $producto->id,
@@ -80,18 +74,15 @@ class CarritoController extends Controller
                 'precioUnitario' => $producto->precio,
                 'subtotal'       => $producto->precio,
             ]);
-            Log::info('Detalle creado OK');
         }
 
         $this->sincronizarCabecera($venta);
-
-        Log::info('Agregar completado OK');
 
         return redirect()->back()->with('success', '¡Producto añadido al carrito!');
     }
 
     // 3. Actualizar cantidad desde el selector del carrito
-    public function updateCantidad(Request $request, $id)
+    public function updateCantidad(Request $request, mixed $id)
     {
         $detalle = DetalleVenta::with('producto', 'venta')->findOrFail($id);
         $nuevaCantidad = (int) $request->input('cantidad');
@@ -115,7 +106,7 @@ class CarritoController extends Controller
     }
 
     // 4. Eliminar un producto del carrito
-    public function eliminar($id)
+    public function eliminar(mixed $id)
     {
         $detalle = DetalleVenta::with('venta')->findOrFail($id);
 
@@ -131,7 +122,7 @@ class CarritoController extends Controller
     }
 
     // 5. Verificar stock y confirmar la compra
-    public function verificarStock(CompraRequest $datos, $id)
+    public function verificarStock(CompraRequest $datos, mixed $id)
     {
         $datos = $datos->validated();   
 
