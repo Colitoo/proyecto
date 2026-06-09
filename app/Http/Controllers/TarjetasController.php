@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class TarjetasController extends Controller{
 
     public function ver_tarjetas(){
-        $productos = Producto::with('categoria')->orderBy('created_at', 'desc')->get();
+        $productos = Producto::with('categoria')->where('activo', true)->orderBy('created_at', 'desc')->get();
         return view('frontend.productos', compact('productos'));
     }
 
