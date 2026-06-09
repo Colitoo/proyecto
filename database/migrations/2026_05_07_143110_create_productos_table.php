@@ -26,6 +26,10 @@ return new class extends Migration
             //pertenece a una categoría que debe existir, y si esa categoría se borra, sus productos se borran también".
             $table->timestamps();
         });
+
+        Schema::table('productos', function (Blueprint $table){
+            $table->softDeletes();
+        });
     }
 
     /**

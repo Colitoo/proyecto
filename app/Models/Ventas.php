@@ -3,9 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use App\Models\DetalleVenta;
 class Ventas extends Model
 {
+    protected $table = 'ventas';
+    
     protected $fillable = [
         'personas_id',
         'cantidad',

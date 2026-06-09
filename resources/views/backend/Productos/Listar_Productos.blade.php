@@ -1,16 +1,16 @@
 <x-layout title="Lista de Productos">
     <div class="container mt-4">
-        <h2 class="txt-color">Lista de Productos</h2>
+        <h2 class="txt-color text-center">Lista de Productos</h2>
 
         <div class="table-responsive mt-4">
-            <table class="table table-dark table-striped table-hover">
+            <table class="table table-dark table-striped table-bordered table-hover align-middle">
                 <thead>
                     <tr>
                         <th>ID</th>
                         <th>Imagen</th>
                         <th>Nombre</th>
                         <th>Categoría</th>
-                        <th>Cantidad</th>
+                        <th>Stock</th>
                         <th>Precio</th>
                         <th>Estado</th>
                     </tr>
@@ -29,7 +29,7 @@
                         <td>{{ $producto->stock }}</td>
                         <td>${{ number_format($producto->precio, 2) }}</td>
                         <td>
-                            @if($producto->activo)
+                            @if(!$producto->trashed())
                             <span class="badge bg-success">Activo</span>
                             @else
                             <span class="badge bg-danger">Inactivo</span>
@@ -38,7 +38,7 @@
                     </tr>
                     @empty
                     <tr>
-                        <td colspan="7" class="text-center py-4">No hay productos</td>
+                        <td colspan="7" class="text-center py-4">No hay productos o no están activos</td>
                     </tr>
                     @endforelse
                 </tbody>

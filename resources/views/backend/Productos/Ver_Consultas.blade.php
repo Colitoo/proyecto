@@ -33,7 +33,7 @@
                         <span class="badge bg-warning">Pendiente</span>
                         @endif
                     </td>
-                    <td>{{ $consulta->created_at->format('d/m/Y H:i') }}</td>
+                    <td>{{ $consulta->created_at->format('d/m/Y') }}</td>
                 </tr>
                 @endforeach
             </tbody>

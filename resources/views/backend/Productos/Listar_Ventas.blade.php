@@ -6,10 +6,10 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Nombre Comprador</th>
-                        <th>cantidad</th>
+                        <th>Nombre del comprador</th>
+                        <th>Cantidad</th>
                         <th>Precio Total</th>
-                        <th>fecha</th>
+                        <th>Fecha</th>
                         <th>Estado</th>
                         <th>Detalles</th>
                     </tr>
@@ -31,7 +31,7 @@
                         </td>
                         <td>
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#DetalleVenta{{ $venta->id }}">
-                                ver detalle
+                                Ver detalle
                             </button>
                         </td>
                     </tr>
@@ -78,7 +78,7 @@
                             </tbody>
                         </table>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                         </div>
                     </div>
                 </div>
