@@ -1,4 +1,17 @@
 <x-layout title="Carrito">
+    <style>
+        /* Ocultar flechas del input number */
+        .cantidad-input::-webkit-outer-spin-button,
+        .cantidad-input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        .cantidad-input[type=number] {
+            -moz-appearance: textfield;
+        }
+    </style>
+
     <div class="container-md mt-5">
         <h2 class="subtitulo text-center txt-color mb-4">Carrito de Compras</h2>
 
@@ -20,7 +33,24 @@
 
                                 <div class="col-md-8">
                                     <div class="card-body py-2 text-white">
-                                        <h5 class="card-title fw-bold text-white mb-2">{{ $detalle->producto->nombre }}</h5>
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <h5 class="card-title fw-bold text-white mb-0">{{ $detalle->producto->nombre }}</h5>
+
+                                            {{-- Botón eliminar producto individual --}}
+                                            <form action="{{ route('carrito.eliminar', $detalle->id) }}" method="POST" style="display:inline;">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="border-0 bg-transparent text-danger p-0" title="Eliminar producto" style="cursor: pointer;">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-trash">
+                                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                        <path d="M4 7l16 0" />
+                                                        <path d="M10 11l0 6" />
+                                                        <path d="M14 11l0 6" />
+                                                        <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                                                        <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+                                                    </svg></button>
+                                            </form>
+                                        </div>
 
                                         <form action="{{ route('carrito.update-cantidad', $detalle->id) }}" method="POST" class="d-flex align-items-center">
                                             @csrf
@@ -35,9 +65,15 @@
                                                     -
                                                 </button>
 
-                                                <input type="hidden" name="cantidad" value="{{ $detalle->cantidad }}">
+                                                <input type="hidden" name="cantidad" value="{{ $detalle->cantidad }}" class="cantidad-hidden">
 
-                                                <span class="fw-bold fs-6 cantidad-display px-3">{{ $detalle->cantidad }}</span>
+                                                <input type="number"
+                                                    class="form-control fw-bold text-center cantidad-input"
+                                                    value="{{ $detalle->cantidad }}"
+                                                    min="1"
+                                                    max="{{ $detalle->producto->stock }}"
+                                                    style="width: 70px;"
+                                                    onchange="actualizarCantidadManual(this)">
 
                                                 <button type="button"
                                                     class="btn btn-outline-light px-3 text-bold"
@@ -60,6 +96,15 @@
                         </div>
                     </div>
                     @endforeach
+                </div>
+                <div class="d-grid mt-3 text-end">
+                    <form action="{{ route('carrito.vaciar') }}" method="POST" class="mt-2">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger w-50 py-2">
+                            Vaciar Carrito
+                        </button>
+                    </form>
                 </div>
             </div>
 
@@ -212,7 +257,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Modificar Carrito</button>
-                    <button type="submit" form="formCheckout" class="btn btn-success fw-bold">Validar y Confirmar Pedido</button>
+                    <button type="submit" form="formCheckout" class="btn btn-secondary">Validar y Confirmar Pedido</button>
                 </div>
             </div>
         </div>
@@ -221,18 +266,44 @@
     <script>
         function cambiarCantidad(btn, delta) {
             const wrapper = btn.closest('.d-flex');
-            const input = wrapper.querySelector('input[name="cantidad"]');
-            const display = wrapper.querySelector('.cantidad-display');
+            const inputHidden = wrapper.querySelector('.cantidad-hidden');
+            const inputNumber = wrapper.querySelector('.cantidad-input');
             const form = btn.closest('form');
             const stock = parseInt(wrapper.querySelector('strong').textContent);
 
-            let nueva = parseInt(input.value) + delta;
+            let nueva = parseInt(inputNumber.value) + delta;
 
             if (nueva < 1) nueva = 1;
             if (nueva > stock) nueva = stock;
 
+            inputNumber.value = nueva;
+            inputHidden.value = nueva;
+
+            wrapper.querySelector('button:first-child').disabled = nueva <= 1;
+            wrapper.querySelector('button:nth-child(4)').disabled = nueva >= stock;
+
+            form.submit();
+        }
+
+        function actualizarCantidadManual(input) {
+            const wrapper = input.closest('.d-flex');
+            const inputHidden = wrapper.querySelector('.cantidad-hidden');
+            const form = input.closest('form');
+            const stock = parseInt(wrapper.querySelector('strong').textContent);
+
+            let nueva = parseInt(input.value);
+
+            // Validaciones
+            if (isNaN(nueva) || nueva < 1) {
+                nueva = 1;
+            }
+            if (nueva > stock) {
+                nueva = stock;
+                alert(`La cantidad máxima disponible es ${stock}`);
+            }
+
             input.value = nueva;
-            display.textContent = nueva;
+            inputHidden.value = nueva;
 
             wrapper.querySelector('button:first-child').disabled = nueva <= 1;
             wrapper.querySelector('button:nth-child(4)').disabled = nueva >= stock;

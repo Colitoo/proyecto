@@ -87,7 +87,7 @@ class CarritoController extends Controller
 
         Log::info('Agregar completado OK');
 
-        return redirect()->route('carrito.index')->with('success', '¡Producto añadido al carrito!');
+        return redirect()->back()->with('success', '¡Producto añadido al carrito!');
     }
 
     // 3. Actualizar cantidad desde el selector del carrito
@@ -118,8 +118,12 @@ class CarritoController extends Controller
     public function eliminar($id)
     {
         $detalle = DetalleVenta::with('venta')->findOrFail($id);
-        $venta = $detalle->venta;
 
+        if ($detalle->venta->personas_id !== Auth::id()) {
+            abort(403);
+        }
+
+        $venta = $detalle->venta;
         $detalle->delete();
         $this->sincronizarCabecera($venta);
 
@@ -148,6 +152,11 @@ class CarritoController extends Controller
                     }
 
                     $producto->decrement('stock', $detalle->cantidad);
+                    // Si el stock llegó a 0, desactivar el producto
+                    if ($producto->fresh()->stock <= 0) {
+                        $producto->activo = false;
+                        $producto->save();
+                    }
                 }
 
                 $venta->estado = true;
@@ -167,5 +176,21 @@ class CarritoController extends Controller
         $venta->cantidad    = $venta->detalleVentas()->sum('cantidad');
         $venta->precioTotal = $venta->detalleVentas()->sum('subtotal');
         $venta->save();
+    }
+
+    // 6. Vaciar el carrito
+    public function vaciar()
+    {
+        $usuarioId = Auth::id();
+        $venta = Ventas::where('personas_id', $usuarioId)
+            ->where('estado', false)
+            ->first();
+
+        if ($venta) {
+            $venta->detalleVentas()->delete();
+            $this->sincronizarCabecera($venta);
+        }
+
+        return redirect()->route('carrito.index')->with('success', 'Carrito vaciado.');
     }
 }
