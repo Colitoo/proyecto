@@ -13,8 +13,9 @@
                                 <div class="justify-content-center mb-5">
                                     <div class="p-3">
                                         @if(session('success'))
-                                        <div class="alert alert-success">
+                                        <div class="alert alert-success alert-dismissible fade show mt-3">
                                             {{ session('success') }}
+                                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
                                         </div>
                                         @endif
                                         <div>

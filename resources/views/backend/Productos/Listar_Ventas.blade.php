@@ -18,7 +18,7 @@
                     @forelse($ventas as $venta)
                     <tr>
                         <td>{{ $venta->id }}</td>
-                        <td>{{ $venta->persona->nombre ?? 'Sin nombre' }}</td>
+                        <td>{{ $venta->persona['nombre y apellido'] ?? 'Sin nombre' }}</td>
                         <td>{{ $venta->cantidad }}</td>
                         <td>${{ number_format($venta->precioTotal, 2) }}</td>
                         <td>{{ $venta->fecha }}</td>
@@ -27,7 +27,7 @@
                             <span class="badge bg-success">Activo</span>
                             @else
                             <span class="badge bg-danger">Inactivo</span>
-                            @endif
+                            @endif  
                         </td>
                         <td>
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#DetalleVenta{{ $venta->id }}">
@@ -45,7 +45,7 @@
 
             <!-- Modales para cada venta -->
             @foreach($ventas as $venta)
-            <div class="modal fade" id="DetalleVenta{{ $venta->id }}" tabindex="-1" aria-labelledby="DetalleVentaLabel{{ $venta->id }}" aria-hidden="true">
+            <div class="modal fade" id="DetalleVenta{{ $venta->id }}" tabindex="-1" aria-labelledby="DetalleVentaLabel{{ $venta->id }}" aria-hidden="true" data-bs-theme="dark">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -53,7 +53,7 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <p><strong>Nombre del Comprador:</strong> {{ $venta->persona->nombre ?? 'Sin nombre' }}</p>
+                            <p><strong>Nombre del Comprador:</strong> {{ $venta->persona['nombre y apellido'] ?? 'Sin nombre' }}</p>
                             <p><strong>Precio Total:</strong> ${{ number_format($venta->precioTotal, 2) }}</p>
                             <p><strong>Fecha:</strong> {{ $venta->fecha }}</p>
                         </div>
@@ -69,7 +69,7 @@
                             <tbody>
                                 @foreach($venta->detalleVentas as $detalle)
                                 <tr>
-                                    <td>{{ $detalle->producto->nombre ?? 'Producto eliminado' }}</td>
+                                    <td>{{ $detalle->producto->nombre ?? 'Producto' }}</td>
                                     <td>{{ $detalle->cantidad }}</td>
                                     <td>${{ number_format($detalle->precioUnitario, 2) }}</td>
                                     <td>${{ number_format($detalle->subtotal, 2) }}</td>
