@@ -61,6 +61,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/carrito/eliminar/{id}', [CarritoController::class, 'eliminar'])->name('carrito.eliminar');
     Route::delete('/carrito/vaciar', [CarritoController::class, 'vaciar'])->name('carrito.vaciar');
     Route::post('/carrito/verificar-stock/{id}', [CarritoController::class, 'verificarStock'])->name('carrito.verificar-stock');
+    Route::get('/historial', [VentaController::class, 'historial'])->name('historial-compras');
 });
 
 

@@ -73,6 +73,11 @@
                     <small class="text-secondary d-block">Teléfono</small>
                     <span>{{ Auth::user()->telefono ?? 'No registrado' }}</span>
                 </li>
+                <li class="mt-4">
+                    <a href="{{route ('historial-compras') }}" class="btn btn-outline-light w-100">
+                        Ver historial de compras
+                    </a>
+                </li>
             </ul>
         </div>
         <form method="POST" action="{{ route('logout') }}">
