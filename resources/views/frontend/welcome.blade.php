@@ -62,11 +62,8 @@
             <p>Te invitamos a que explores de mejor manera nuestros productos para entender su funcionamiento y características.</p>
         </div>
 
-        <!-- Limpieza: Se quitó el sistema row-cols del <ul> para que las tarjetas de ancho completo (w-100) no se encimen verticalmente -->
         <ul class="list-group d-flex flex-column gap-4 p-0">
-
-            <!-- CATEGORÍA: CONSOLAS DE SOBRE MESA (ID: 3) -->
-            <li class="card border-0 shadow-lg w-100 list-group-item bg-transparent p-0">
+            <li class="card border-0 shadow-lg w-100 list-group-item p-0">
                 <div class="row align-items-center g-0">
                     <div class="col-md-5">
                         <img src="{{asset('img/play2.jpg')}}" class="img-fluid h-100 w-100 rounded-start object-fit-cover" alt="consolas-sobremesa">
@@ -76,21 +73,18 @@
                         <div class="card-body h-100 shadow-sm border-0 text-center text-white p-3">
                             <h5 class="card-title fw-bold">Consolas de Sobremesa</h5>
                             <p class="card-text opacity-75">En esta categoría encontrarás las opciones de las consolas retro que ofrecemos, donde podrás jugar de la forma "típica" frente a un televisor con un mando en mano. Incluimos una amplia biblioteca con los juegos icónicos que cada consola puede ofrecer.</p>
-                            <!-- CORREGIDO: Redirecciona con parámetro de consulta -->
                             <a href="{{ route('catalogo.index', ['categoria' => 3]) }}" class="btn btn-outline-light btn-lg w-100 mt-2">Ver Consolas</a>
                         </div>
                     </div>
                 </div>
             </li>
 
-            <!-- CATEGORÍA: MANDOS (ID: 1) -->
-            <li class="card border-0 shadow-lg w-100 list-group-item bg-transparent p-0">
+            <li class="card border-0 shadow-lg w-100 list-group-item p-0">
                 <div class="row g-0 align-items-center">
                     <div class="col-md-7 px-5 ps-md-5">
                         <div class="card-body h-100 shadow-sm border-0 text-center text-white p-3">
                             <h5 class="card-title fw-bold">Mandos</h5>
                             <p class="card-text opacity-75">En esta categoría encontrarás las herramientas utilizadas para interactuar con el mundo dentro del juego. A pesar de que no son productos de la actualidad, no significa que no contengan tecnologías y diseños innovadores. En su momento cada uno destacó a su manera, ya sea por su comodidad o innovación.</p>
-                            <!-- CORREGIDO: Redirecciona con parámetro de consulta -->
                             <a href="{{ route('catalogo.index', ['categoria' => 1]) }}" class="btn btn-outline-light btn-lg w-100 mt-2">Ver Mandos</a>
                         </div>
                     </div>
@@ -101,8 +95,7 @@
                 </div>
             </li>
 
-            <!-- CATEGORÍA: PORTÁTILES (ID: 2) -->
-            <li class="card border-0 shadow-lg w-100 list-group-item bg-transparent p-0">
+            <li class="card border-0 shadow-lg w-100 list-group-item  p-0">
                 <div class="row g-0 align-items-center">
                     <div class="col-md-5">
                         <img src="{{asset('img/3DS.jpg')}}" class="img-fluid h-100 w-100 rounded-start object-fit-cover" alt="consolas-portatiles">
@@ -112,7 +105,6 @@
                         <div class="card-body h-100 shadow-sm border-0 text-center text-white p-3">
                             <h5 class="card-title fw-bold">Portátiles</h5>
                             <p class="card-text opacity-75">En esta categoría encontrarás las consolas que trajeron una manera de jugar única. Con su extrema comodidad y versatilidad que permitía jugar en los lugares que uno quisiera, no se dejen llevar por sus limitaciones técnicas porque cuentan con su propio catálogo que no decepciona.</p>
-                            <!-- CORREGIDO: Redirecciona con parámetro de consulta -->
                             <a href="{{ route('catalogo.index', ['categoria' => 2]) }}" class="btn btn-outline-light btn-lg w-100 mt-2">Ver Portátiles</a>
                         </div>
                     </div>

@@ -18,10 +18,6 @@ class CarritoController extends Controller
     {
         $usuarioId = Auth::id();
 
-        if (!$usuarioId) {
-            return redirect()->route('login')->with('error', 'Debe iniciar sesión para ver el carrito.');
-        }
-
         $venta = Ventas::with('detalleVentas.producto')
             ->where('personas_id', $usuarioId)
             ->where('estado', false)
@@ -36,8 +32,8 @@ class CarritoController extends Controller
     {
         $usuarioId = Auth::id();
 
-        if (!$usuarioId) {
-            return redirect()->route('login')->with('error', 'Debe iniciar sesión para agregar productos.');
+        if (Auth::user()->perfiles_id == 1) {
+            return redirect()->back()->with('error', 'Los administradores no pueden agregar productos al carrito.');
         }
 
         $producto = Producto::where('id', $id)
@@ -78,7 +74,7 @@ class CarritoController extends Controller
 
         $this->sincronizarCabecera($venta);
 
-        return redirect()->back()->with('success', '¡Producto añadido al carrito!');
+        return redirect()->back()->with('success', 'Producto añadido al carrito!');
     }
 
     // 3. Actualizar cantidad desde el selector del carrito
