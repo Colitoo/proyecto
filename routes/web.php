@@ -29,7 +29,7 @@ Route::get('/', function () {
     }
 
     // Traemos el último producto validando por su columna 'estado' que es la real de tu BD
-    $productoNuevo = Producto::latest()->first();
+    $productoNuevo = Producto::latest()->take(3)->get();
 
     return view('frontend.welcome', compact('productosMasVendidos', 'productoNuevo'));
 });
