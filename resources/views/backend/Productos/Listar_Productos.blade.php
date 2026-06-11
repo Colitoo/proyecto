@@ -1,6 +1,6 @@
 <x-layout title="Lista de Productos">
     <div class="container mt-4">
-        <h2 class="txt-color text-center">Lista de Productos</h2>
+        <h2 class="subtitulo txt-color text-center">Lista de Productos</h2>
 
         <div class="table-responsive mt-4">
             <table class="table table-dark table-striped table-bordered table-hover align-middle">
