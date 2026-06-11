@@ -9,6 +9,9 @@
             @auth
             <ul class="navbar-nav">
                 <li class="nav-item">
+                    <a class="nav-link" href="/">Ver inicio</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="/admin/Listar_Productos">Productos</a>
                 </li>
                 <li class="nav-item">

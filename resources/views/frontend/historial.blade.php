@@ -1,6 +1,6 @@
 <x-layout title="Historial de compras">
     <div class="container mt-4">
-        <h2 class="txt-color">Historial de compras</h2>
+        <h2 class="txt-color subtitulo text-center">Historial de compras</h2>
         <p class="text-white"> </p>
         <div class="table-responsive mt-4">
             <table class="table table-dark table-striped table-hover align-middle">
