@@ -9,8 +9,29 @@ use App\Http\Controllers\CarritoController;
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
+use App\Models\Producto;
+use App\Models\DetalleVenta;
+use Illuminate\Support\Facades\DB;
+
 Route::get('/', function () {
-    return view('frontend.welcome');
+    try {
+        // Envolvemos en un bloque seguro para que el carrito no dependa de si hay o no ventas hechas
+        $productosMasVendidos = DetalleVenta::select('producto_id', DB::raw('SUM(cantidad) as total_vendido'))
+            ->groupBy('producto_id')
+            ->orderByDesc('total_vendido')
+            ->take(3)
+            ->get(); 
+
+        // Cargamos la relación de forma manual y segura sólo para los productos encontrados
+        $productosMasVendidos->load('producto');
+    } catch (\Exception $e) {
+        $productosMasVendidos = collect(); // Si la BD está vacía, devuelve una lista vacía para no romper la pantalla
+    }
+
+    // Traemos el último producto validando por su columna 'estado' que es la real de tu BD
+    $productoNuevo = Producto::latest()->first();
+
+    return view('frontend.welcome', compact('productosMasVendidos', 'productoNuevo'));
 });
 
 Route::get('/comercializacion', function () {

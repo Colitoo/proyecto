@@ -1,3 +1,4 @@
+
 <x-layout title="Inicio">
 
     <div class="banner-container">
@@ -26,21 +27,37 @@
     <section class="contenedor-carousel mt-4">
         <div class="mt-4 text-center">
             <h2 class="titulo subtitulo text-center">Productos más vendidos</h2>
-            <p>Nos enorgullese presentarles los productos más queridos y vendidos por nuestra tienda.</p>
+            <p>Nos enorgullece presentarles los productos más queridos y vendidos por nuestra tienda.</p>
         </div>
 
         <div id="carouselMasVendidos" class="carousel carouselGeneral slide" data-bs-ride="carousel">
             <div class="carousel-inner">
+                <!-- Recorremos dinámicamente el TOP 3 que viene de tu Base de Datos -->
+                @forelse($productosMasVendidos as $top)
+                <!-- Verificamos si existe el objeto relación producto para prevenir errores de borrado -->
+                @if($top->producto)
+                <!-- Uso crítico de $loop->first: Inyecta la clase 'active' SÓLO al primer ítem del bucle -->
+                <div class="carousel-item {{ $loop->first ? 'active' : '' }}" data-bs-interval="3000">
+                    <img src="{{ asset('storage/' . $top->producto->url_imagen) }}"
+                        class="carousel-img"
+                        alt="{{ $top->producto->nombre }}">
+
+                    <!-- Opcional: Podés añadir un cartel sutil con el nombre del producto aprovechando tus estilos -->
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded p-2 m-auto w-50 border border-secondary shadow-lg">
+                        <h5 class="fw-bold m-0 text-truncate" style="color: #a0a4e9;">{{ $top->producto->nombre }}</h5>
+                        <small style="color: #afffaa;">¡{{ $top->total_vendido }} unidades vendidas!</small>
+                    </div>
+                </div>
+                @endif
+                @empty
+                <!-- Imagen de respaldo por si el sistema es nuevo y no tiene compras registradas -->
                 <div class="carousel-item active" data-bs-interval="3000">
-                    <img src="{{asset('img/3DS.jpg')}}" class="carousel-img" alt="3DS">
+                    <img src="{{ asset('img/3DS.jpg') }}" class="carousel-img" alt="Por defecto">
                 </div>
-                <div class="carousel-item" data-bs-interval="3000">
-                    <img src="{{asset('img/play1.jpg')}}" class="carousel-img" alt="PlayStation1">
-                </div>
-                <div class="carousel-item" data-bs-interval="3000">
-                    <img src="{{asset('img/play2.jpg')}}" class="carousel-img" alt="PlayStation2">
-                </div>
+                @endforelse
             </div>
+
+            <!-- Controles de navegación laterales (Se mantienen igual usando el ID dinámico) -->
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselMasVendidos" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
@@ -49,12 +66,14 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
-
         </div>
+
         <div class="text-center mt-2 w-100">
-            <a href="/catalogo" class="w-25 btn btn-primary btn-outline-light">Más productos</a>
+            <!-- Corregido: Usa la ruta nombrada para tu listado unificado -->
+            <a href="{{ route('catalogo.index') }}" class="w-25 btn btn-primary btn-outline-light">Más productos</a>
         </div>
     </section>
+
 
     <section class="container mt-5 mb-5">
         <div class="text-center mt-4">
@@ -119,16 +138,21 @@
             <div class="card-header bg-dark">
                 <h2 class="txt-color fw-bold mb-0">Novedad de la Tienda</h2>
             </div>
+            @if($productoNuevo)
             <div class="card-body">
                 <div class="text-center p-3">
                     <p class="card-text opacity-75">Como parte de nuestro compromiso hacia la comunidad de jugadores nos esforzamos por traer a la "vida" nuevos productos Retro, por ello en ésta sección les presentaremos los nuevos productos que van ingresando a nuestro catálogo.</p>
-                    <p class="card-text opacity-75">Les presentamos a la GameCube una consola extremadamente potente para su época que no se supo valorar en su momento.</p>
+                    <p class="card-text opacity-75">¡Les presentamos <strong>{{ $productoNuevo->nombre }}</strong>!</p>
                 </div>
                 <div class="card-img-bottom">
-                    <img src="{{ asset('img/gamecube.jpg') }}" class="img-fluid mx-auto d-block" style="object-fit: cover; height: 450px; max-width: 90%;" alt="GameCube">
-                    <a href="/consolas" class="btn btn-outline-light btn-lg col-md-5 mt-2">Ver más</a>
+                    <img src="{{ asset('storage/' . $productoNuevo->url_imagen) }}"
+                        class="img-fluid mx-auto d-block"
+                        style="object-fit: cover; height: 450px; max-width: 90%;"
+                        alt="{{ $productoNuevo->nombre }}">
+                    <a href="/catalogo" class="btn btn-outline-light btn-lg col-md-5 mt-2">Ver más</a>
                 </div>
             </div>
+            @endif
         </div>
     </section>
 

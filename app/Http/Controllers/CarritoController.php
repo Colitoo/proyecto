@@ -130,7 +130,7 @@ class CarritoController extends Controller
                     // Bloqueamos la fila para evitar condición de carrera
                     $producto = Producto::lockForUpdate()->findOrFail($detalle->producto_id);
 
-                    if (!$producto->activo) {
+                    if ($producto->stock <= 0) {
                         throw new \Exception("El producto '{$producto->nombre}' ya no está disponible.");
                     }
 
@@ -139,11 +139,6 @@ class CarritoController extends Controller
                     }
 
                     $producto->decrement('stock', $detalle->cantidad);
-                    // Si el stock llegó a 0, desactivar el producto
-                    if ($producto->fresh()->stock <= 0) {
-                        $producto->activo = false;
-                        $producto->save();
-                    }
                 }
 
                 $venta->estado = true;

@@ -6,8 +6,13 @@ use Illuminate\Http\Request;
 use App\Http\Requests\ProductoRequest;
 use App\Models\Producto;
 use App\Models\Categoria;
+use Illuminate\Support\Facades\Storage;
+use App\Models\DetalleVenta;
+use Illuminate\Support\Facades\DB;
 
-class ProductosController extends Controller{
+
+class ProductosController extends Controller
+{
     public function index()
     {
         $productos = Producto::with('categoria')->orderBy('created_at', 'desc')->get();
@@ -50,16 +55,26 @@ class ProductosController extends Controller{
 
 
 
-    public function update(ProductoRequest $datos, string $id){
-        $datos = $datos->validated();
+    public function update(ProductoRequest $request, string $id)
+    {
+        $datos = $request->validated();
 
         $producto = Producto::withTrashed()->findOrFail($id);
+
+        if ($request->hasFile('imagen')) {
+            if ($producto->url_imagen) {
+                Storage::disk('public')->delete($producto->url_imagen);
+            }
+
+            $datos['url_imagen'] = $request->file('imagen')->store('productos', 'public');
+        } else {
+            unset($datos['url_imagen']);
+        }
 
         $producto->update($datos);
 
         return redirect()->back()->with('success', 'Producto actualizado correctamente');
     }
-
 
     public function destroy(String $id)
     {
@@ -70,10 +85,13 @@ class ProductosController extends Controller{
     }
 
 
-    public function restore(String $id){
+    public function restore(String $id)
+    {
         $producto = Producto::withTrashed()->findOrFail($id);
         $producto->restore();
 
         return redirect()->back()->with('success', 'Producto restaurado correctamente');
     }
+
+    
 }

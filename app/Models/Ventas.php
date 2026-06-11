@@ -19,6 +19,7 @@ class Ventas extends Model
     protected $casts = [
         'precioTotal' => 'decimal:2',
         'estado' => 'boolean',
+        'fecha' => 'datetime',
     ];
 
     public function persona()
