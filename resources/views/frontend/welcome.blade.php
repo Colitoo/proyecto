@@ -1,4 +1,3 @@
-
 <x-layout title="Inicio">
 
     <div class="banner-container">
@@ -132,27 +131,36 @@
         </ul>
     </section>
 
-
     <section class="container mt-5 mb-5">
         <div class="card mt-4 mb-4 shadow-sm w-100 text-center">
             <div class="card-header bg-dark">
                 <h2 class="txt-color fw-bold mb-0">Novedad de la Tienda</h2>
             </div>
-            @if($productoNuevo)
             <div class="card-body">
                 <div class="text-center p-3">
                     <p class="card-text opacity-75">Como parte de nuestro compromiso hacia la comunidad de jugadores nos esforzamos por traer a la "vida" nuevos productos Retro, por ello en ésta sección les presentaremos los nuevos productos que van ingresando a nuestro catálogo.</p>
-                    <p class="card-text opacity-75">¡Les presentamos <strong>{{ $productoNuevo->nombre }}</strong>!</p>
                 </div>
-                <div class="card-img-bottom">
-                    <img src="{{ asset('storage/' . $productoNuevo->url_imagen) }}"
-                        class="img-fluid mx-auto d-block"
-                        style="object-fit: cover; height: 450px; max-width: 90%;"
-                        alt="{{ $productoNuevo->nombre }}">
-                    <a href="/catalogo" class="btn btn-outline-light btn-lg col-md-5 mt-2">Ver más</a>
+                @if($productoNuevo->isNotEmpty())
+                <div class="row justify-content-center g-3 p-3">
+                    @foreach($productoNuevo as $producto)
+                    <div class="col-md-4">
+                        <div class="card shadow-sm h-100">
+                            <img src="{{ asset('storage/' . $producto->url_imagen) }}"
+                                class="card-img-top"
+                                style="object-fit: cover; height: 250px;"
+                                alt="{{ $producto->nombre }}">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">{{ $producto->nombre }}</h5>
+                                <p class="card-text opacity-75 flex-grow-1">{{ Str::limit($producto->descripcion, 80) }}</p>
+                                <a href="/catalogo?categoria={{ $producto->categoria_id }}"
+                                    class="btn btn-outline-secondary mt-2">Ver categoría</a>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
                 </div>
+                @endif
             </div>
-            @endif
         </div>
     </section>
 
