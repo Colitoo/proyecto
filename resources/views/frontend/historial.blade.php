@@ -75,12 +75,12 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($venta->detalleVentas as $detalle)
+                                @forelse($venta->detalleVentas as $detalle)
                                 <tr>
                                     <td>
-                                        @if($venta->detalleVentas->first()?->producto)
-                                        <img src="{{ asset('storage/' . $venta->detalleVentas->first()->producto->url_imagen) }}"
-                                            alt="{{ $venta->detalleVentas->first()->producto->nombre }}"
+                                        @if($detalle->producto)
+                                        <img src="{{ asset('storage/' . $detalle->producto->url_imagen) }}"
+                                            alt="{{ $detalle->producto->nombre }}"
                                             width="90" height="90"
                                             style="object-fit: contain;">
                                         @else
@@ -94,7 +94,11 @@
                                     <td>${{ number_format($detalle->subtotal, 2) }}</td>
                                 </tr>
                                 <hr class="border-secondary">
-                                @endforeach
+                                @empty
+                                <tr>
+                                    <td colspan="6" class="text-center">No hay detalles de venta disponibles.</td>
+                                </tr>
+                                @endforelse
                             </tbody>
                         </table>
                         <div class="modal-footer">
